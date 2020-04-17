@@ -275,14 +275,14 @@ color: white;
      <property name="spacing">
       <number>0</number>
      </property>
+     <item row="0" column="2">
+      <widget class="QWidget" name="rational" native="true"/>
+     </item>
      <item row="0" column="3">
       <widget class="QWidget" name="polynomials" native="true"/>
      </item>
-     <item row="0" column="0">
-      <widget class="QWidget" name="natural" native="true"/>
-     </item>
-     <item row="0" column="4">
-      <widget class="QWidget" name="matrix" native="true"/>
+     <item row="0" column="1">
+      <widget class="QWidget" name="integer" native="true"/>
      </item>
      <item row="0" column="2">
       <widget class="QWidget" name="rational" native="true"/>
@@ -483,6 +483,368 @@ text-align:  center;</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QWidget" name="matrix" native="true">
+       <widget class="QLabel" name="m_pic5">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic3">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>380</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic4">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>380</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka1.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>140</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Matrix size</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="minimum">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <number>32767</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="matrix1">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>110</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Matrix 1</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_Result">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>370</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Result</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_operation_label">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>200</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> Operation</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea_1">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>140</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_8">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout_1"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="m_pic1">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>140</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_9">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QComboBox" name="m_operation">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>220</y>
+          <width>69</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="currentText">
+         <string>+</string>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>*</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="m_pic2">
+        <property name="geometry">
+         <rect>
+          <x>950</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka1.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_calc">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>290</y>
+          <width>71</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="text">
+         <string>Calc</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="matrix2">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>110</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Matrix 2</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea_2">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>400</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_10">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_17">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout_2"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="matrix_size">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>120</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Matrix size&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic6">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>120</y>
+          <width>31</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../../Desktop/Skobka1.jpg</pixmap>
         </property>
        </widget>
       </widget>

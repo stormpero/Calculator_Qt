@@ -209,6 +209,8 @@ vector<int> SUB_NN_N(vector<int> a, vector<int> b) // Вычитание из первого больш
 		}
 		return result;   // Возвращаемое значение - результат вычитания двух натуральных чисел
 	}
+
+    return vector<int>{};
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -313,11 +315,13 @@ vector<int> DIV_NN_Dk(vector<int> vector_1, vector<int> vector_2) // Вычисление 
 		if (COM_NN_D(vector_1, vector_2) == 0) // если делятся нацело, то увеличиваем вектор еще на 1цу
 			number = ADD_1N_N(number);
 
-		for (int i = 1; i < number.size(); i++) //Так как мы считаем до 1й значащей цифры то остальное заменяем нулями
+        for (unsigned int i = 1; i < number.size(); i++) //Так как мы считаем до 1й значащей цифры то остальное заменяем нулями
 			number[i] = 0;
 
 		return number;
 	}
+
+    return vector<int>{};
 }
 
 vector<int> MUL_ND_N(vector<int> entry, int number)
