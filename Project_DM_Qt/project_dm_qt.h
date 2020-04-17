@@ -42,10 +42,6 @@ private slots:
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
 
-    // Disablebuttons /////
-    void disablebuttons();
-    ///////////////////////
-
 private:
     Ui::Project_DM_Qt *ui;
 
