@@ -63,18 +63,14 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
 	
-	    //Buttons_Integer
-      connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
+    // Buttons_Integer
+    connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
 
     // Matrix initialization //
     increaseCells();         //
     increaseCells();         //
     increaseCells();         //
     //\////////////////////////
-        
-    //Buttons_Integer
-      connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
-
 
 }
 
