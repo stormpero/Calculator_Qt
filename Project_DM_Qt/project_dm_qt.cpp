@@ -38,29 +38,32 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     animation->setPropertyName("geometry");
 
     // Background color for Natural
-    const QPalette palet3(qRgb(212, 102, 102));
+    const QPalette palet3(qRgb(152, 251, 152)); //(212, 102, 102)
     ui->natural->setPalette(palet3);
     ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
-    const QPalette palet1(qRgb(200, 200, 0));
+    const QPalette palet1(qRgb(135, 206, 250)); //(200, 200, 0)
     ui->integer->setPalette(palet1);
     ui->integer->setAutoFillBackground(true);
 
     // Background color for Rational
-    const QPalette palet2(qRgb(0, 200, 0));
+    const QPalette palet2(qRgb(240, 230, 140)); //(0, 200, 0)
     ui->rational->setPalette(palet2);
     ui->rational->setAutoFillBackground(true);
 
     // Background color for Polynomials
-    const QPalette palet4(qRgb(222, 135, 222));
+    const QPalette palet4(qRgb(221, 160, 221)); //(222, 135, 222)
     ui->polynomials->setPalette(palet4);
     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-    const QPalette palet5(qRgb(135, 222, 194));
+    const QPalette palet5(qRgb(240, 128, 128)); //(135, 222, 194)
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
+
+    //Buttons_Integer
+      connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
 }
 
 // Destructor

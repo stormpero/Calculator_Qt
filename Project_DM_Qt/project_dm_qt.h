@@ -2,6 +2,7 @@
 #define PROJECT_DM_QT_H
 
 #include <QMainWindow>
+#include <QString>
 #include "Allfunc.h"
 #include "natural.h"
 
@@ -28,7 +29,11 @@ private slots:
     //
     // Disablebuttons
     void disablebuttons();
-    //
+    //Integer
+    void integ();
+    vector <int> integ_check_convert(QString a);
+
+
 
 private:
     Ui::Project_DM_Qt *ui;
