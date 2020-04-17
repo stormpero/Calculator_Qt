@@ -1,6 +1,6 @@
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-#include <QDebug>
+
 
 
 void Project_DM_Qt::integ()

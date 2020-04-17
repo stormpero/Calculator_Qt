@@ -70,6 +70,16 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Integer_res->setReadOnly(true);
     ui->Integer_num1->setText("0");
     ui->Integer_num2->setText("0");
+    //
+
+    //Rational_Button
+    connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(integ()));
+    ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Rational_res_num->setReadOnly(true);
+    ui->Rational_res_det->setReadOnly(true);
+    //
+
     // Matrix initialization //
     increaseCells();         //
     increaseCells();         //
