@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Project_DM_Qt</class>
+ <widget class="QMainWindow" name="Project_DM_Qt">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1110</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1110</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1110</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Project_DM_Qt</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame_Buttons">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>720</y>
+      <width>1111</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="Btn_natural">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Натуральные числа N</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Btn_integer">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Целые числа Z</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Btn_rational">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Рациональные числа Q</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Btn_polynomials">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Многочлены P</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Btn_matrix">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+       </property>
+       <property name="text">
+        <string>Матрицы M</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="main" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>5550</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>5550</width>
+      <height>721</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>5550</width>
+      <height>721</height>
+     </size>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item row="0" column="1">
+      <widget class="QWidget" name="integer" native="true"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="QWidget" name="polynomials" native="true"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QWidget" name="rational" native="true"/>
+     </item>
+     <item row="0" column="4">
+      <widget class="QWidget" name="matrix" native="true"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QWidget" name="natural" native="true"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1110</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Настройки</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>Тест</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
