@@ -25,7 +25,10 @@ private slots:
     void on_Btn_rational_clicked();
     void on_Btn_polynomials_clicked();
     void on_Btn_matrix_clicked();
-    //\/////////////////////
+    //
+    // Disablebuttons
+    void disablebuttons();
+    //
 
 private:
     Ui::Project_DM_Qt *ui;
