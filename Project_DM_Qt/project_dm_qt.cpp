@@ -27,6 +27,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 // Detecting release mode
 #ifndef QT_DEBUG
     ui->main->setGeometry(0, 0, 5550, 721);
+    ui->Btn_natural->setDisabled(true);
 #endif
 
     setWindowTitle("The best of the best");
@@ -43,7 +44,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
-    const QPalette palet1(qRgb(200, 200, 0));
+    const QPalette palet1(qRgb(135, 222, 194));
     ui->integer->setPalette(palet1);
     ui->integer->setAutoFillBackground(true);
 
@@ -58,9 +59,16 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-    const QPalette palet5(qRgb(135, 222, 194));
+    const QPalette palet5(qRgb(214,214,77));
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
+
+    // Matrix initialization //
+    increaseCells();         //
+    increaseCells();         //
+    increaseCells();         //
+    //\////////////////////////
+
 }
 
 // Destructor
@@ -68,6 +76,7 @@ Project_DM_Qt::~Project_DM_Qt()
 {
     delete ui;
 }
+
 
 void Project_DM_Qt::disablebuttons()
 {
@@ -77,12 +86,16 @@ void Project_DM_Qt::disablebuttons()
     ui->Btn_integer->setDisabled(false);
     ui->Btn_natural->setDisabled(false);
 }
+
+
 // Natural button click
 void Project_DM_Qt::on_Btn_natural_clicked()
 {
     animation->stop();
+
     disablebuttons();
     ui->Btn_natural->setDisabled(true);
+
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->natural->x(), 0, ui->main->width(), ui->main->height()));
 
