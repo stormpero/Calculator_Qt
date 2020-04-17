@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QLineEdit>
+#include <QString>
 #include "Allfunc.h"
 #include "natural.h"
 
@@ -32,6 +33,7 @@ private slots:
 
     // Disablebuttons /////
     void disablebuttons();
+
     //\////////////////////
 
     // Matrices ////////////////////////////
@@ -41,6 +43,11 @@ private slots:
     void on_m_calc_clicked();
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
+
+    //Integer
+    void integ();
+    vector <int> integ_check_convert(QString a);
+
 
 private:
     Ui::Project_DM_Qt *ui;
