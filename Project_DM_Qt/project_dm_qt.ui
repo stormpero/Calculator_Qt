@@ -292,16 +292,6 @@ color: white;
           <height>281</height>
          </rect>
         </property>
-        <widget class="QTextEdit" name="Integer_num1">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>100</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-        </widget>
         <widget class="QComboBox" name="Integer_choose">
          <property name="geometry">
           <rect>
@@ -334,26 +324,6 @@ color: white;
            <string>/</string>
           </property>
          </item>
-        </widget>
-        <widget class="QTextEdit" name="Integer_num2">
-         <property name="geometry">
-          <rect>
-           <x>200</x>
-           <y>100</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QTextBrowser" name="Integer_res">
-         <property name="geometry">
-          <rect>
-           <x>320</x>
-           <y>100</y>
-           <width>91</width>
-           <height>41</height>
-          </rect>
-         </property>
         </widget>
         <widget class="QLabel" name="Integer_Error">
          <property name="geometry">
@@ -403,6 +373,36 @@ color: white;
          </property>
          <property name="text">
           <string>Вычислить</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Integer_num2">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Integer_num1">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Integer_num2_2">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
          </property>
         </widget>
        </widget>

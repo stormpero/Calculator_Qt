@@ -36,7 +36,7 @@ private slots:
 
     //Integer//////////////////////////////
     void integ();
-    vector <int> integ_check_convert(QString a);
+    vector <int> integ_convert(QString a);
     //|/////////////////////////////////////
 
     // Matrices ////////////////////////////

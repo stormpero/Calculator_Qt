@@ -64,8 +64,12 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->matrix->setAutoFillBackground(true);
 	
     // Buttons_Integer
-    connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
-
+    connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
+    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Integer_res->setReadOnly(true);
+    ui->Integer_num1->setText("0");
+    ui->Integer_num2->setText("0");
     // Matrix initialization //
     increaseCells();         //
     increaseCells();         //
