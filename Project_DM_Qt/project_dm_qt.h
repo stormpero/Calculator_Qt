@@ -33,11 +33,11 @@ private slots:
 
     // Disablebuttons /////
     void disablebuttons();
+
     //Integer
     void integ();
     vector <int> integ_check_convert(QString a);
 
-  
 
     // Matrices ////////////////////////////
     void customSlot(const QString &str);
@@ -46,6 +46,7 @@ private slots:
     void on_m_calc_clicked();
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
+
 
 
 private:

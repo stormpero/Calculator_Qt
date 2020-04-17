@@ -59,7 +59,6 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-	
     const QPalette palet5(qRgb(214,214,77));
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
@@ -72,6 +71,9 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     increaseCells();         //
     increaseCells();         //
     //\////////////////////////
+        
+    //Buttons_Integer
+      connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));
 
 
 }
