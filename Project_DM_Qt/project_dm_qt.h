@@ -39,6 +39,10 @@ private slots:
     vector <int> integ_convert(QString a);
     //|/////////////////////////////////////
 
+    //Integer//////////////////////////////
+    void ration();
+    //\/////////////////////////////////////
+
     // Matrices ////////////////////////////
     void customSlot(const QString &str);
     void finishSlot();

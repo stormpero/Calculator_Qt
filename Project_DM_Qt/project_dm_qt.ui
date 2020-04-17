@@ -235,7 +235,7 @@ color: white;
    <widget class="QWidget" name="main" native="true">
     <property name="geometry">
      <rect>
-      <x>-1110</x>
+      <x>-2220</x>
       <y>0</y>
       <width>5550</width>
       <height>721</height>
@@ -276,7 +276,161 @@ color: white;
       <number>0</number>
      </property>
      <item row="0" column="2">
-      <widget class="QWidget" name="rational" native="true"/>
+      <widget class="QWidget" name="rational" native="true">
+       <widget class="QWidget" name="widget_2" native="true">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>220</y>
+          <width>521</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <widget class="QComboBox" name="Rational_choose">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>134</y>
+           <width>40</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>*</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>/</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLineEdit" name="Rational_num2_num">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Rational_end">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>123</y>
+           <width>21</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-size: 18px;</string>
+         </property>
+         <property name="text">
+          <string>=</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Rational_num1_num">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="Rational_Button">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>230</y>
+           <width>241</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Вычислить</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Rational_res_num">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>100</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Rational_num1_det">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>150</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Rational_num2_det">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>150</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Rational_res_det">
+         <property name="geometry">
+          <rect>
+           <x>340</x>
+           <y>150</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
      </item>
      <item row="0" column="3">
       <widget class="QWidget" name="polynomials" native="true"/>
@@ -395,7 +549,7 @@ color: white;
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="Integer_num2_2">
+        <widget class="QLineEdit" name="Integer_res">
          <property name="geometry">
           <rect>
            <x>320</x>
