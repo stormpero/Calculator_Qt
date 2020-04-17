@@ -28,9 +28,6 @@ private slots:
     void on_Btn_rational_clicked();
     void on_Btn_polynomials_clicked();
     void on_Btn_matrix_clicked();
-<<<<<<< Updated upstream
-    //\/////////////////////
-=======
     //\////////////////////////////////
 
     // Disablebuttons /////
@@ -44,7 +41,10 @@ private slots:
     void on_m_calc_clicked();
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
->>>>>>> Stashed changes
+
+    // Disablebuttons /////
+    void disablebuttons();
+    ///////////////////////
 
 private:
     Ui::Project_DM_Qt *ui;

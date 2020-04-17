@@ -78,8 +78,6 @@ Project_DM_Qt::~Project_DM_Qt()
 }
 
 
-<<<<<<< Updated upstream
-=======
 void Project_DM_Qt::disablebuttons()
 {
     ui->Btn_matrix->setDisabled(false);
@@ -90,18 +88,14 @@ void Project_DM_Qt::disablebuttons()
 }
 
 
->>>>>>> Stashed changes
 // Natural button click
 void Project_DM_Qt::on_Btn_natural_clicked()
 {
     animation->stop();
 
-<<<<<<< Updated upstream
-=======
     disablebuttons();
     ui->Btn_natural->setDisabled(true);
 
->>>>>>> Stashed changes
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->natural->x(), 0, ui->main->width(), ui->main->height()));
 
@@ -112,6 +106,9 @@ void Project_DM_Qt::on_Btn_natural_clicked()
 void Project_DM_Qt::on_Btn_integer_clicked()
 {
     animation->stop();
+
+    disablebuttons();
+    ui->Btn_integer->setDisabled(true);
 
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->integer->x(), 0, ui->main->width(), ui->main->height()));
@@ -124,6 +121,9 @@ void Project_DM_Qt::on_Btn_rational_clicked()
 {
     animation->stop();
 
+    disablebuttons();
+    ui->Btn_rational->setDisabled(true);
+
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->rational->x(), 0, ui->main->width(), ui->main->height()));
 
@@ -135,6 +135,9 @@ void Project_DM_Qt::on_Btn_polynomials_clicked()
 {
     animation->stop();
 
+    disablebuttons();
+    ui->Btn_polynomials->setDisabled(true);
+
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->polynomials->x(), 0, ui->main->width(), ui->main->height()));
 
@@ -145,6 +148,9 @@ void Project_DM_Qt::on_Btn_polynomials_clicked()
 void Project_DM_Qt::on_Btn_matrix_clicked()
 {
     animation->stop();
+
+    disablebuttons();
+    ui->Btn_matrix->setDisabled(true);
 
     animation->setStartValue(ui->main->geometry());
     animation->setEndValue(QRect(-ui->matrix->x(), 0, ui->main->width(), ui->main->height()));
