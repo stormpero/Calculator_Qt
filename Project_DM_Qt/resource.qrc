@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images"/>
+    <qresource prefix="/pic"/>
+    <qresource prefix="/buttons">
+        <file>img/Кнопка_Натуральные числа.png</file>
+    </qresource>
+</RCC>
