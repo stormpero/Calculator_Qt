@@ -2,8 +2,8 @@
 #define PROJECT_DM_QT_H
 
 #include <QMainWindow>
-#include <QLineEdit>
 #include <QString>
+#include <QLineEdit>
 #include "Allfunc.h"
 #include "natural.h"
 
@@ -34,7 +34,10 @@ private slots:
     // Disablebuttons /////
     void disablebuttons();
 
-    //\////////////////////
+    //Integer
+    void integ();
+    vector <int> integ_check_convert(QString a);
+
 
     // Matrices ////////////////////////////
     void customSlot(const QString &str);
@@ -44,9 +47,6 @@ private slots:
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
 
-    //Integer
-    void integ();
-    vector <int> integ_check_convert(QString a);
 
 
 private:
