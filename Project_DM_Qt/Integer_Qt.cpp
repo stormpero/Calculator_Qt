@@ -1,51 +1,54 @@
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-#include <QRegExpValidator>
-#include <QMouseEvent>
-#include <QtWidgets>
-
+#include <QDebug>
 
 
 void Project_DM_Qt::integ()
 {
-    QString number1 = ui->Integer_num1->toPlainText();
-    QString number2 = ui->Integer_num2->toPlainText();
-    vector <int> a = integ_check_convert(number1);
-    vector <int> b = integ_check_convert(number2);
-    if (ui->Integer_choose->currentText() == "+")
-        number1 = "yes +";
-    else if (ui->Integer_choose->currentText() == "-")
-        number1 = "yes -";
-    else if (ui->Integer_choose->currentText() == "*")
-        number1 = "yes *";
-    else if (ui->Integer_choose->currentText() == "/")
-        number1 = "yes /";
+    ui->Integer_res->setText("");
+    vector <int> a = integ_convert(ui->Integer_num1->text());
+    vector <int> b = integ_convert(ui->Integer_num2->text());
+
+    vector <int> res(a);
+
+//    if (ui->Integer_choose->currentText() == "+")
+//        res = ADD_ZZ_Z(a,b);
+//    else if (ui->Integer_choose->currentText() == "-")
+//        res = SUB_ZZ_Z(a,b);
+//    else if (ui->Integer_choose->currentText() == "*")
+//        res = MUL_ZZ_Z(a,b);
+//    else if (ui->Integer_choose->currentText() == "div")
+//        res = DIV_ZZ_Z(a,b);
+//    else if (ui->Integer_choose->currentText() == "mod")
+//        res = MOD_ZZ_Z(a,b);
+
+    // Проверка знака
+    if (res[0] == 1)
+        ui->Integer_res->setText("-");
+
+    // Вывод
+    for (int i = 1; i < res.size(); i++)
+        ui->Integer_res->setText(ui->Integer_res->text() + QString::number(res[i]));
 }
-vector <int> Project_DM_Qt::integ_check_convert(QString a)
+vector <int> Project_DM_Qt::integ_convert(QString a)
 {
-    foreach(QChar s,a)
+    vector <int> res;
+
+    // Проверка знака
+    if (a[0] == '-')
     {
-         if (s.isLetter())
-         {
-            ui->Integer_Error->setText("Error");
-         }
-         else if (s.isSpace())
-         {
-
-         }
-         else if (s.isPunct())
-         {
-
-         }
+        res.push_back(1);
+        a.remove(0, 1);
     }
+    else
+        res.push_back(0);
+    // Преобразование в строки в вектор
+    for (int k(0); k < a.size(); ++k)
+        res.push_back(a[k].digitValue());
 
-
-
-//    vector <int> test(a.length());
-//    int SizeTest= test.size();
-//    for (int i = 1; i < SizeTest; i++)
-//        test[i] = a.toInt();
-//    if (a[0] == '-') test[0] = 1;
-//    else { test[0] = a[0] - '0';  test.insert(test.begin(), 0); }
-
+    return res;
 }
+
+
+
+
