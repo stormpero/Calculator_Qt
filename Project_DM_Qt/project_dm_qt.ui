@@ -276,16 +276,34 @@ color: white;
       <number>0</number>
      </property>
      <item row="0" column="3">
-      <widget class="QWidget" name="polynomials" native="true"/>
+      <widget class="QWidget" name="polynomials" native="true">
+       <widget class="QLabel" name="label_Pol">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>70</y>
+          <width>671</width>
+          <height>621</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #8B0000;
+font-size: 98px;</string>
+        </property>
+        <property name="text">
+         <string>В разработке</string>
+        </property>
+       </widget>
+      </widget>
      </item>
      <item row="0" column="0">
       <widget class="QWidget" name="natural" native="true">
        <widget class="QWidget" name="widget_3" native="true">
         <property name="geometry">
          <rect>
-          <x>270</x>
-          <y>230</y>
-          <width>491</width>
+          <x>304</x>
+          <y>220</y>
+          <width>501</width>
           <height>281</height>
          </rect>
         </property>
@@ -294,7 +312,7 @@ color: white;
           <rect>
            <x>150</x>
            <y>110</y>
-           <width>40</width>
+           <width>60</width>
            <height>22</height>
           </rect>
          </property>
@@ -318,14 +336,19 @@ color: white;
          </item>
          <item>
           <property name="text">
-           <string>/</string>
+           <string>div</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mod</string>
           </property>
          </item>
         </widget>
         <widget class="QLabel" name="natural_Error">
          <property name="geometry">
           <rect>
-           <x>300</x>
+           <x>320</x>
            <y>99</y>
            <width>21</width>
            <height>41</height>
@@ -341,7 +364,7 @@ color: white;
         <widget class="QLineEdit" name="natural_num2">
          <property name="geometry">
           <rect>
-           <x>200</x>
+           <x>220</x>
            <y>100</y>
            <width>91</width>
            <height>41</height>
@@ -361,7 +384,7 @@ color: white;
         <widget class="QLineEdit" name="natural_res">
          <property name="geometry">
           <rect>
-           <x>320</x>
+           <x>340</x>
            <y>100</y>
            <width>91</width>
            <height>41</height>
@@ -402,6 +425,40 @@ color: white;
           <string>Вычислить</string>
          </property>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="natural_Button_help">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>20</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -772,8 +829,8 @@ color: white;
        <widget class="QWidget" name="widget_2" native="true">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>220</y>
+          <x>294</x>
+          <y>205</y>
           <width>521</width>
           <height>311</height>
          </rect>
@@ -929,7 +986,7 @@ color: white;
        <widget class="QWidget" name="widget" native="true">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>309</x>
           <y>220</y>
           <width>491</width>
           <height>281</height>
@@ -940,7 +997,7 @@ color: white;
           <rect>
            <x>150</x>
            <y>110</y>
-           <width>40</width>
+           <width>60</width>
            <height>22</height>
           </rect>
          </property>
@@ -964,14 +1021,19 @@ color: white;
          </item>
          <item>
           <property name="text">
-           <string>/</string>
+           <string>div</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>mod</string>
           </property>
          </item>
         </widget>
         <widget class="QLabel" name="Integer_Error">
          <property name="geometry">
           <rect>
-           <x>300</x>
+           <x>320</x>
            <y>99</y>
            <width>21</width>
            <height>41</height>
@@ -1021,7 +1083,7 @@ color: white;
         <widget class="QLineEdit" name="Integer_num2">
          <property name="geometry">
           <rect>
-           <x>200</x>
+           <x>220</x>
            <y>100</y>
            <width>91</width>
            <height>41</height>
@@ -1041,7 +1103,7 @@ color: white;
         <widget class="QLineEdit" name="Integer_res">
          <property name="geometry">
           <rect>
-           <x>320</x>
+           <x>340</x>
            <y>100</y>
            <width>91</width>
            <height>41</height>
@@ -1065,15 +1127,26 @@ color: white;
    </property>
    <widget class="QMenu" name="menu">
     <property name="title">
-     <string>Настройки</string>
+     <string>Приложение находится в разработке</string>
     </property>
-    <addaction name="action"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>К коллоквиуму планируется всё успеть</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Приносим извинения за временные неудобства</string>
+    </property>
    </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
   </widget>
   <action name="action">
    <property name="text">
-    <string>Тест</string>
+    <string>Их нет</string>
    </property>
   </action>
  </widget>

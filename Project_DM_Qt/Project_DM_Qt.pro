@@ -17,17 +17,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     Integer_Qt.cpp \
-    Matrix.cpp \
+    Matrix_Qt.cpp \
     Natural_Qt.cpp \
     Rational_Qt.cpp \
+    integer.cpp \
     main.cpp \
+    matrix.cpp \
     natural.cpp \
-    project_dm_qt.cpp
+    project_dm_qt.cpp \
+    rational.cpp
 
 HEADERS += \
     Allfunc.h \
+    integer.h \
+    matrix.h \
     natural.h \
-    project_dm_qt.h
+    project_dm_qt.h \
+    rational.h
 
 FORMS += \
     project_dm_qt.ui

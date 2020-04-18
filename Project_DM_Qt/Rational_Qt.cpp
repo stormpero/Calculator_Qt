@@ -4,7 +4,8 @@
 
 void Project_DM_Qt::ration()
 {
-    ui->Integer_res->setText("");
+    ui->Rational_res_num->setText("");
+    ui->Rational_res_det->setText("");
     Drob a,b;
 
     a.numerator = integ_convert(ui->Rational_num1_num->text());
@@ -14,14 +15,14 @@ void Project_DM_Qt::ration()
 
     Drob res;
 
-//    if (ui->Integer_choose->currentText() == "+")
-//        res = ADD_QQ_Q(a,b);
-//    else if (ui->Integer_choose->currentText() == "-")
-//        res = SUB_QQ_Q(a,b);
-//    else if (ui->Integer_choose->currentText() == "*")
-//        res = MUL_QQ_Q(a,b);
-//    else if (ui->Integer_choose->currentText() == "/")
-//        res = DIV_QQ_Q(a,b);
+    if (ui->Integer_choose->currentText() == "+")
+        res = ADD_QQ_Q(a,b);
+    else if (ui->Integer_choose->currentText() == "-")
+        res = SUB_QQ_Q(a,b);
+    else if (ui->Integer_choose->currentText() == "*")
+        res = MUL_QQ_Q(a,b);
+    else if (ui->Integer_choose->currentText() == "/")
+        res = DIV_QQ_Q(a,b);
 
     // Проверка знака
     if (res.numerator[0] == 1)

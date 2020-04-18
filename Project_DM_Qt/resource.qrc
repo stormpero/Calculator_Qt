@@ -3,5 +3,9 @@
     <qresource prefix="/pic"/>
     <qresource prefix="/buttons">
         <file>img/Кнопка_Натуральные числа.png</file>
+        <file>img/indevelop.png</file>
+        <file>img/1200x630bb.png</file>
+        <file>img/warning.jpg</file>
+        <file>img/new.jpg</file>
     </qresource>
 </RCC>

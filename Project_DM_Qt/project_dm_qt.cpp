@@ -1,7 +1,7 @@
 #include <QPropertyAnimation>
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-
+#include <QMessageBox>
 
 /* Modules x coords
  *
@@ -30,7 +30,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Btn_natural->setDisabled(true);
 #endif
 
-    setWindowTitle("Calculator");
+    setWindowTitle("Almighty calculator");
+    setWindowIcon(QIcon(":/buttons/img/1200x630bb.png"));
 
     // Animation properties
     animation->setTargetObject(ui->main);
@@ -87,9 +88,14 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
     ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
     ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-     ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
+    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
     ui->Rational_res_num->setReadOnly(true);
     ui->Rational_res_det->setReadOnly(true);
+    ui->Rational_num1_num->setText("0");
+    ui->Rational_num2_num->setText("0");
+    ui->Rational_num1_det->setText("1");
+    ui->Rational_num2_det->setText("1");
+
     //
 
     // Matrix initialization //
@@ -98,6 +104,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     increaseCells();         //
     //\////////////////////////
 
+    ui->label_Pol->setPixmap(QPixmap(":/buttons/img/indevelop.png"));
+    ui->Btn_natural->setDisabled(true);
 }
 
 // Destructor
@@ -187,3 +195,17 @@ void Project_DM_Qt::on_Btn_matrix_clicked()
     animation->start();
 }
 
+
+void Project_DM_Qt::on_natural_Button_help_clicked()
+{
+
+    QMessageBox msgBox;
+    msgBox.setParent(0);
+    msgBox.setWindowTitle(" =) ");
+    msgBox.setText("");
+    QPixmap p;
+    p.load(":/buttons/img/new.jpg");
+    msgBox.setIconPixmap(p);// no sound, but with icon
+
+    msgBox.exec();
+}

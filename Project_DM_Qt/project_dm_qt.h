@@ -6,6 +6,9 @@
 #include <QLineEdit>
 #include "Allfunc.h"
 #include "natural.h"
+#include "integer.h"
+#include "rational.h"
+#include "matrix.h"
 
 typedef vector<vector<vector<int>>> Matrix;
 
@@ -57,6 +60,8 @@ private slots:
 
 
 
+
+    void on_natural_Button_help_clicked();
 
 private:
     Ui::Project_DM_Qt *ui;

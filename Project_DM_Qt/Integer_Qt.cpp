@@ -1,26 +1,24 @@
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
 
-
-
 void Project_DM_Qt::integ()
 {
     ui->Integer_res->setText("");
     vector <int> a = integ_convert(ui->Integer_num1->text());
     vector <int> b = integ_convert(ui->Integer_num2->text());
 
-    vector <int> res(a);
+    vector <int> res;
 
-//    if (ui->Integer_choose->currentText() == "+")
-//        res = ADD_ZZ_Z(a,b);
-//    else if (ui->Integer_choose->currentText() == "-")
-//        res = SUB_ZZ_Z(a,b);
-//    else if (ui->Integer_choose->currentText() == "*")
-//        res = MUL_ZZ_Z(a,b);
-//    else if (ui->Integer_choose->currentText() == "div")
-//        res = DIV_ZZ_Z(a,b);
-//    else if (ui->Integer_choose->currentText() == "mod")
-//        res = MOD_ZZ_Z(a,b);
+    if (ui->Integer_choose->currentText() == "+")
+        res = ADD_ZZ_Z(a,b);
+    else if (ui->Integer_choose->currentText() == "-")
+        res = SUB_ZZ_Z(a,b);
+    else if (ui->Integer_choose->currentText() == "*")
+        res = MUL_ZZ_Z(a,b);
+    else if (ui->Integer_choose->currentText() == "div")
+        res = DIV_ZZ_Z(a,b);
+    else if (ui->Integer_choose->currentText() == "mod")
+        res = MOD_ZZ_Z(a,b);
 
     // Проверка знака
     if (res[0] == 1)
