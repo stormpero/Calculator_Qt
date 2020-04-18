@@ -56,8 +56,11 @@ private slots:
 
 
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> master
 private:
     Ui::Project_DM_Qt *ui;
 
