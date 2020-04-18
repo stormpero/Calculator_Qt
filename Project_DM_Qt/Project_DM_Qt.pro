@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Integer_Qt.cpp \
     Matrix.cpp \
+    Natural_Qt.cpp \
     Rational_Qt.cpp \
     main.cpp \
     natural.cpp \

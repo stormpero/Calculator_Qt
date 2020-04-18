@@ -30,7 +30,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Btn_natural->setDisabled(true);
 #endif
 
-    setWindowTitle("The best of the best");
+    setWindowTitle("Calculator");
 
     // Animation properties
     animation->setTargetObject(ui->main);
@@ -63,6 +63,15 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
 	
+
+    // Buttons_Natural
+
+    connect(ui->natural_Button,SIGNAL(clicked()),this,SLOT(natural()));
+    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->natural_res->setReadOnly(true);
+    ui->natural_num1->setText("0");
+    ui->natural_num2->setText("0");
     // Buttons_Integer
     connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
     ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
@@ -174,3 +183,4 @@ void Project_DM_Qt::on_Btn_matrix_clicked()
 
     animation->start();
 }
+

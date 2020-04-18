@@ -33,7 +33,10 @@ private slots:
 
     // Disablebuttons /////
     void disablebuttons();
-
+    //Natural//////////////////////////////
+    void natural();
+    vector <int> natural_convert(QString a);
+    //|/////////////////////////////////////
     //Integer//////////////////////////////
     void integ();
     vector <int> integ_convert(QString a);
@@ -52,6 +55,8 @@ private slots:
     //\/////////////////////////////////////
 
 
+
+    void on_natural_Button_clicked();
 
 private:
     Ui::Project_DM_Qt *ui;
