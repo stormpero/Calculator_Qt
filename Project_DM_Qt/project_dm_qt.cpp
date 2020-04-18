@@ -44,7 +44,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
-    const QPalette palet1(qRgb(135, 222, 194));
+    const QPalette palet1(qRgb(135, 206, 250));
     ui->integer->setPalette(palet1);
     ui->integer->setAutoFillBackground(true);
 
@@ -59,19 +59,20 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-    const QPalette palet5(qRgb(214,214,77));
+    const QPalette palet5(qRgb(240, 128, 128));
     ui->matrix->setPalette(palet5);
     ui->matrix->setAutoFillBackground(true);
 	
 
     // Buttons_Natural
-
     connect(ui->natural_Button,SIGNAL(clicked()),this,SLOT(natural()));
-    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
+    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
     ui->natural_res->setReadOnly(true);
     ui->natural_num1->setText("0");
     ui->natural_num2->setText("0");
+
+
     // Buttons_Integer
     connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
     ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
@@ -82,9 +83,11 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     //
 
     //Rational_Button
-    connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(integ()));
+    connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(ration()));
     ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
     ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+     ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
     ui->Rational_res_num->setReadOnly(true);
     ui->Rational_res_det->setReadOnly(true);
     //
