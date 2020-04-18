@@ -56,8 +56,6 @@ private slots:
 
 
 
-    void on_natural_Button_clicked();
-
 private:
     Ui::Project_DM_Qt *ui;
 
