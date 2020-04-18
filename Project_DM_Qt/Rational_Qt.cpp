@@ -7,26 +7,30 @@ void Project_DM_Qt::ration()
     ui->Integer_res->setText("");
     Drob a,b;
 
-    a.numerator = integ_convert(ui->Integer_num1->text());
-    b.numerator = integ_convert(ui->Integer_num2->text());
+    a.numerator = integ_convert(ui->Rational_num1_num->text());
+    a.denominator = natural_convert(ui->Rational_num1_det->text());
+    b.numerator = integ_convert(ui->Rational_num2_num->text());
+    b.denominator = natural_convert(ui->Rational_num2_det->text());
 
-    vector <int> res(a.numerator);
+    Drob res;
 
 //    if (ui->Integer_choose->currentText() == "+")
-//        res = ADD_ZZ_Z(a,b);
+//        res = ADD_QQ_Q(a,b);
 //    else if (ui->Integer_choose->currentText() == "-")
-//        res = SUB_ZZ_Z(a,b);
+//        res = SUB_QQ_Q(a,b);
 //    else if (ui->Integer_choose->currentText() == "*")
-//        res = MUL_ZZ_Z(a,b);
+//        res = MUL_QQ_Q(a,b);
 //    else if (ui->Integer_choose->currentText() == "/")
-//        res = DIV_ZZ_Z(a,b);
+//        res = DIV_QQ_Q(a,b);
 
     // Проверка знака
-    if (res[0] == 1)
-        ui->Integer_res->setText("-");
+    if (res.numerator[0] == 1)
+        ui->Rational_res_num->setText("-");
 
     // Вывод
-    for (int i = 1; i < res.size(); i++)
-        ui->Integer_res->setText(ui->Integer_res->text() + QString::number(res[i]));
+    for (int i = 1; i < res.numerator.size(); i++)
+        ui->Rational_res_num->setText(ui->Rational_res_num->text() + QString::number(res.numerator[i]));
+    for (int i = 0; i < res.denominator.size(); i++)
+        ui->Rational_res_det->setText(ui->Rational_res_det->text() + QString::number(res.denominator[i]));
 }
 
