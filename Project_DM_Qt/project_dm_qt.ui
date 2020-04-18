@@ -338,40 +338,6 @@ color: white;
           <string>=</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="natural_Button">
-         <property name="geometry">
-          <rect>
-           <x>140</x>
-           <y>170</y>
-           <width>201</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-color: #000000;
-background-color: white;
-border: 1px solid #828282;
-border-radius: 3px;
-font-size: 18px;
-}
-QPushButton:hover {
-border: 1px solid #828282;
-background-color: #d5d5d5;
-}
-QPushButton:hover:pressed { 
-background-color: gray;
-color: white;
-}
-QPushButton:disabled { 
-background-color: gray;
-color: white;
-}</string>
-         </property>
-         <property name="text">
-          <string>Вычислить</string>
-         </property>
-        </widget>
         <widget class="QLineEdit" name="natural_num2">
          <property name="geometry">
           <rect>
@@ -400,6 +366,40 @@ color: white;
            <width>91</width>
            <height>41</height>
           </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="natural_Button">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>170</y>
+           <width>191</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #000000;
+background-color: white;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #d5d5d5;
+}
+QPushButton:hover:pressed { 
+background-color: gray;
+color: white;
+}
+QPushButton:disabled { 
+background-color: gray;
+color: white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Вычислить</string>
          </property>
         </widget>
        </widget>

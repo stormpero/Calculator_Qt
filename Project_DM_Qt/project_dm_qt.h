@@ -42,7 +42,7 @@ private slots:
     vector <int> integ_convert(QString a);
     //|/////////////////////////////////////
 
-    //Integer//////////////////////////////
+    //Rational//////////////////////////////
     void ration();
     //\/////////////////////////////////////
 
@@ -56,7 +56,7 @@ private slots:
 
 
 
-    void on_natural_Button_clicked();
+
 
 private:
     Ui::Project_DM_Qt *ui;
