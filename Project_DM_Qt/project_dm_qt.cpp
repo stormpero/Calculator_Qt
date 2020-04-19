@@ -1,7 +1,7 @@
 #include <QPropertyAnimation>
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-
+#include <QMessageBox>
 
 /* Modules x coords
  *
@@ -30,7 +30,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Btn_natural->setDisabled(true);
 #endif
 
-    setWindowTitle("Calculator");
+    setWindowTitle("Almighty calculator");
+    setWindowIcon(QIcon(":/buttons/img/1200x630bb.png"));
 
     // Animation properties
     animation->setTargetObject(ui->main);
@@ -39,8 +40,16 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     animation->setPropertyName("geometry");
 
     // Background color for Natural
-    const QPalette palet3(qRgb(152, 251, 152)); //(212, 102, 102)
-    ui->natural->setPalette(palet3);
+    //const QPalette palet3(qRgb(152, 251, 152)); //(212, 102, 102)
+    //ui->natural->setPalette(palet3);
+    //
+     //ui->natural->setTextureImage(QPixmap(":/buttons/img/fon_nat.jpg"));
+
+     QBrush br(Qt::TexturePattern);
+     br.setTextureImage(QImage(":/buttons/img/fon_nat.jpg"));
+     QPalette fon_nat =ui->natural->palette();
+     fon_nat.setBrush(QPalette::Background, br);
+     ui->natural->setPalette(fon_nat);
     ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
@@ -66,11 +75,11 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     // Buttons_Natural
     connect(ui->natural_Button,SIGNAL(clicked()),this,SLOT(natural()));
-    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
-    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
+    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
+    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
     ui->natural_res->setReadOnly(true);
-    ui->natural_num1->setText("0");
-    ui->natural_num2->setText("0");
+    ui->natural_num1->setPlaceholderText("0");
+    ui->natural_num2->setPlaceholderText("0");
 
 
     // Buttons_Integer
@@ -78,18 +87,23 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
     ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
     ui->Integer_res->setReadOnly(true);
-    ui->Integer_num1->setText("0");
-    ui->Integer_num2->setText("0");
+    ui->Integer_num1->setPlaceholderText("0");
+    ui->Integer_num2->setPlaceholderText("0");
     //
 
     //Rational_Button
     connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(ration()));
     ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
+    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
     ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-     ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("\\d*"), this));
+    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
     ui->Rational_res_num->setReadOnly(true);
     ui->Rational_res_det->setReadOnly(true);
+    ui->Rational_num1_num->setPlaceholderText("0");
+    ui->Rational_num2_num->setPlaceholderText("0");
+    ui->Rational_num1_det->setPlaceholderText("1");
+    ui->Rational_num2_det->setPlaceholderText("1");
+
     //
 
     // Matrix initialization //
@@ -98,6 +112,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     increaseCells();         //
     //\////////////////////////
 
+    ui->label_Pol->setPixmap(QPixmap(":/buttons/img/indevelop.png"));
+    ui->Btn_natural->setDisabled(true);
 }
 
 // Destructor
@@ -187,3 +203,25 @@ void Project_DM_Qt::on_Btn_matrix_clicked()
     animation->start();
 }
 
+bool Project_DM_Qt::check_zero(vector <int> zero)
+{
+    if (POZ_Z_D(zero)==0)
+        return true;
+    else
+        return false;
+}
+
+
+void Project_DM_Qt::on_natural_Button_help_clicked()
+{
+
+    QMessageBox msgBox;
+    msgBox.setParent(0);
+    msgBox.setWindowTitle(" =) ");
+    msgBox.setText("");
+    QPixmap p;
+    p.load(":/buttons/img/new.jpg");
+    msgBox.setIconPixmap(p);// no sound, but with icon
+
+    msgBox.exec();
+}

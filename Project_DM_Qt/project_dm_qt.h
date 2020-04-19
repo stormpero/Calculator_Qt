@@ -6,6 +6,9 @@
 #include <QLineEdit>
 #include "Allfunc.h"
 #include "natural.h"
+#include "integer.h"
+#include "rational.h"
+#include "matrix.h"
 
 typedef vector<vector<vector<int>>> Matrix;
 
@@ -30,13 +33,16 @@ private slots:
     void on_Btn_polynomials_clicked();
     void on_Btn_matrix_clicked();
     //\////////////////////////////////
-
+    bool check_zero(vector <int> zero);
+    //\////////////////////////////////
     // Disablebuttons /////
     void disablebuttons();
+
     //Natural//////////////////////////////
     void natural();
     vector <int> natural_convert(QString a);
     //|/////////////////////////////////////
+
     //Integer//////////////////////////////
     void integ();
     vector <int> integ_convert(QString a);
@@ -55,12 +61,10 @@ private slots:
     //\/////////////////////////////////////
 
 
+    //Help_info/////////////////////////////
+    void on_natural_Button_help_clicked();
+    //\////////////////////////////////
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
 private:
     Ui::Project_DM_Qt *ui;
 

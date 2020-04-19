@@ -205,10 +205,10 @@ void Project_DM_Qt::on_m_calc_clicked()
     Matrix mat1, mat2, result;
     QList<QLineEdit*> list = getData(mat1, mat2);
 
-    /*if (ui->m_operation->currentText() == "+")
+    if (ui->m_operation->currentText() == "+")
         result = MAT_Z_SUM(mat1, mat2);
     else
-        result = MAT_Z_MUL(mat1, mat2);*/
+        result = MAT_Z_MUL(mat1, mat2);
 
     int counter(sqrt(ui->m_gridLayout->count()));
 
