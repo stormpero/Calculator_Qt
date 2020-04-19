@@ -16,10 +16,23 @@ void Project_DM_Qt::integ()
     else if (ui->Integer_choose->currentText() == "*")
         res = MUL_ZZ_Z(a,b);
     else if (ui->Integer_choose->currentText() == "div")
+    {
+        if (check_zero(b))
+        {
+            ui->Integer_res->setText("Error");
+            return;
+        }
         res = DIV_ZZ_Z(a,b);
+    }
     else if (ui->Integer_choose->currentText() == "mod")
-        res = MOD_ZZ_Z(a,b);
-
+    {
+        if (check_zero(b))
+        {
+            ui->Integer_res->setText("Error");
+            return;
+        }
+        res = MOD_ZZ_Z(a,b);        
+    }
     // Проверка знака
     if (res[0] == 1)
         ui->Integer_res->setText("-");
@@ -43,7 +56,9 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
     // Преобразование в строки в вектор
     for (int k(0); k < a.size(); ++k)
         res.push_back(a[k].digitValue());
+    if (res.empty())
 
+        res.push_back(0);
     return res;
 }
 
