@@ -11,6 +11,7 @@ void Project_DM_Qt::natural()
 
     vector <int> res;
 
+
     if (ui->natural_choose->currentText() == "+")
         res = ADD_NN_N(a,b);
     else if (ui->natural_choose->currentText() == "-")
@@ -60,7 +61,7 @@ vector <int> Project_DM_Qt::natural_convert(QString a)
     vector <int> res;
 
     // Преобразование в строки в вектор
-    for (int k(0); k < a.size(); ++k)
+    for (int k(0); k < a.size(); k++)
         res.push_back(a[k].digitValue());
      if (res.empty())
          res.push_back(0);

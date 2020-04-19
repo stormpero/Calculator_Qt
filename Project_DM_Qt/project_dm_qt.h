@@ -61,11 +61,10 @@ private slots:
     //\/////////////////////////////////////
 
 
-
-
     //Help_info/////////////////////////////
     void on_natural_Button_help_clicked();
     //\////////////////////////////////
+
 private:
     Ui::Project_DM_Qt *ui;
 
