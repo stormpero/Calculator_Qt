@@ -14,7 +14,15 @@ void Project_DM_Qt::integ()
     else if (ui->Integer_choose->currentText() == "-")
         res = SUB_ZZ_Z(a,b);
     else if (ui->Integer_choose->currentText() == "*")
-        res = MUL_ZZ_Z(a,b);
+    {
+        if ((check_zero(a))||(check_zero(b)))
+        {
+            res.push_back(0);
+            res.push_back(0);
+        }
+        else
+            res = MUL_ZZ_Z(a,b);
+    }
     else if (ui->Integer_choose->currentText() == "div")
     {
         if (check_zero(b))
@@ -22,7 +30,7 @@ void Project_DM_Qt::integ()
             ui->Integer_res->setText("Error");
             return;
         }
-        res = DIV_ZZ_Z(a,b);
+        res = DIV_ZZ_Z(a,b);     
     }
     else if (ui->Integer_choose->currentText() == "mod")
     {
@@ -31,6 +39,7 @@ void Project_DM_Qt::integ()
             ui->Integer_res->setText("Error");
             return;
         }
+
         res = MOD_ZZ_Z(a,b);        
     }
     // Проверка знака

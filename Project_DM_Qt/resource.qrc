@@ -2,10 +2,17 @@
     <qresource prefix="/images"/>
     <qresource prefix="/pic"/>
     <qresource prefix="/buttons">
-        <file>img/Кнопка_Натуральные числа.png</file>
         <file>img/indevelop.png</file>
         <file>img/1200x630bb.png</file>
-        <file>img/new.jpg</file>
         <file>img/fon_nat.jpg</file>
+        <file>img/downarrow.png</file>
+        <file>img/fon_int.jpg</file>
+        <file>img/fon_mat.jpg</file>
+        <file>img/fon_rat.jpg</file>
+        <file>img/res_nat1.jpg</file>
+        <file>img/res_nat2.jpg</file>
+        <file>img/res_nat3.jpg</file>
+        <file>img/info.png</file>
+        <file>img/fon_matmini.png</file>
     </qresource>
 </RCC>

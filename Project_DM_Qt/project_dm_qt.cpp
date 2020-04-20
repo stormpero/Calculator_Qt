@@ -2,6 +2,7 @@
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
 #include <QMessageBox>
+#include <QPixmap>
 
 /* Modules x coords
  *
@@ -39,28 +40,34 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     animation->setDuration(500);
     animation->setPropertyName("geometry");
 
-    // Background color for Natural
+
     //const QPalette palet3(qRgb(152, 251, 152)); //(212, 102, 102)
     //ui->natural->setPalette(palet3);
-    //
      //ui->natural->setTextureImage(QPixmap(":/buttons/img/fon_nat.jpg"));
 
-     QBrush br(Qt::TexturePattern);
-     br.setTextureImage(QImage(":/buttons/img/fon_nat.jpg"));
-     QPalette fon_nat =ui->natural->palette();
-     fon_nat.setBrush(QPalette::Background, br);
-     ui->natural->setPalette(fon_nat);
-    ui->natural->setAutoFillBackground(true);
+     // Background color for Natural
+     QBrush fon_nat(Qt::TexturePattern);
+     fon_nat.setTextureImage(QImage(":/buttons/img/fon_nat.jpg"));
+     QPalette fon_nat_pal =ui->natural->palette();
+     fon_nat_pal.setBrush(QPalette::Background, fon_nat);
+     ui->natural->setPalette(fon_nat_pal);
+     ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
-    const QPalette palet1(qRgb(135, 206, 250));
-    ui->integer->setPalette(palet1);
-    ui->integer->setAutoFillBackground(true);
+     QBrush fon_int(Qt::TexturePattern);
+     fon_int.setTextureImage(QImage(":/buttons/img/fon_int.jpg"));
+     QPalette fon_int_pal =ui->integer->palette();
+     fon_int_pal.setBrush(QPalette::Background, fon_int);
+     ui->integer->setPalette(fon_int_pal);
+     ui->integer->setAutoFillBackground(true);
 
     // Background color for Rational
-    const QPalette palet2(qRgb(240, 230, 140)); //(0, 200, 0)
-    ui->rational->setPalette(palet2);
-    ui->rational->setAutoFillBackground(true);
+     QBrush fon_rat(Qt::TexturePattern);
+     fon_rat.setTextureImage(QImage(":/buttons/img/fon_rat.jpg"));
+     QPalette fon_rat_pal =ui->integer->palette();
+     fon_rat_pal.setBrush(QPalette::Background, fon_rat);
+     ui->rational->setPalette(fon_rat_pal);
+     ui->rational->setAutoFillBackground(true);
 
     // Background color for Polynomials
     const QPalette palet4(qRgb(221, 160, 221)); //(222, 135, 222)
@@ -68,10 +75,21 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-    const QPalette palet5(qRgb(240, 128, 128));
-    ui->matrix->setPalette(palet5);
+    QBrush fon_mat(Qt::TexturePattern);
+    fon_mat.setTextureImage(QImage(":/buttons/img/fon_mat.jpg"));
+    QPalette fon_mat_pal =ui->matrix->palette();
+    fon_mat_pal.setBrush(QPalette::Background, fon_mat);
+    ui->matrix->setPalette(fon_mat_pal);
     ui->matrix->setAutoFillBackground(true);
-	
+
+    // Background color for mini Matrices
+    const QPalette pmatmin(qRgb(237, 186, 183));
+    ui->scrollAreaWidgetContents_8->setPalette(pmatmin);
+    ui->scrollAreaWidgetContents_9->setPalette(pmatmin);
+    ui->scrollAreaWidgetContents_10->setPalette(pmatmin);
+    //
+
+  // ui->scrollAreaWidgetContents_8->setStyleSheet("background-color:black;");
 
     // Buttons_Natural
     connect(ui->natural_Button,SIGNAL(clicked()),this,SLOT(natural()));
@@ -84,8 +102,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     // Buttons_Integer
     connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
-    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-    ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
+    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]? \\d*"), this));
+    ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
     ui->Integer_res->setReadOnly(true);
     ui->Integer_num1->setPlaceholderText("0");
     ui->Integer_num2->setPlaceholderText("0");
@@ -93,10 +111,10 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     //Rational_Button
     connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(ration()));
-    ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
-    ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("[-]?\\d*"), this));
-    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
+    ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
+    ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
+    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("[^0]\\d*"), this));
+    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("[^0]\\d*"), this));
     ui->Rational_res_num->setReadOnly(true);
     ui->Rational_res_det->setReadOnly(true);
     ui->Rational_num1_num->setPlaceholderText("0");
@@ -114,6 +132,13 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     ui->label_Pol->setPixmap(QPixmap(":/buttons/img/indevelop.png"));
     ui->Btn_natural->setDisabled(true);
+    //info_buttons
+    connect(ui->natural_Button_help_1,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    connect(ui->natural_Button_help_2,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    connect(ui->natural_Button_help_3,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    connect(ui->natural_Button_help_4,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    connect(ui->natural_Button_help_5,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    //\////////////////////////
 }
 
 // Destructor
@@ -205,12 +230,15 @@ void Project_DM_Qt::on_Btn_matrix_clicked()
 
 bool Project_DM_Qt::check_zero(vector <int> zero)
 {
-    if (POZ_Z_D(zero)==0)
+    if ( ((zero[0]==0)&&(zero.size()==1)) || ((zero[0]==0)&&(zero[1]==0))  )
         return true;
     else
         return false;
 }
+bool Project_DM_Qt::text_error_integer(vector <int> m_z)
+{
 
+}
 
 void Project_DM_Qt::on_natural_Button_help_clicked()
 {
@@ -220,7 +248,7 @@ void Project_DM_Qt::on_natural_Button_help_clicked()
     msgBox.setWindowTitle(" =) ");
     msgBox.setText("");
     QPixmap p;
-    p.load(":/buttons/img/new.jpg");
+    p.load(":/buttons/img/info.png");
     msgBox.setIconPixmap(p);// no sound, but with icon
 
     msgBox.exec();

@@ -235,7 +235,7 @@ color: white;
    <widget class="QWidget" name="main" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-4440</x>
       <y>0</y>
       <width>5550</width>
       <height>721</height>
@@ -294,6 +294,40 @@ font-size: 98px;</string>
          <string>В разработке</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="natural_Button_help_4">
+        <property name="geometry">
+         <rect>
+          <x>1060</x>
+          <y>10</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
+       </widget>
       </widget>
      </item>
      <item row="0" column="0">
@@ -301,8 +335,8 @@ font-size: 98px;</string>
        <widget class="QWidget" name="widget_3" native="true">
         <property name="geometry">
          <rect>
-          <x>304</x>
-          <y>220</y>
+          <x>290</x>
+          <y>213</y>
           <width>501</width>
           <height>281</height>
          </rect>
@@ -311,13 +345,64 @@ font-size: 98px;</string>
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>110</y>
-           <width>60</width>
-           <height>22</height>
+           <y>112</y>
+           <width>61</width>
+           <height>20</height>
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-size: 18px;</string>
+          <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -342,6 +427,16 @@ font-size: 98px;</string>
          <item>
           <property name="text">
            <string>mod</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>НОД</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>НОК</string>
           </property>
          </item>
         </widget>
@@ -370,6 +465,15 @@ font-size: 98px;</string>
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="natural_num1">
          <property name="geometry">
@@ -379,6 +483,15 @@ font-size: 98px;</string>
            <width>91</width>
            <height>41</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="natural_res">
@@ -390,34 +503,45 @@ font-size: 98px;</string>
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: darkgray;
+	background-color: #E3F2FD
+}
+</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="natural_Button">
          <property name="geometry">
           <rect>
-           <x>140</x>
-           <y>170</y>
+           <x>150</x>
+           <y>180</y>
            <width>191</width>
            <height>51</height>
           </rect>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-color: #000000;
-background-color: white;
-border: 1px solid #828282;
+color: #1f4126;
+background-color: #bddfc4;
+border: 2px solid white;
 border-radius: 3px;
-font-size: 18px;
+font-size: 23px;
+font-weight: 600;
 }
 QPushButton:hover {
-border: 1px solid #828282;
-background-color: #d5d5d5;
+border: 2px solid white;
+background-color: #a7f1b6;
 }
-QPushButton:hover:pressed { 
-background-color: gray;
+QPushButton:hover:pressed {
+background-color: #a7f1b6;
 color: white;
 }
-QPushButton:disabled { 
-background-color: gray;
+QPushButton:disabled {
+background-color: #a7f1b6;
 color: white;
 }</string>
          </property>
@@ -426,7 +550,7 @@ color: white;
          </property>
         </widget>
        </widget>
-       <widget class="QPushButton" name="natural_Button_help">
+       <widget class="QPushButton" name="natural_Button_help_1">
         <property name="geometry">
          <rect>
           <x>1050</x>
@@ -650,6 +774,9 @@ color: white;
           <height>201</height>
          </rect>
         </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
         <property name="frameShape">
          <enum>QFrame::WinPanel</enum>
         </property>
@@ -664,6 +791,9 @@ color: white;
            <width>327</width>
            <height>197</height>
           </rect>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_15">
           <item row="0" column="0">
@@ -683,8 +813,62 @@ color: white;
         </property>
         <property name="font">
          <font>
-          <pointsize>15</pointsize>
+          <pointsize>-1</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
         </property>
         <property name="currentText">
          <string>+</string>
@@ -730,6 +914,28 @@ color: white;
         </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #572421;
+background-color: #edbab7;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #e58d88;
+}
+QPushButton:hover:pressed {
+background-color: #e58d88;
+color: white;
+}
+QPushButton:disabled {
+background-color: #e58d88;
+color: white;
+}</string>
         </property>
         <property name="text">
          <string>Calc</string>
@@ -822,6 +1028,40 @@ color: white;
          <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
         </property>
        </widget>
+       <widget class="QPushButton" name="natural_Button_help_5">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>20</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
+       </widget>
       </widget>
      </item>
      <item row="0" column="2">
@@ -845,7 +1085,58 @@ color: white;
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-size: 18px;</string>
+          <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -864,7 +1155,7 @@ color: white;
          </item>
          <item>
           <property name="text">
-           <string>/</string>
+           <string>÷</string>
           </property>
          </item>
         </widget>
@@ -876,6 +1167,15 @@ color: white;
            <width>91</width>
            <height>41</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
          </property>
         </widget>
         <widget class="QLabel" name="Rational_end">
@@ -903,6 +1203,15 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="Rational_Button">
          <property name="geometry">
@@ -915,22 +1224,23 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-color: #000000;
-background-color: white;
-border: 1px solid #828282;
+color: #584026;
+background-color: #f6dec4;
+border: 2px solid white;
 border-radius: 3px;
-font-size: 18px;
+font-size: 23px;
+font-weight: 900;
 }
 QPushButton:hover {
-border: 1px solid #828282;
-background-color: #d5d5d5;
+border: 2px solid white;
+background-color: #f5cc9f;
 }
-QPushButton:hover:pressed { 
-background-color: gray;
+QPushButton:hover:pressed {
+background-color: #f5cc9f;
 color: white;
 }
-QPushButton:disabled { 
-background-color: gray;
+QPushButton:disabled {
+background-color: #f5cc9f;
 color: white;
 }</string>
          </property>
@@ -947,6 +1257,16 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: darkgray;
+	background-color: #E3F2FD
+}
+</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="Rational_num1_det">
          <property name="geometry">
@@ -956,6 +1276,15 @@ color: white;
            <width>91</width>
            <height>41</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="Rational_num2_det">
@@ -967,6 +1296,15 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="Rational_res_det">
          <property name="geometry">
@@ -977,7 +1315,51 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: darkgray;
+	background-color: #E3F2FD
+}
+</string>
+         </property>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="natural_Button_help_3">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>20</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -1002,7 +1384,58 @@ color: white;
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">font-size: 18px;</string>
+          <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
          </property>
          <item>
           <property name="text">
@@ -1049,7 +1482,7 @@ color: white;
         <widget class="QPushButton" name="Integer_Button">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>120</x>
            <y>170</y>
            <width>201</width>
            <height>51</height>
@@ -1057,22 +1490,23 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton {
-color: #000000;
-background-color: white;
-border: 1px solid #828282;
+color: #18455c;
+background-color: #b6e3fa;
+border: 2px solid white;
 border-radius: 3px;
-font-size: 18px;
+font-size: 23px;
+font-weight: 900;
 }
 QPushButton:hover {
-border: 1px solid #828282;
-background-color: #d5d5d5;
+border: 2px solid white;
+background-color: #83cdf3;
 }
-QPushButton:hover:pressed { 
-background-color: gray;
+QPushButton:hover:pressed {
+background-color: #83cdf3;
 color: white;
 }
-QPushButton:disabled { 
-background-color: gray;
+QPushButton:disabled {
+background-color: #83cdf3;
 color: white;
 }</string>
          </property>
@@ -1089,6 +1523,15 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+         </property>
         </widget>
         <widget class="QLineEdit" name="Integer_num1">
          <property name="geometry">
@@ -1098,6 +1541,15 @@ color: white;
            <width>91</width>
            <height>41</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="Integer_res">
@@ -1109,7 +1561,51 @@ color: white;
            <height>41</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: darkgray;
+	background-color: #E3F2FD
+}
+</string>
+         </property>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="natural_Button_help_2">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>20</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
        </widget>
       </widget>
      </item>

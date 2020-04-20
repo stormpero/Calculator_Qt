@@ -11,7 +11,7 @@ void Project_DM_Qt::customSlot(const QString &str)
 }
 void Project_DM_Qt::finishSlot()
 {
-    child->setStyleSheet("background: rgb(255, 255, 255);");
+    child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
 }
 
 void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
@@ -23,7 +23,7 @@ void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
 
        if (child && !child->isReadOnly())
        {
-           child->setStyleSheet("background: rgb(255, 0, 0);");
+           child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(178, 34, 34);}");
 
             newLine = new QLineEdit();
             createCell(newLine, false);
@@ -71,7 +71,7 @@ void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
     ple->setToolTip("Matrix cell");
 
     // Фильтрация ввода
-    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("[-]?\\d*"), this); // pos and neg
+    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this); // pos and neg
     ple->setValidator(rxv);
 
     // Параметр только для чтения
