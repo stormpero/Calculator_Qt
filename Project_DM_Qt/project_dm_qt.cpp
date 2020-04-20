@@ -102,7 +102,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     // Buttons_Integer
     connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
-    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]? \\d*"), this));
+    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
     ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
     ui->Integer_res->setReadOnly(true);
     ui->Integer_num1->setPlaceholderText("0");

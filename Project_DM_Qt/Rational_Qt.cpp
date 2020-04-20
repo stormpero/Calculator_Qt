@@ -8,10 +8,8 @@ void Project_DM_Qt::ration()
     ui->Rational_res_det->setText("");
     Drob a,b;
 
-    a.numerator = integ_convert(ui->Rational_num1_num->text());
-    a.denominator = natural_convert(ui->Rational_num1_det->text());
-    b.numerator = integ_convert(ui->Rational_num2_num->text());
-    b.denominator = natural_convert(ui->Rational_num2_det->text());
+    a = ration_convert(ui->Rational_num1_num->text(), ui->Rational_num1_det->text());
+    b = ration_convert(ui->Rational_num2_num->text(), ui->Rational_num2_det->text());
 
     Drob res;
 
@@ -42,5 +40,21 @@ void Project_DM_Qt::ration()
         ui->Rational_res_num->setText(ui->Rational_res_num->text() + QString::number(res.numerator[i]));
     for (int i = 0; i < res.denominator.size(); i++)
         ui->Rational_res_det->setText(ui->Rational_res_det->text() + QString::number(res.denominator[i]));
+}
+
+Drob Project_DM_Qt::ration_convert(QString a, QString b)
+{
+    Drob number;
+    if(a.length() == 1 && a[0] == "0")
+    {
+        number.numerator.resize(2);
+        number.denominator.push_back(1);
+        return number;
+    }
+    else
+        number.numerator.resize(a.length());
+    number.numerator = integ_convert(a);
+    number.denominator.resize(b.length());
+    number.denominator = natural_convert(b);
 }
 

@@ -47,7 +47,7 @@ void Project_DM_Qt::integ()
         ui->Integer_res->setText("-");
 
     // Вывод
-    for (int i = 1; i < res.size(); i++)
+    for (unsigned int i = 1; i < res.size(); i++)
         ui->Integer_res->setText(ui->Integer_res->text() + QString::number(res[i]));
 }
 vector <int> Project_DM_Qt::integ_convert(QString a)
