@@ -15,13 +15,22 @@ void Project_DM_Qt::ration()
 
     Drob res;
 
-    if (ui->Integer_choose->currentText() == "+")
+    if (ui->Rational_choose->currentText() == "+")
         res = ADD_QQ_Q(a,b);
-    else if (ui->Integer_choose->currentText() == "-")
+    else if (ui->Rational_choose->currentText() == "-")
         res = SUB_QQ_Q(a,b);
-    else if (ui->Integer_choose->currentText() == "*")
-        res = MUL_QQ_Q(a,b);
-    else if (ui->Integer_choose->currentText() == "/")
+    else if (ui->Rational_choose->currentText() == "*")
+    {
+        if((check_zero(a.numerator))||(check_zero(b.numerator)))
+        {
+          res.numerator.push_back(0);
+          res.numerator.push_back(0);
+          res.denominator.push_back(0);
+        }
+        else
+            res = MUL_QQ_Q(a,b);
+    }
+    else if (ui->Rational_choose->currentText() == "/")
         res = DIV_QQ_Q(a,b);
 
     // Проверка знака

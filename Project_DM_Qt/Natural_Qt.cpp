@@ -49,7 +49,24 @@ void Project_DM_Qt::natural()
         else
             res = MOD_NN_N(a,b);
     }
-
+    else if (ui->natural_choose->currentText() == "НОД")
+    {
+        if ((check_zero(a))||(check_zero(b)))
+        {
+            ui->natural_res->setText("Error");
+            return;
+        }
+        res = GCF_NN_N(a, b);
+    }
+    else if (ui->natural_choose->currentText() == "НОК")
+    {
+        if ((check_zero(a))||(check_zero(b)))
+        {
+            ui->natural_res->setText("Error");
+            return;
+        }
+        res = LCM_NN_N(a, b);
+    }
 
 
     // Вывод

@@ -5,9 +5,9 @@
 
 Drob SUB_QQ_Q(Drob f, Drob s)
 {
-	if (s.numerator[0] == 0 && s.numerator.size() == 1) // если s == 0
+    if (POZ_Z_D(s.numerator) == 0) // если s == 0
 		return f;
-	s.numerator[0] = !s.numerator[0]; // иначе инвертируем знак второго
+    s.numerator = MUL_ZM_Z(s.numerator); // иначе инвертируем знак второго
 	return ADD_QQ_Q(f, s); // вызываем ф-ию сложения целых чисел, но прибавляем мы число с противоположным знаком	
 }
 
@@ -20,8 +20,8 @@ Drob SUB_QQ_Q(Drob f, Drob s)
 int INT_Q_B(Drob a)
 {
 	a = RED_Q_Q(a); //Выполним сокращение дроби
-	if (a.denominator[0] == 1)  // Проверим, является ли его первый элемент еденицей в знаменателе
-		return 1; // Если да, то выведем еденицу
+    if ((a.denominator[0] == 1) && (a.denominator.size() == 1)) // Проверим, является ли его первый элемент единицей в знаменателе
+        return 1; // Если да, то выведем единицу
 	else
 		return 0; // Если нет, то ноль
 }
@@ -38,7 +38,7 @@ Drob DIV_QQ_Q(Drob a, Drob b)
 		b.denominator.insert(b.denominator.begin(), 0);
 	
 	b.numerator = ABS_Z_N(b.numerator);
-	swap(b.numerator, b.denominator);
+    swap(b.numerator, b.denominator);
 		
 	result = RED_Q_Q(MUL_QQ_Q(a,b)); // Выполним сокращение дроби
 	return(result);
