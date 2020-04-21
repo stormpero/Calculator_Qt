@@ -34,8 +34,10 @@ vector<int>  MOD_ZZ_Z(vector<int> a, vector<int> b)
 {
     if (COM_NN_D(a, b) == 1)
         swap(a, b);
-
-    return SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));
+    vector<int> res;
+    res = SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));
+    res[0]=0;
+    return res;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,24 +130,30 @@ vector<int> SUB_ZZ_Z(vector<int> vector_1, vector<int> vector_2) //Вычитание цел
 
 vector<int> DIV_ZZ_Z(vector<int> vector_1_N, vector<int> vector_2_N)
 {
-	if ((POZ_Z_D(vector_2_N) == 0))// если Делитель = 0 ошибка
-		throw ("Divider 0!");
-	
-		if ((POZ_Z_D(vector_1_N) == 0))// если Делимое = 0 возвращаем 0 
-			return { 0 };
+    vector<int> result;
+    if ((POZ_Z_D(vector_2_N) == 0))// anee Aaeeoaeu = 0 ioeaea
+        throw ("Divider 0!");
 
-		bool f;//Отвечает за знак
-		if (((POZ_Z_D(vector_1_N) == 2) && (POZ_Z_D(vector_2_N) == 1)) || ((POZ_Z_D(vector_1_N) == 1) && (POZ_Z_D(vector_2_N) == 2)))
-			f = 1;
-		else f = 0;
+        if ((POZ_Z_D(vector_1_N) == 0))// anee Aaeeiia = 0 aica?auaai 0
+            return { 0,0 };
 
-		vector_1_N.erase(vector_1_N.begin());//Чистим знаки чисел
-		vector_2_N.erase(vector_2_N.begin());
+        bool first = POZ_Z_D(vector_1_N) == 1;
+        bool second = POZ_Z_D(vector_2_N) == 1;
 
-		vector<int> result;
-		result = DIV_NN_N(vector_1_N, vector_2_N);//Делим как целые
-		result.insert(result.begin(), f);//Вставляем знак
-		return (result);
+        if (!NZER_N_B(MOD_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))) || (!first && !second))
+        {
+            if((first && !second) || (second && !first))
+                result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+            else
+                result = TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)));
+        }
+        else if (first && !second)
+            result = MUL_ZM_Z(TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)))));
+        else if (!first && second)
+            result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+        else
+            result = TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+        return result;
 	
 }
 

@@ -162,7 +162,7 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
             QString number(list[i * lSize + j]->text()), number1(list1[i * lSize + j]->text());
             // Обработка знаков чисел первой матрицы
             if (number.isEmpty())
-                mat1[i][j].push_back(0);
+                mat1[i][j].push_back(0);            
 
             else if (number[0] == '-')
             {
@@ -174,6 +174,11 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
 
             for (int k(0); k < number.size(); ++k)
                 mat1[i][j].push_back(number[k].digitValue());
+
+            if (text_error_integer(mat1[i][j]))
+            {
+                QMessageBox::warning(this, "Внимание","Ошибка ввода");
+            }
 
             // Обработка знаков чисел второй матрицы
             if (number1.isEmpty())
@@ -191,6 +196,9 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
 
             for (int k(0); k < number1.size(); ++k)
                 mat2[i][j].push_back(number1[k].digitValue());
+
+            if (text_error_integer(mat2[i][j]))
+                QMessageBox::warning(this, "Внимание","Ошибка ввода");
         }
     }
 

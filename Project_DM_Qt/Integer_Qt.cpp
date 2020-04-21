@@ -36,7 +36,10 @@ void Project_DM_Qt::integ()
             ui->Integer_res->setText("Error");
             return;
         }
-        res = DIV_ZZ_Z(a,b);     
+        res = DIV_ZZ_Z(a,b);
+
+        if (res.size()==2 && res[0]==1 && res[1]==0)
+            res[0]=0;
     }
     else if (ui->Integer_choose->currentText() == "mod")
     {
