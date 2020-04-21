@@ -15,7 +15,14 @@ void Project_DM_Qt::natural()
     if (ui->natural_choose->currentText() == "+")
         res = ADD_NN_N(a,b);
     else if (ui->natural_choose->currentText() == "-")
+    {
+        if (COM_NN_D(a,b)==1)
+        {
+            ui->natural_res->setText("Error");
+            return;
+        }
         res = SUB_NN_N(a,b);
+    }
     else if (ui->natural_choose->currentText() == "*")
     {
         if ((check_zero(a))||(check_zero(b)))

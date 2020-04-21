@@ -19,8 +19,7 @@ vector<int> MUL_ZZ_Z(vector<int> a, vector<int> b) // Ермольев Максим Викторович
 	{
 		result.push_back(0);
 		result.push_back(0);
-	}
-		
+	}		
 	else
 	{
 		result = MUL_NN_N(ABS_Z_N(a), ABS_Z_N(b)); // Переведем целые в натуральные и выполним умножение
@@ -35,6 +34,7 @@ vector<int>  MOD_ZZ_Z(vector<int> a, vector<int> b)
 {
     if (COM_NN_D(a, b) == 1)
         swap(a, b);
+
     return SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));
 }
 
@@ -44,8 +44,7 @@ vector<int>  MOD_ZZ_Z(vector<int> a, vector<int> b)
 
 int POZ_Z_D(vector<int> num)
 {
-
-    if (((num[0] == 0)&&(num.size()==1)) || ((num[0]==0)&&(num[1]==0)))
+    if ((num.size() == 2) && (num[0] == 0) && (num[1] == 0))
 		return 0;
 	else if (num[0] == 1)
 		return 1;

@@ -9,6 +9,12 @@ void Project_DM_Qt::integ()
 
     vector <int> res;
 
+     if (text_error_integer(a)||text_error_integer(b))
+     {
+         ui->Integer_res->setText("Error");
+         return;
+     }
+
     if (ui->Integer_choose->currentText() == "+")
         res = ADD_ZZ_Z(a,b);
     else if (ui->Integer_choose->currentText() == "-")
@@ -39,8 +45,10 @@ void Project_DM_Qt::integ()
             ui->Integer_res->setText("Error");
             return;
         }
-
-        res = MOD_ZZ_Z(a,b);        
+        if (COM_NN_D(ABS_Z_N(a),ABS_Z_N(b))==1 && POZ_Z_D(a)==1 && POZ_Z_D(b)==1)
+            res = a;
+        else
+            res = MOD_ZZ_Z(a,b);
     }
     // Проверка знака
     if (res[0] == 1)
@@ -65,9 +73,10 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
     // Преобразование в строки в вектор
     for (int k(0); k < a.size(); ++k)
         res.push_back(a[k].digitValue());
-    if (res.empty())
 
-        res.push_back(0);
+    if (res.empty())
+        res.push_back(0);   
+
     return res;
 }
 
