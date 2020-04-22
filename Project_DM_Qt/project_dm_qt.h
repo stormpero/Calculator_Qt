@@ -34,7 +34,6 @@ private slots:
     void on_Btn_matrix_clicked();
     //\////////////////////////////////
     bool check_zero(vector <int> zero);
-    bool text_error_integer(vector <int> zero);
     //\////////////////////////////////
     // Disablebuttons /////
     void disablebuttons();

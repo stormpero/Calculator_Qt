@@ -71,7 +71,7 @@ void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
     ple->setToolTip("Matrix cell");
 
     // Фильтрация ввода
-    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this); // pos and neg
+    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this);
     ple->setValidator(rxv);
 
     // Параметр только для чтения
@@ -140,6 +140,7 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
     QList<QLineEdit*> list1 = ui->m_scrollArea_1->findChildren<QLineEdit*>();
     QList<QLineEdit*> list2 = ui->m_scrollArea_2->findChildren<QLineEdit*>();
 
+
     // Сортировка листов
     for (int squar(2); squar < sqrt(list.size()); ++squar)
         for (int i(squar), j(squar * squar); i < pow(squar + 1, 2) - 1; i += squar + 1, j += 2)
@@ -175,11 +176,6 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
             for (int k(0); k < number.size(); ++k)
                 mat1[i][j].push_back(number[k].digitValue());
 
-            if (text_error_integer(mat1[i][j]))
-            {
-                QMessageBox::warning(this, "Внимание","Ошибка ввода");
-            }
-
             // Обработка знаков чисел второй матрицы
             if (number1.isEmpty())
             {
@@ -196,9 +192,6 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
 
             for (int k(0); k < number1.size(); ++k)
                 mat2[i][j].push_back(number1[k].digitValue());
-
-            if (text_error_integer(mat2[i][j]))
-                QMessageBox::warning(this, "Внимание","Ошибка ввода");
         }
     }
 
@@ -209,7 +202,6 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
 void Project_DM_Qt::on_m_calc_clicked()
 {
     using namespace std;
-
     Matrix mat1, mat2, result;
     QList<QLineEdit*> list = getData(mat1, mat2);
 

@@ -92,8 +92,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     // Buttons_Natural
     connect(ui->natural_Button,SIGNAL(clicked()),this,SLOT(natural()));
-    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
-    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])\\d*"), this));
+    ui->natural_num1->setValidator(new QRegExpValidator(QRegExp("^(0$|[1-9])\\d*"), this));
+    ui->natural_num2->setValidator(new QRegExpValidator(QRegExp("^(0$|[1-9])\\d*"), this));
     ui->natural_res->setReadOnly(true);
     ui->natural_num1->setPlaceholderText("0");
     ui->natural_num2->setPlaceholderText("0");
@@ -101,8 +101,8 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     // Buttons_Integer
     connect(ui->Integer_Button,SIGNAL(clicked()),this,SLOT(integ()));    
-    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this)); // -[1-9]* // ^(\\-[1-9])\\d*
-    ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
+    ui->Integer_num1->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
+    ui->Integer_num2->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
     ui->Integer_res->setReadOnly(true);
     ui->Integer_num1->setPlaceholderText("0"); //
     ui->Integer_num2->setPlaceholderText("0");
@@ -110,10 +110,10 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     //Rational_Button
     connect(ui->Rational_Button,SIGNAL(clicked()),this,SLOT(ration()));
-    ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
-    ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this));
-    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("[^0]\\d*"), this));
-    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("[^0]\\d*"), this));
+    ui->Rational_num1_num->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
+    ui->Rational_num2_num->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
+    ui->Rational_num1_det->setValidator(new QRegExpValidator(QRegExp("^[1-9]\\d*"), this));
+    ui->Rational_num2_det->setValidator(new QRegExpValidator(QRegExp("^[1-9]\\d*"), this));
     ui->Rational_res_num->setReadOnly(true);
     ui->Rational_res_det->setReadOnly(true);
     ui->Rational_num1_num->setPlaceholderText("0");
@@ -234,20 +234,13 @@ bool Project_DM_Qt::check_zero(vector <int> zero)
     else
         return false;
 }
-bool Project_DM_Qt::text_error_integer(vector <int> m_z)
-{
-    if (m_z[0]==1 && m_z[1]==0)
-        return true;
-    else
-        return false;
-}
 
 void Project_DM_Qt::on_natural_Button_help_clicked()
 {
 
     QMessageBox msgBox;
     msgBox.setParent(0);
-    msgBox.setWindowTitle(" =) ");
+    msgBox.setWindowTitle(" Справка ");
     msgBox.setText("");
     QPixmap p;
     p.load(":/buttons/img/info.png");
