@@ -162,36 +162,9 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
         {
             QString number(list[i * lSize + j]->text()), number1(list1[i * lSize + j]->text());
             // Обработка знаков чисел первой матрицы
-            if (number.isEmpty())
-                mat1[i][j].push_back(0);            
 
-            else if (number[0] == '-')
-            {
-                mat1[i][j].push_back(1);
-                number.remove(0, 1);
-            }
-            else
-                mat1[i][j].push_back(0);
-
-            for (int k(0); k < number.size(); ++k)
-                mat1[i][j].push_back(number[k].digitValue());
-
-            // Обработка знаков чисел второй матрицы
-            if (number1.isEmpty())
-            {
-                mat2[i][j].push_back(0);
-                continue;
-            }
-            if (number1[0] == '-')
-            {
-                mat2[i][j].push_back(1);
-                number1.remove(0, 1);
-            }
-            else
-                mat2[i][j].push_back(0);
-
-            for (int k(0); k < number1.size(); ++k)
-                mat2[i][j].push_back(number1[k].digitValue());
+            mat1[i][j] = integ_convert(number);
+            mat2[i][j]= integ_convert(number1);
         }
     }
 

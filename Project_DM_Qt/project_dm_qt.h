@@ -57,7 +57,7 @@ private slots:
     void customSlot(const QString &str);
     void finishSlot();
     void keyPressEvent(QKeyEvent* event);
-    void on_m_calc_clicked();
+    void on_m_calc_clicked();    
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
 

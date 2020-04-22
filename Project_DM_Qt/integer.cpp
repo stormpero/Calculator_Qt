@@ -37,7 +37,6 @@ vector<int>  MOD_ZZ_Z(vector<int> a, vector<int> b)
 //        swap(a, b);
     vector<int> res;
     res = SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));
-    res[0] = 0;
     return res;
 }
 
