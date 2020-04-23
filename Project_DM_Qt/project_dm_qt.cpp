@@ -64,15 +64,18 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     // Background color for Rational
      QBrush fon_rat(Qt::TexturePattern);
      fon_rat.setTextureImage(QImage(":/buttons/img/fon_rat.jpg"));
-     QPalette fon_rat_pal =ui->integer->palette();
+     QPalette fon_rat_pal =ui->rational->palette();
      fon_rat_pal.setBrush(QPalette::Background, fon_rat);
      ui->rational->setPalette(fon_rat_pal);
      ui->rational->setAutoFillBackground(true);
 
     // Background color for Polynomials
-    const QPalette palet4(qRgb(221, 160, 221)); //(222, 135, 222)
-    ui->polynomials->setPalette(palet4);
-    ui->polynomials->setAutoFillBackground(true);
+     QBrush fon_pol(Qt::TexturePattern);
+     fon_pol.setTextureImage(QImage(":/buttons/img/fon_pol.jpg"));
+     QPalette fon_pol_pal =ui->polynomials->palette();
+     fon_pol_pal.setBrush(QPalette::Background, fon_pol);
+     ui->polynomials->setPalette(fon_pol_pal);
+     ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
     QBrush fon_mat(Qt::TexturePattern);

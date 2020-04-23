@@ -78,11 +78,11 @@ border: 1px solid #828282;
 background-color: #d5d5d5;
 }
 QPushButton:hover:pressed { 
-background-color: gray;
+background-color: #011223;
 color: white;
 }
 QPushButton:disabled { 
-background-color: gray;
+background-color:#011223;
 color: white;
 }</string>
        </property>
@@ -112,11 +112,11 @@ border: 1px solid #828282;
 background-color: #d5d5d5;
 }
 QPushButton:hover:pressed { 
-background-color: gray;
+background-color: #011223;
 color: white;
 }
 QPushButton:disabled { 
-background-color: gray;
+background-color:#011223;
 color: white;
 }</string>
        </property>
@@ -146,11 +146,11 @@ border: 1px solid #828282;
 background-color: #d5d5d5;
 }
 QPushButton:hover:pressed { 
-background-color: gray;
+background-color: #011223;
 color: white;
 }
 QPushButton:disabled { 
-background-color: gray;
+background-color:#011223;
 color: white;
 }</string>
        </property>
@@ -180,11 +180,11 @@ border: 1px solid #828282;
 background-color: #d5d5d5;
 }
 QPushButton:hover:pressed { 
-background-color: gray;
+background-color: #011223;
 color: white;
 }
 QPushButton:disabled { 
-background-color: gray;
+background-color:#011223;
 color: white;
 }</string>
        </property>
@@ -214,11 +214,11 @@ border: 1px solid #828282;
 background-color: #d5d5d5;
 }
 QPushButton:hover:pressed { 
-background-color: gray;
+background-color: #011223;
 color: white;
 }
 QPushButton:disabled { 
-background-color: gray;
+background-color:#011223;
 color: white;
 }</string>
        </property>
@@ -297,56 +297,56 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
+color: #18455c;
+border: 2px solid white;
+border-radius: 3px;
+background: #b6e3fa;
+font-size: 14px;
 }
 
 QComboBox:editable {
-	background: #000000;
+background: #83cdf3
 }
 
 QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #83cdf3, stop: 0.4 #83cdf3,
+stop: 0.5 #83cdf3, stop: 1.0 #83cdf3);
 }
 
 /* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #83cdf3, stop: 0.4 #83cdf3
+stop: 0.5 #83cdf3, stop: 1.0 #83cdf3);
 }
 
 QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
+padding-top: 3px;
+padding-left: 4px;
+background-color: #83cdf3;
 }
 
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
+subcontrol-origin: padding;
+subcontrol-position: top right;
+font-size: 14px;
+border-left-width: 1px;
+border-left-style: solid; /* just a single line */
 
 }
 
 QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
+image: url(:/buttons/img/downarrow.png);
 }
 
 QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
+top: 1px;
+left: 1px;
 }
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
+border: 2px solid white;
+selection-background-color: #83cdf3;
 }</string>
          </property>
          <item>
@@ -543,56 +543,56 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
+color: #584026;
+border: 2px solid white;
+border-radius: 3px;
+background:#f6dec4;
+font-size: 14px;
 }
 
 QComboBox:editable {
-	background: #000000;
+background: #f5cc9f;
 }
 
 QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #f5cc9f, stop: 0.4 #f5cc9f,
+stop: 0.5 #f5cc9f, stop: 1.0 #f5cc9f);
 }
 
 /* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #f5cc9f, stop: 0.4 #f5cc9f
+stop: 0.5 #f5cc9f, stop: 1.0 #f5cc9f);
 }
 
 QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
+padding-top: 3px;
+padding-left: 4px;
+background-color: #f5cc9f;
 }
 
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
+subcontrol-origin: padding;
+subcontrol-position: top right;
+font-size: 14px;
+border-left-width: 1px;
+border-left-style: solid; /* just a single line */
 
 }
 
 QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
+image: url(:/buttons/img/downarrow.png);
 }
 
 QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
+top: 1px;
+left: 1px;
 }
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
+border: 2px solid white;
+selection-background-color: #f5cc9f;
 }</string>
          </property>
          <item>
@@ -1052,56 +1052,56 @@ color: white;
         </property>
         <property name="styleSheet">
          <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
+color: #572421;
+border: 2px solid white;
+border-radius: 3px;
+background:#edbab7;
+font-size: 14px;
 }
 
 QComboBox:editable {
-	background: #000000;
+background: #e58d88;
 }
 
 QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #e58d88, stop: 0.4 #e58d88,
+stop: 0.5 #e58d88, stop: 1.0 #e58d88);
 }
 
 /* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #e58d88, stop: 0.4 #e58d88
+stop: 0.5 #e58d88, stop: 1.0 #e58d88);
 }
 
 QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
+padding-top: 3px;
+padding-left: 4px;
+background-color: #e58d88;
 }
 
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
+subcontrol-origin: padding;
+subcontrol-position: top right;
+font-size: 14px;
+border-left-width: 1px;
+border-left-style: solid; /* just a single line */
 
 }
 
 QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
+image: url(:/buttons/img/downarrow.png);
 }
 
 QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
+top: 1px;
+left: 1px;
 }
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
+border: 2px solid white;
+selection-background-color: #e58d88;
 }</string>
         </property>
         <property name="currentText">
@@ -1320,56 +1320,57 @@ color: white;
          </property>
          <property name="styleSheet">
           <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
+color: #1f4126;
+border: 2px solid white;
+border-radius: 3px;
+background: #bddfc4;
+font-size: 14px;
 }
 
 QComboBox:editable {
-	background: #000000;
+color: #31213c;
+background: #a7f1b6
 }
 
 QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #a7f1b6, stop: 0.4 #a7f1b6,
+stop: 0.5 #a7f1b6, stop: 1.0 #a7f1b6);
 }
 
 /* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #a7f1b6, stop: 0.4 #a7f1b6,
+stop: 0.5 #a7f1b6, stop: 1.0 #a7f1b6);
 }
 
 QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
+padding-top: 3px;
+padding-left: 4px;
+background-color: #a7f1b6;
 }
 
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
+subcontrol-origin: padding;
+subcontrol-position: top right;
+font-size: 14px;
+border-left-width: 1px;
+border-left-style: solid; /* just a single line */
 
 }
 
 QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
+image: url(:/buttons/img/downarrow.png);
 }
 
 QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
+top: 1px;
+left: 1px;
 }
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
+border: 2px solid white;
+selection-background-color: #a7f1b6;
 }</string>
          </property>
          <item>
@@ -1593,7 +1594,7 @@ color: white;
        <widget class="QWidget" name="Poly_widget_new" native="true">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>97</x>
           <y>110</y>
           <width>181</width>
           <height>121</height>
@@ -1717,6 +1718,15 @@ color: white;
                <height>16777215</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+             </property>
             </widget>
            </item>
            <item row="0" column="0">
@@ -1765,7 +1775,7 @@ color: white;
        <widget class="QWidget" name="widget_4" native="true">
         <property name="geometry">
          <rect>
-          <x>291</x>
+          <x>288</x>
           <y>107</y>
           <width>141</width>
           <height>141</height>
@@ -1774,8 +1784,45 @@ color: white;
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QRadioButton" name="Poly_rad1">
+           <property name="styleSheet">
+            <string notr="true">form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+}
+form_radio_btn input[type=radio] {
+	display: none;
+}
+form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #999;
+	border-radius: 6px;
+	user-select: none;
+}
+ 
+/* Checked */
+form_radio_btn input[type=radio]:checked + label {
+	background: #ffe0a6;
+}
+ 
+/* Hover */
+form_radio_btn label:hover {
+	color: #666;
+}
+ 
+/* Disabled */
+form_radio_btn input[type=radio]:disabled + label {
+	background: #efefef;
+	color: #666;
+}</string>
+           </property>
            <property name="text">
             <string>Первый многочлен</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -1788,6 +1835,28 @@ color: white;
          </item>
          <item>
           <widget class="QPushButton" name="Poly_addButton">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 22px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+           </property>
            <property name="text">
             <string>Ввести</string>
            </property>
@@ -1799,7 +1868,7 @@ color: white;
         <property name="geometry">
          <rect>
           <x>120</x>
-          <y>330</y>
+          <y>349</y>
           <width>821</width>
           <height>181</height>
          </rect>
@@ -1808,7 +1877,7 @@ color: white;
          <property name="geometry">
           <rect>
            <x>9</x>
-           <y>9</y>
+           <y>10</y>
            <width>811</width>
            <height>161</height>
           </rect>
@@ -1901,56 +1970,57 @@ background:white;
             </property>
             <property name="styleSheet">
              <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
+color: #31213c;
+border: 2px solid white;
+border-radius: 3px;
+background: #cfbfda;
+font-size: 14px;
 }
 
 QComboBox:editable {
-	background: #000000;
+color: #31213c;
+background: #cfbfda;
 }
 
 QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #c397e1, stop: 0.4 #c397e1,
+stop: 0.5 #c397e1, stop: 1.0 #c397e1);
 }
 
 /* QComboBox gets the &quot;on&quot; state when the popup is open */
 QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 #c397e1, stop: 0.4 #c397e1,
+stop: 0.5 #c397e1, stop: 1.0 #c397e1);
 }
 
 QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
+padding-top: 3px;
+padding-left: 4px;
+background-color: #c397e1;
 }
 
 QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
+subcontrol-origin: padding;
+subcontrol-position: top right;
+font-size: 14px;
+border-left-width: 1px;
+border-left-style: solid; /* just a single line */
 
 }
 
 QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
+image: url(:/buttons/img/downarrow.png);
 }
 
 QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
+top: 1px;
+left: 1px;
 }
 QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
+border: 2px solid white;
+selection-background-color: #c397e1;
 }</string>
             </property>
             <property name="insertPolicy">
@@ -1991,14 +2061,36 @@ QComboBox QAbstractItemView {
          </layout>
         </widget>
        </widget>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Poly_button_res">
         <property name="geometry">
          <rect>
           <x>444</x>
-          <y>520</y>
+          <y>536</y>
           <width>171</width>
           <height>41</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
         </property>
         <property name="text">
          <string>Вычислить</string>
@@ -2008,7 +2100,7 @@ QComboBox QAbstractItemView {
         <property name="geometry">
          <rect>
           <x>130</x>
-          <y>600</y>
+          <y>619</y>
           <width>809</width>
           <height>30</height>
          </rect>
@@ -2040,29 +2132,95 @@ background:white;</string>
        <widget class="QWidget" name="widget_6" native="true">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>110</y>
-          <width>181</width>
-          <height>131</height>
+          <x>427</x>
+          <y>106</y>
+          <width>191</width>
+          <height>141</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QPushButton" name="pushButton_4">
+          <widget class="QPushButton" name="Poly_der_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 18px;
+font-weight: 600;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+           </property>
            <property name="text">
             <string>Производная</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="Poly_nod_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 13px;
+font-weight: 600;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+           </property>
            <property name="text">
             <string>Вынесение НОД и НОК</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="Poly_sqrt_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 11px;
+font-weight: 600;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+           </property>
            <property name="text">
             <string>Кратные корни в простые</string>
            </property>
