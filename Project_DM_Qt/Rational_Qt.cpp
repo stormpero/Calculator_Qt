@@ -64,6 +64,7 @@ Drob Project_DM_Qt::ration_convert(QString a, QString b)
     number.denominator = natural_convert(b);
     if (number.denominator.size()==1 && number.denominator[0]==0)
         number.denominator[0] = 1;
+    return number;
 
 //   qDebug() <<"Размер числителя: " <<number.numerator.size();
 //   qDebug() <<"==========================";
@@ -76,5 +77,5 @@ Drob Project_DM_Qt::ration_convert(QString a, QString b)
 //        qDebug() << number.denominator[k]<< " ";
 //    qDebug() <<"-----------STOP---------------";
 
-    return number;
+
 }

@@ -19,6 +19,7 @@ SOURCES += \
     Integer_Qt.cpp \
     Matrix_Qt.cpp \
     Natural_Qt.cpp \
+    Polynomials_Qt.cpp \
     Rational_Qt.cpp \
     integer.cpp \
     main.cpp \

@@ -53,6 +53,12 @@ private slots:
     Drob ration_convert(QString a, QString b);
     //\/////////////////////////////////////
 
+    //Polynoms//////////////////////////////
+    void poly();
+    vector<Drob> poly_convert(QString a);
+    void Create_poly();
+    //\/////////////////////////////////////
+
     // Matrices ////////////////////////////
     void customSlot(const QString &str);
     void finishSlot();

@@ -122,6 +122,9 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     ui->Rational_num2_det->setPlaceholderText("1");
 
     //
+    Create_poly();
+    Create_poly();
+    Create_poly();
 
     // Matrix initialization //
     increaseCells();         //
@@ -129,8 +132,6 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     increaseCells();         //
     //\////////////////////////
 
-    ui->label_Pol->setPixmap(QPixmap(":/buttons/img/indevelop.png"));
-    ui->Btn_natural->setDisabled(true);
     //info_buttons
     connect(ui->natural_Button_help_1,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_2,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));

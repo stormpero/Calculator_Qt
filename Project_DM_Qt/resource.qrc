@@ -14,5 +14,7 @@
         <file>img/res_nat3.jpg</file>
         <file>img/info.png</file>
         <file>img/fon_matmini.png</file>
+        <file>img/x1.jpg</file>
+        <file>img/x2.jpg</file>
     </qresource>
 </RCC>

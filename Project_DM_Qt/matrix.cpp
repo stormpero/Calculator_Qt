@@ -42,6 +42,7 @@ vector<vector<vector<int>>> MAT_Z_MUL(vector<vector<vector<int>>> a, vector<vect
 		for (int j = 0; j < sizec; j++)
 		{
 			c[i][j].push_back(0);
+            c[i][j].push_back(0);
 			for (int k = 0; k < sizec; k++)
 				c[i][j] = ADD_ZZ_Z(c[i][j], MUL_ZZ_Z(a[i][k], b[k][j]));
 		}
