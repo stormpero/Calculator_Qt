@@ -123,8 +123,6 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 
     //
     Create_poly();
-    Create_poly();
-    Create_poly();
 
     // Matrix initialization //
     increaseCells();         //

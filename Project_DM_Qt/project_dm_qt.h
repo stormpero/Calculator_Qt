@@ -55,7 +55,7 @@ private slots:
 
     //Polynoms//////////////////////////////
     void poly();
-    vector<Drob> poly_convert(QString a);
+    vector<Drob> poly_out(QString a);
     void Create_poly();
     //\/////////////////////////////////////
 

@@ -22,7 +22,7 @@ void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
        QPoint pt = mapFromGlobal(QCursor::pos());
        child = qobject_cast<QLineEdit*>(childAt(pt));
 
-       if (child && !child->isReadOnly())
+       if (child)
        {
            child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(178, 34, 34);}");
 
@@ -35,6 +35,10 @@ void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
             newLine->setWindowFlag(Qt::FramelessWindowHint);
             newLine->setObjectName("myObject");
             newLine->setStyleSheet("#myObject { border: 2px solid darkGray; border-radius: 5px; }");
+
+            newLine->setText(child->text());
+            newLine->setAlignment(Qt::AlignLeft);
+            newLine->setWindowModality(Qt::ApplicationModal);
 
             connect(newLine, SIGNAL(textChanged(const QString &)), this, SLOT(customSlot(const QString &)));
             connect(newLine, SIGNAL(editingFinished()), this, SLOT(finishSlot()));
@@ -52,7 +56,7 @@ void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
     size->setVerticalPolicy(QSizePolicy::Expanding);
     ple->setSizePolicy(*size);
     ple->setMinimumSize(70, 40);
-
+    ple->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
     // Настраиваем размер текста
     auto font = ple->font();
     font.setPointSizeF(20);
@@ -194,7 +198,7 @@ void Project_DM_Qt::on_m_calc_clicked()
                 list[i * counter + j]->setText("-");
 
             for(uint k(1); k < result[i][j].size(); ++k)
-                if (result[i][j][k])
+                if (result[i][j][1])
                     list[i * counter + j]->setText(list[i * counter + j]->text() + QString::number(result[i][j][k]));
         }
 }

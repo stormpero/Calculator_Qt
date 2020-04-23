@@ -5,13 +5,119 @@
 
 void Project_DM_Qt::Create_poly()
 {
+    connect(ui->Poly_addButton,SIGNAL(clicked()),this,SLOT(poly()));
+    ui->Poly_num->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
+    ui->Poly_det->setValidator(new QRegExpValidator(QRegExp("^[1-9]\\d*"), this));
+    ui->Poly_deg->setValidator(new QRegExpValidator(QRegExp("^([1-9]|0$)\\d{1,6}"), this));
 
+    ui->Poly_num->setPlaceholderText("0");
+    ui->Poly_det->setPlaceholderText("1");
+    ui->Poly_deg->setPlaceholderText("0");
+
+    //Poly_num
+    //Poly_det
+    //Poly_deg
+    //Poly_res1
+    //Poly_res2
 }
 
 void Project_DM_Qt::poly()
 {
-//    ui->Pol_res->setText("");
 
+
+    ui->Poly_res1->setText("");
+//    ui->Pol_res->setText("");
+    static vector <Drob> pl1;
+    static vector <Drob> pl2;
+    Drob a;
+    vector<int>nul = {0,0};
+    int degree = 0;
+    static int degreeold = -1;
+
+    a = ration_convert(ui->Poly_num->text(), ui->Poly_det->text());
+
+
+    degree = ui->Poly_deg->text().toInt();
+
+       if (degree > degreeold)
+       {
+            pl1.resize(degree + 1);
+            for (int i(0); i < pl1.size(); i++)
+            {
+               pl1[i].numerator.resize(2); // В числитель два нуля
+               pl1[i].denominator.resize(1,1);// В знаменатель единица
+            }
+            degreeold = degree;
+       }
+       else
+       {
+           if (degree < degreeold)
+                degreeold = degree;
+       }
+       pl1[degree] = a;
+
+       int degmin = degree+1;
+       for (int i = pl1.size() - 1; i >= 1; i--)
+       {
+           degmin--;
+           if(pl1[i].numerator == nul)
+               continue;
+            if (i != pl1.size() - 1)
+                ui->Poly_res1->setText(ui->Poly_res1->text() + " + ");
+
+            for (int j = 1; j < pl1[i].numerator.size(); j++)
+            {
+                ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[i].numerator[j]));
+            }
+
+            ui->Poly_res1->setText(ui->Poly_res1->text() + "/");
+
+            for (int j = 0; j < pl1[i].denominator.size(); j++)
+               ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[i].denominator[j]));
+
+            ui->Poly_res1->setText(ui->Poly_res1->text() + "x<sup>" + QString::number(degmin) + "</sup>"); // Степень x
+       }
+       if(pl1[0].numerator != nul)
+       {
+           ui->Poly_res1->setText(ui->Poly_res1->text() + " + ");
+           for (int i = 1; i < pl1[0].numerator.size(); i++)
+               ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].numerator[i]));
+
+           ui->Poly_res1->setText(ui->Poly_res1->text() + "/");
+
+           for (int i = 0; i < pl1[0].denominator.size(); i++)
+               ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].denominator[i]));
+       }
+
+
+    //------------------------------------------------------------------------------------------------------
+//    }
+//    else if (ui->Poly_rad2->isChecked())
+//    {
+//        if (degree > degreeold)
+//             pl1.resize(degree);
+//        pl1[degree]=a;
+//        for (int i = pl1.size() - 1; i >= 1; i--)
+//        {
+//            for (int j = 1; j < pl1[i].numerator.size(); j++)
+//                ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl1[i].numerator[j]));
+
+//            ui->Poly_res2->setText(ui->Poly_res2->text() + "/");
+
+//            for (int j = 0; j < pl1[i].denominator.size(); j++)
+//                ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl1[i].denominator[j]));
+
+//            ui->Poly_res2->setText("x<sup>" + QString::number(degree) + "<sup> +"); // Степень x
+
+//        }
+//        for (int i = 1; i < pl1[0].numerator.size(); i++)
+//            ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl1[0].numerator[i]));
+
+//        ui->Poly_res2->setText(ui->Poly_res2->text() + "/");
+
+//        for (int i = 0; i < pl1[0].denominator.size(); i++)
+//            ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl1[0].denominator[i]));
+//    }
 
 
 
@@ -19,44 +125,18 @@ void Project_DM_Qt::poly()
 //    vector<Drob> a = poly_convert(ui->Pol_num1->text());
 //    vector<Drob> b = poly_convert(ui->Pol_num2->text());
 
-
 }
 
-vector<Drob> Project_DM_Qt::poly_convert(QString a) // ^\d{1,7}
+vector<Drob> Project_DM_Qt::poly_out(QString a)
 {
 
 
 
 
+
+
+
+
 }
-//    static int coord = 0;
-//    QLineEdit* num1 = new QLineEdit(this);
-//    QLineEdit* num2 = new QLineEdit(this);
-//    QLineEdit* deg = new QLineEdit(this); // Для сетпени
-//    QLabel* x1 = new QLabel(this);
-//    QLabel* x2 = new QLabel(this);
-//    QLabel* plus = new QLabel(this);
-//    plus->setText("+");
-
-//    QPixmap px1(":/buttons/img/x1.jpg");
-//    QPixmap px2(":/buttons/img/x2.jpg");
-//    x1->setPixmap(px1);
-//    x2->setPixmap(px2);
-
-//    deg->setMinimumSize(200,20);
-//    ui->Poly_Grid_all->addWidget(num1, 0,coord);//0,3
-//    ui->Poly_Grid_all->addWidget(num2, 1,coord);//2,3
-//    ui->Poly_Grid_all->addWidget(x1,0,1+coord);
-//    ui->Poly_Grid_all->addWidget(x2,1,1+coord);
-
-//    ui->Poly_Grid_all->addWidget(deg,0,2+coord);
-//    ui->Poly_Grid_all->addWidget(plus,1,3+coord);
-
-//    num1->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Expanding);
-//    num2->setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Expanding);
 
 
-//    QWidget* tes = new QWidget(ui->Poly_widget_new);
-//
-//    qDebug() << ui->Poly_Grid_all->count();
-//    coord +=4;
