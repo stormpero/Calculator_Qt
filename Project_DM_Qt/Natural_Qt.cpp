@@ -14,15 +14,8 @@ void Project_DM_Qt::natural()
 
     if (ui->natural_choose->currentText() == "+")
         res = ADD_NN_N(a,b);
-    else if (ui->natural_choose->currentText() == "-")
-    {
-        if (COM_NN_D(a,b)==1)
-        {
-            ui->natural_res->setText("Error");
-            return;
-        }
+    if (ui->natural_choose->currentText() == "-")
         res = SUB_NN_N(a,b);
-    }
     else if (ui->natural_choose->currentText() == "*")
     {
         if ((check_zero(a))||(check_zero(b)))
@@ -34,7 +27,7 @@ void Project_DM_Qt::natural()
     {
         if (check_zero(b))
         {
-            ui->natural_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Деление на нуль!");
             return;
         }
         res = DIV_NN_N(a,b);
@@ -43,7 +36,7 @@ void Project_DM_Qt::natural()
     {
         if (check_zero(b))
         {
-            ui->natural_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Деление на нуль!");
             return;
         }
         if(check_zero(a))
@@ -60,7 +53,7 @@ void Project_DM_Qt::natural()
     {
         if ((check_zero(a))||(check_zero(b)))
         {
-            ui->natural_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Невозможная операция, одно из чисел равно нулю!");
             return;
         }
         res = GCF_NN_N(a, b);
@@ -69,7 +62,7 @@ void Project_DM_Qt::natural()
     {
         if ((check_zero(a))||(check_zero(b)))
         {
-            ui->natural_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Невозможная операция, одно из чисел равно нулю!");
             return;
         }
         res = LCM_NN_N(a, b);

@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QString>
 #include <QLineEdit>
+#include <QMessageBox>
+#include <QPixmap>
+#include <QPropertyAnimation>
+
 #include "Allfunc.h"
 #include "natural.h"
 #include "integer.h"

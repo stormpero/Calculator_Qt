@@ -11,7 +11,8 @@ void Project_DM_Qt::integ()
     //Ошибка, если введён только минус
     if ((a.size()==1 && a[0]==1)||(b.size()==1 && b[0]==1))
     {
-        ui->Integer_res->setText("Error");
+       // ui->Integer_res->setText("Error");
+        QMessageBox::critical(this, "Almighty calculator", "Error, wrong input");
         return;
     }
 
@@ -35,7 +36,7 @@ void Project_DM_Qt::integ()
         // Деление на ноль
         if (check_zero(b))
         {
-            ui->Integer_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Деление на нуль!");
             return;
         }
         res = DIV_ZZ_Z(a,b);
@@ -48,7 +49,7 @@ void Project_DM_Qt::integ()
         // Деление на ноль
         if (check_zero(b))
         {
-            ui->Integer_res->setText("Error");
+            QMessageBox::critical(this, "Almighty calculator", "Деление на нуль!");
             return;
         }
         // Если второе число больше первого, то первое число это остаток

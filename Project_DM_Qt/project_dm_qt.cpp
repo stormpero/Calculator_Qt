@@ -1,8 +1,5 @@
-#include <QPropertyAnimation>
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-#include <QMessageBox>
-#include <QPixmap>
 
 /* Modules x coords
  *

@@ -14,8 +14,7 @@ void Project_DM_Qt::ration()
     //Ошибка, если введён только минус
     if (a.numerator.size()==1 && a.numerator[0]==1)
     {
-        ui->Rational_res_num->setText("Error");
-        ui->Rational_res_det->setText(" =) ");
+        QMessageBox::critical(this, "Almighty calculator", "Error, wrong input");
         return;
     }
     if (ui->Rational_choose->currentText() == "+")
@@ -39,8 +38,7 @@ void Project_DM_Qt::ration()
         // Проверка на ноль
         if (POZ_Z_D(b.numerator)==0)
         {
-            ui->Rational_res_num->setText("Error");
-            ui->Rational_res_det->setText(" =) ");
+            QMessageBox::critical(this, "Almighty calculator", "Error, wrong input");
             return;
         }
         res = DIV_QQ_Q(a,b);
