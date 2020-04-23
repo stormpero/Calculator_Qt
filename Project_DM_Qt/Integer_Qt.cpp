@@ -6,8 +6,14 @@ void Project_DM_Qt::integ()
     ui->Integer_res->setText("");
     vector <int> a = integ_convert(ui->Integer_num1->text());
     vector <int> b = integ_convert(ui->Integer_num2->text());
-
     vector <int> res;
+
+    //Ошибка, если введён только минус
+    if ((a.size()==1 && a[0]==1)||(b.size()==1 && b[0]==1))
+    {
+        ui->Integer_res->setText("Error");
+        return;
+    }
 
     if (ui->Integer_choose->currentText() == "+")
         res = ADD_ZZ_Z(a,b);
@@ -15,6 +21,7 @@ void Project_DM_Qt::integ()
         res = SUB_ZZ_Z(a,b);
     else if (ui->Integer_choose->currentText() == "*")
     {
+        // Если один из множителей ноль, то выводим 0
         if ((check_zero(a))||(check_zero(b)))
         {
             res.push_back(0);
@@ -25,23 +32,32 @@ void Project_DM_Qt::integ()
     }
     else if (ui->Integer_choose->currentText() == "div")
     {
+        // Деление на ноль
         if (check_zero(b))
         {
             ui->Integer_res->setText("Error");
             return;
         }
-        res = DIV_ZZ_Z(a,b);     
+        res = DIV_ZZ_Z(a,b);
+        // Проверка если -0, испр на 0
+        if (res.size()==2 && res[0]==1 && res[1]==0)
+            res[0]=0;
     }
     else if (ui->Integer_choose->currentText() == "mod")
     {
+        // Деление на ноль
         if (check_zero(b))
         {
             ui->Integer_res->setText("Error");
             return;
         }
-
-        res = MOD_ZZ_Z(a,b);        
+        // Если второе число больше первого, то первое число это остаток
+        if ((COM_NN_D(ABS_Z_N(a),ABS_Z_N(b))==1 && POZ_Z_D(a)==1 && POZ_Z_D(b)==1)||(check_zero(a)))
+            res = a;
+        else
+            res = MOD_ZZ_Z(a,b);
     }
+
     // Проверка знака
     if (res[0] == 1)
         ui->Integer_res->setText("-");
@@ -54,6 +70,13 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
 {
     vector <int> res;
 
+    if (a.isEmpty())
+    {
+        res.push_back(0);
+        res.push_back(0);
+        return res;
+    }
+
     // Проверка знака
     if (a[0] == '-')
     {
@@ -65,9 +88,8 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
     // Преобразование в строки в вектор
     for (int k(0); k < a.size(); ++k)
         res.push_back(a[k].digitValue());
-    if (res.empty())
 
-        res.push_back(0);
+
     return res;
 }
 

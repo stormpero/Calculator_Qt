@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1110</width>
-    <height>800</height>
+    <height>780</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>1110</width>
-    <height>800</height>
+    <height>780</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1110</width>
-    <height>800</height>
+    <height>780</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -235,7 +235,7 @@ color: white;
    <widget class="QWidget" name="main" native="true">
     <property name="geometry">
      <rect>
-      <x>-4440</x>
+      <x>-3330</x>
       <y>0</y>
       <width>5550</width>
       <height>721</height>
@@ -275,79 +275,24 @@ color: white;
      <property name="spacing">
       <number>0</number>
      </property>
-     <item row="0" column="3">
-      <widget class="QWidget" name="polynomials" native="true">
-       <widget class="QLabel" name="label_Pol">
+     <item row="0" column="1">
+      <widget class="QWidget" name="integer" native="true">
+       <widget class="QWidget" name="widget" native="true">
         <property name="geometry">
          <rect>
-          <x>190</x>
-          <y>70</y>
-          <width>671</width>
-          <height>621</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: #8B0000;
-font-size: 98px;</string>
-        </property>
-        <property name="text">
-         <string>В разработке</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="natural_Button_help_4">
-        <property name="geometry">
-         <rect>
-          <x>1060</x>
-          <y>10</y>
-          <width>41</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-color: #000000;
-background-color:#E0FFFF;
-border: 1px solid #828282;
-border-radius: 3px;
-font-size: 18px;
-}
-QPushButton:hover {
-border: 1px solid #828282;
-background-color: #AFEEEE;
-}
-QPushButton:hover:pressed { 
-background-color:#48D1CC;
-color: white;
-}
-QPushButton:disabled { 
-background-color: #48D1CC;
-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>?</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QWidget" name="natural" native="true">
-       <widget class="QWidget" name="widget_3" native="true">
-        <property name="geometry">
-         <rect>
-          <x>290</x>
-          <y>213</y>
-          <width>501</width>
+          <x>309</x>
+          <y>220</y>
+          <width>491</width>
           <height>281</height>
          </rect>
         </property>
-        <widget class="QComboBox" name="natural_choose">
+        <widget class="QComboBox" name="Integer_choose">
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>112</y>
-           <width>61</width>
-           <height>20</height>
+           <y>110</y>
+           <width>60</width>
+           <height>22</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -429,18 +374,8 @@ QComboBox QAbstractItemView {
            <string>mod</string>
           </property>
          </item>
-         <item>
-          <property name="text">
-           <string>НОД</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>НОК</string>
-          </property>
-         </item>
         </widget>
-        <widget class="QLabel" name="natural_Error">
+        <widget class="QLabel" name="Integer_Error">
          <property name="geometry">
           <rect>
            <x>320</x>
@@ -456,7 +391,42 @@ QComboBox QAbstractItemView {
           <string>=</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="natural_num2">
+        <widget class="QPushButton" name="Integer_Button">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>170</y>
+           <width>201</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #18455c;
+background-color: #b6e3fa;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #83cdf3;
+}
+QPushButton:hover:pressed {
+background-color: #83cdf3;
+color: white;
+}
+QPushButton:disabled {
+background-color: #83cdf3;
+color: white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Вычислить</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Integer_num2">
          <property name="geometry">
           <rect>
            <x>220</x>
@@ -475,7 +445,7 @@ QComboBox QAbstractItemView {
 </string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="natural_num1">
+        <widget class="QLineEdit" name="Integer_num1">
          <property name="geometry">
           <rect>
            <x>50</x>
@@ -494,7 +464,7 @@ QComboBox QAbstractItemView {
 </string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="natural_res">
+        <widget class="QLineEdit" name="Integer_res">
          <property name="geometry">
           <rect>
            <x>340</x>
@@ -514,521 +484,8 @@ QComboBox QAbstractItemView {
 </string>
          </property>
         </widget>
-        <widget class="QPushButton" name="natural_Button">
-         <property name="geometry">
-          <rect>
-           <x>150</x>
-           <y>180</y>
-           <width>191</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-color: #1f4126;
-background-color: #bddfc4;
-border: 2px solid white;
-border-radius: 3px;
-font-size: 23px;
-font-weight: 600;
-}
-QPushButton:hover {
-border: 2px solid white;
-background-color: #a7f1b6;
-}
-QPushButton:hover:pressed {
-background-color: #a7f1b6;
-color: white;
-}
-QPushButton:disabled {
-background-color: #a7f1b6;
-color: white;
-}</string>
-         </property>
-         <property name="text">
-          <string>Вычислить</string>
-         </property>
-        </widget>
        </widget>
-       <widget class="QPushButton" name="natural_Button_help_1">
-        <property name="geometry">
-         <rect>
-          <x>1050</x>
-          <y>20</y>
-          <width>41</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-color: #000000;
-background-color:#E0FFFF;
-border: 1px solid #828282;
-border-radius: 3px;
-font-size: 18px;
-}
-QPushButton:hover {
-border: 1px solid #828282;
-background-color: #AFEEEE;
-}
-QPushButton:hover:pressed { 
-background-color:#48D1CC;
-color: white;
-}
-QPushButton:disabled { 
-background-color: #48D1CC;
-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>?</string>
-        </property>
-       </widget>
-      </widget>
-     </item>
-     <item row="0" column="4">
-      <widget class="QWidget" name="matrix" native="true">
-       <widget class="QLabel" name="m_pic5">
-        <property name="geometry">
-         <rect>
-          <x>140</x>
-          <y>120</y>
-          <width>47</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_pic3">
-        <property name="geometry">
-         <rect>
-          <x>370</x>
-          <y>380</y>
-          <width>47</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_pic4">
-        <property name="geometry">
-         <rect>
-          <x>720</x>
-          <y>380</y>
-          <width>47</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QSpinBox" name="spinBox">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>140</y>
-          <width>71</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="toolTip">
-         <string>Matrix size</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="minimum">
-         <number>2</number>
-        </property>
-        <property name="maximum">
-         <number>32767</number>
-        </property>
-        <property name="value">
-         <number>3</number>
-        </property>
-       </widget>
-       <widget class="QLabel" name="matrix1">
-        <property name="geometry">
-         <rect>
-          <x>270</x>
-          <y>110</y>
-          <width>121</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Bookman Old Style</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Matrix 1</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_Result">
-        <property name="geometry">
-         <rect>
-          <x>510</x>
-          <y>370</y>
-          <width>91</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Bookman Old Style</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Result</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_operation_label">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>200</y>
-          <width>71</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>MS Shell Dlg 2</family>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string> Operation</string>
-        </property>
-       </widget>
-       <widget class="QScrollArea" name="m_scrollArea_1">
-        <property name="geometry">
-         <rect>
-          <x>620</x>
-          <y>140</y>
-          <width>331</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_8">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>327</width>
-           <height>197</height>
-          </rect>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_14">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="m_gridLayout_1"/>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-       <widget class="QLabel" name="m_pic1">
-        <property name="geometry">
-         <rect>
-          <x>600</x>
-          <y>120</y>
-          <width>47</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QScrollArea" name="m_scrollArea">
-        <property name="geometry">
-         <rect>
-          <x>160</x>
-          <y>140</y>
-          <width>331</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::WinPanel</enum>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_9">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>327</width>
-           <height>197</height>
-          </rect>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_15">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="m_gridLayout"/>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-       <widget class="QComboBox" name="m_operation">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>220</y>
-          <width>69</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 3px;
- 	background: #EEE8AA;
-	font-size: 14px;
-}
-
-QComboBox:editable {
-	background: #000000;
-}
-
-QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-}
-
-/* QComboBox gets the &quot;on&quot; state when the popup is open */
-QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
-}
-
-QComboBox:on { /* shift the text when the popup opens */
-    padding-top: 3px;
-    padding-left: 4px;
-	background-color:   rgb(255, 255, 255);
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-	font-size: 14px;
-    border-left-width: 1px;
-    border-left-color: darkgray;
-    border-left-style: solid; /* just a single line */
-
-}
-
-QComboBox::down-arrow {
-    image: url(:/buttons/img/downarrow.png);
-}
-
-QComboBox::down-arrow:on { /* shift the arrow when popup is open */
-    top: 1px;
-    left: 1px;
-}
-QComboBox QAbstractItemView {
-    border: 2px solid darkgray;
-    selection-background-color:#4169E1;
-}</string>
-        </property>
-        <property name="currentText">
-         <string>+</string>
-        </property>
-        <property name="frame">
-         <bool>true</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>+</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>*</string>
-         </property>
-        </item>
-       </widget>
-       <widget class="QLabel" name="m_pic2">
-        <property name="geometry">
-         <rect>
-          <x>950</x>
-          <y>120</y>
-          <width>47</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="m_calc">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>290</y>
-          <width>71</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-color: #572421;
-background-color: #edbab7;
-border: 2px solid white;
-border-radius: 3px;
-font-size: 23px;
-font-weight: 900;
-}
-QPushButton:hover {
-border: 2px solid white;
-background-color: #e58d88;
-}
-QPushButton:hover:pressed {
-background-color: #e58d88;
-color: white;
-}
-QPushButton:disabled {
-background-color: #e58d88;
-color: white;
-}</string>
-        </property>
-        <property name="text">
-         <string>Calc</string>
-        </property>
-        <property name="checkable">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="matrix2">
-        <property name="geometry">
-         <rect>
-          <x>730</x>
-          <y>110</y>
-          <width>121</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Bookman Old Style</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Matrix 2</string>
-        </property>
-       </widget>
-       <widget class="QScrollArea" name="m_scrollArea_2">
-        <property name="geometry">
-         <rect>
-          <x>390</x>
-          <y>400</y>
-          <width>331</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::Box</enum>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_10">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>327</width>
-           <height>197</height>
-          </rect>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_17">
-          <item row="0" column="0">
-           <layout class="QGridLayout" name="m_gridLayout_2"/>
-          </item>
-         </layout>
-        </widget>
-       </widget>
-       <widget class="QLabel" name="matrix_size">
-        <property name="geometry">
-         <rect>
-          <x>520</x>
-          <y>120</y>
-          <width>71</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Matrix size&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="m_pic6">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>120</y>
-          <width>31</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="natural_Button_help_5">
+       <widget class="QPushButton" name="natural_Button_help_2">
         <property name="geometry">
          <rect>
           <x>1050</x>
@@ -1070,7 +527,7 @@ color: white;
         <property name="geometry">
          <rect>
           <x>294</x>
-          <y>205</y>
+          <y>190</y>
           <width>521</width>
           <height>311</height>
          </rect>
@@ -1363,24 +820,502 @@ color: white;
        </widget>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QWidget" name="integer" native="true">
-       <widget class="QWidget" name="widget" native="true">
+     <item row="0" column="4">
+      <widget class="QWidget" name="matrix" native="true">
+       <widget class="QLabel" name="m_pic5">
         <property name="geometry">
          <rect>
-          <x>309</x>
+          <x>140</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic3">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>380</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic4">
+        <property name="geometry">
+         <rect>
+          <x>720</x>
+          <y>380</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBox">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>140</y>
+          <width>71</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>Matrix size</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="minimum">
+         <number>2</number>
+        </property>
+        <property name="maximum">
+         <number>32767</number>
+        </property>
+        <property name="value">
+         <number>3</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="matrix1">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>110</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Matrix 1</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_Result">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>370</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Result</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_operation_label">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>200</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string> Operation</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea_1">
+        <property name="geometry">
+         <rect>
+          <x>620</x>
+          <y>140</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_8">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout_1"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="m_pic1">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>140</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_9">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QComboBox" name="m_operation">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
           <y>220</y>
-          <width>491</width>
+          <width>69</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
+        </property>
+        <property name="currentText">
+         <string>+</string>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>+</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>*</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="m_pic2">
+        <property name="geometry">
+         <rect>
+          <x>950</x>
+          <y>120</y>
+          <width>47</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="m_calc">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>290</y>
+          <width>71</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #572421;
+background-color: #edbab7;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #e58d88;
+}
+QPushButton:hover:pressed {
+background-color: #e58d88;
+color: white;
+}
+QPushButton:disabled {
+background-color: #e58d88;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>Calc</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="matrix2">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>110</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bookman Old Style</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Matrix 2</string>
+        </property>
+       </widget>
+       <widget class="QScrollArea" name="m_scrollArea_2">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>400</y>
+          <width>331</width>
+          <height>201</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_10">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>327</width>
+           <height>197</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_17">
+          <item row="0" column="0">
+           <layout class="QGridLayout" name="m_gridLayout_2"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QLabel" name="matrix_size">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>120</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Matrix size&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="m_pic6">
+        <property name="geometry">
+         <rect>
+          <x>490</x>
+          <y>120</y>
+          <width>31</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../../../Desktop/Skobka1.jpg</pixmap>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="natural_Button_help_5">
+        <property name="geometry">
+         <rect>
+          <x>1050</x>
+          <y>20</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QWidget" name="natural" native="true">
+       <widget class="QWidget" name="widget_3" native="true">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>213</y>
+          <width>501</width>
           <height>281</height>
          </rect>
         </property>
-        <widget class="QComboBox" name="Integer_choose">
+        <widget class="QComboBox" name="natural_choose">
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>110</y>
-           <width>60</width>
-           <height>22</height>
+           <y>112</y>
+           <width>61</width>
+           <height>20</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -1462,8 +1397,18 @@ QComboBox QAbstractItemView {
            <string>mod</string>
           </property>
          </item>
+         <item>
+          <property name="text">
+           <string>НОД</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>НОК</string>
+          </property>
+         </item>
         </widget>
-        <widget class="QLabel" name="Integer_Error">
+        <widget class="QLabel" name="natural_Error">
          <property name="geometry">
           <rect>
            <x>320</x>
@@ -1479,42 +1424,7 @@ QComboBox QAbstractItemView {
           <string>=</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="Integer_Button">
-         <property name="geometry">
-          <rect>
-           <x>120</x>
-           <y>170</y>
-           <width>201</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-color: #18455c;
-background-color: #b6e3fa;
-border: 2px solid white;
-border-radius: 3px;
-font-size: 23px;
-font-weight: 900;
-}
-QPushButton:hover {
-border: 2px solid white;
-background-color: #83cdf3;
-}
-QPushButton:hover:pressed {
-background-color: #83cdf3;
-color: white;
-}
-QPushButton:disabled {
-background-color: #83cdf3;
-color: white;
-}</string>
-         </property>
-         <property name="text">
-          <string>Вычислить</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="Integer_num2">
+        <widget class="QLineEdit" name="natural_num2">
          <property name="geometry">
           <rect>
            <x>220</x>
@@ -1533,7 +1443,7 @@ color: white;
 </string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="Integer_num1">
+        <widget class="QLineEdit" name="natural_num1">
          <property name="geometry">
           <rect>
            <x>50</x>
@@ -1552,7 +1462,7 @@ color: white;
 </string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="Integer_res">
+        <widget class="QLineEdit" name="natural_res">
          <property name="geometry">
           <rect>
            <x>340</x>
@@ -1572,8 +1482,43 @@ color: white;
 </string>
          </property>
         </widget>
+        <widget class="QPushButton" name="natural_Button">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>180</y>
+           <width>191</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+color: #1f4126;
+background-color: #bddfc4;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 600;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #a7f1b6;
+}
+QPushButton:hover:pressed {
+background-color: #a7f1b6;
+color: white;
+}
+QPushButton:disabled {
+background-color: #a7f1b6;
+color: white;
+}</string>
+         </property>
+         <property name="text">
+          <string>Вычислить</string>
+         </property>
+        </widget>
        </widget>
-       <widget class="QPushButton" name="natural_Button_help_2">
+       <widget class="QPushButton" name="natural_Button_help_1">
         <property name="geometry">
          <rect>
           <x>1050</x>
@@ -1609,36 +1554,526 @@ color: white;
        </widget>
       </widget>
      </item>
+     <item row="0" column="3">
+      <widget class="QWidget" name="polynomials" native="true">
+       <widget class="QPushButton" name="natural_Button_help_4">
+        <property name="geometry">
+         <rect>
+          <x>1060</x>
+          <y>10</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #000000;
+background-color:#E0FFFF;
+border: 1px solid #828282;
+border-radius: 3px;
+font-size: 18px;
+}
+QPushButton:hover {
+border: 1px solid #828282;
+background-color: #AFEEEE;
+}
+QPushButton:hover:pressed { 
+background-color:#48D1CC;
+color: white;
+}
+QPushButton:disabled { 
+background-color: #48D1CC;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>?</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="Poly_widget_new" native="true">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>110</y>
+          <width>181</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>181</width>
+          <height>121</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>181</width>
+          <height>121</height>
+         </size>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="Poly_num">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>91</width>
+               <height>41</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>91</width>
+               <height>41</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="Poly_det">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>91</width>
+               <height>41</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>91</width>
+               <height>41</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 0 8px;
+    selection-background-color: #1E90FF;
+}
+</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <property name="horizontalSpacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="Poly_label_x">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font-size: 28px;</string>
+             </property>
+             <property name="text">
+              <string>x</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <property name="horizontalSpacing">
+            <number>0</number>
+           </property>
+           <item row="1" column="0">
+            <widget class="QLineEdit" name="Poly_deg">
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>16777215</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <spacer name="Poly_space2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="0">
+            <spacer name="Poly_space1">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="3" column="0">
+            <spacer name="Poly_space3">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widget_4" native="true">
+        <property name="geometry">
+         <rect>
+          <x>291</x>
+          <y>107</y>
+          <width>141</width>
+          <height>141</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QRadioButton" name="Poly_rad1">
+           <property name="text">
+            <string>Первый многочлен</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="Poly_rad2">
+           <property name="text">
+            <string>Второй многочлен</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Poly_addButton">
+           <property name="text">
+            <string>Ввести</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="widget_5" native="true">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>330</y>
+          <width>821</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <widget class="QWidget" name="verticalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>9</y>
+           <width>811</width>
+           <height>161</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="Poly_res1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid gray;
+border-radius: 5px;
+padding: 0 8px;
+selection-background-color: #1E90FF;
+font-size: 20px;
+background:white;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Poly_res2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>500</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 2px solid gray;
+border-radius: 5px;
+padding: 0 8px;
+selection-background-color: #1E90FF;
+font-size: 20px;
+background:white;
+
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>50</y>
+           <width>441</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QComboBox" name="Pol_choose_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+ 	background: #EEE8AA;
+	font-size: 14px;
+}
+
+QComboBox:editable {
+	background: #000000;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+	background-color:   rgb(255, 255, 255);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	font-size: 14px;
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+
+}
+
+QComboBox::down-arrow {
+    image: url(:/buttons/img/downarrow.png);
+}
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color:#4169E1;
+}</string>
+            </property>
+            <property name="insertPolicy">
+             <enum>QComboBox::InsertAtBottom</enum>
+            </property>
+            <item>
+             <property name="text">
+              <string>+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>*</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>div</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>mod</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>НОД</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>444</x>
+          <y>520</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Вычислить</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Poly_res3">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>600</y>
+          <width>809</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border: 2px solid gray;
+border-radius: 5px;
+padding: 0 8px;
+selection-background-color: #1E90FF;
+font-size: 20px;
+background:white;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget_6" native="true">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>110</y>
+          <width>181</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QPushButton" name="pushButton_4">
+           <property name="text">
+            <string>Производная</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Вынесение НОД и НОК</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="text">
+            <string>Кратные корни в простые</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1110</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Приложение находится в разработке</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>К коллоквиуму планируется всё успеть</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_3">
-    <property name="title">
-     <string>Приносим извинения за временные неудобства</string>
-    </property>
-   </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
   </widget>
   <action name="action">
    <property name="text">

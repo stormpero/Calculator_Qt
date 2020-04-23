@@ -34,7 +34,6 @@ private slots:
     void on_Btn_matrix_clicked();
     //\////////////////////////////////
     bool check_zero(vector <int> zero);
-    bool text_error_integer(vector <int> zero);
     //\////////////////////////////////
     // Disablebuttons /////
     void disablebuttons();
@@ -52,13 +51,20 @@ private slots:
     //Rational//////////////////////////////
     void ration();
     Drob ration_convert(QString a, QString b);
+
+    //\/////////////////////////////////////
+
+    //Polynoms//////////////////////////////
+    void poly();
+    vector<Drob> poly_out(QString a);
+    void Create_poly();
     //\/////////////////////////////////////
 
     // Matrices ////////////////////////////
     void customSlot(const QString &str);
     void finishSlot();
     void keyPressEvent(QKeyEvent* event);
-    void on_m_calc_clicked();
+    void on_m_calc_clicked();    
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
 

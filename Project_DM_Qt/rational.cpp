@@ -28,20 +28,42 @@ int INT_Q_B(Drob a)
 
 Drob DIV_QQ_Q(Drob a, Drob b)
 {
-	Drob result;
-	if ((POZ_Z_D(b.numerator) == 0)|| (POZ_Z_D(b.numerator) == 0))		
-			throw ((string)"Error / zero \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
+    Drob null;
+    null.numerator = { 0, 0 };
+    null.denominator = { 1 };
+    Drob result;
 
-	if (POZ_Z_D(b.numerator) == 1)	
-		b.denominator.insert(b.denominator.begin(), 1);	
-	else // if (POZ_Z_D(b.numerator) == 2)	
-		b.denominator.insert(b.denominator.begin(), 0);
+    if (POZ_Z_D(a.numerator) == 0)
+        return null;
+    result.numerator = MUL_ZZ_Z(a.numerator, TRANS_N_Z(b.denominator)); // Oiii?ei ?eneeoaeu a?iae a ia ciaiaiaoaeu a?iae b
+    result.denominator = MUL_NN_N(a.denominator, TRANS_Z_N(b.numerator)); // Aiaeiae?ii aey ciaiaiaoaey
+    if (POZ_Z_D(result.numerator) == 0)
+    {
+        result = RED_Q_Q(result);
+        return result;
+    }
+    if ((POZ_Z_D(a.numerator) == POZ_Z_D(b.numerator)))
+        result.numerator[0] = 0;
+    else
+        result.numerator[0] = 1;
+
+    result = RED_Q_Q(result); // Выполним сокращение дроби
+    return(result);
+
+//	Drob result;
+//	if ((POZ_Z_D(b.numerator) == 0)|| (POZ_Z_D(b.numerator) == 0))
+//			throw ((string)"Error / zero \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
+
+//	if (POZ_Z_D(b.numerator) == 1)
+//		b.denominator.insert(b.denominator.begin(), 1);
+//	else // if (POZ_Z_D(b.numerator) == 2)
+//		b.denominator.insert(b.denominator.begin(), 0);
 	
-	b.numerator = ABS_Z_N(b.numerator);
-    swap(b.numerator, b.denominator);
+//	b.numerator = ABS_Z_N(b.numerator);
+//    swap(b.numerator, b.denominator);
 		
-	result = RED_Q_Q(MUL_QQ_Q(a,b)); // Выполним сокращение дроби
-	return(result);
+//	result = RED_Q_Q(MUL_QQ_Q(a,b)); // Выполним сокращение дроби
+//	return(result);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

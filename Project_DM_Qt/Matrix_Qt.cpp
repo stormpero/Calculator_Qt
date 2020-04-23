@@ -12,30 +12,34 @@ void Project_DM_Qt::customSlot(const QString &str)
 void Project_DM_Qt::finishSlot()
 {
     child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
+    newLine->close();
 }
 
 void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
 {
-   if (event->key() == Qt::Key_Control)
+   if (event->key() == Qt::Key_Alt)
    {
        QPoint pt = mapFromGlobal(QCursor::pos());
        child = qobject_cast<QLineEdit*>(childAt(pt));
 
-       if (child && !child->isReadOnly())
+       if (child)
        {
            child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(178, 34, 34);}");
 
             newLine = new QLineEdit();
             createCell(newLine, false);
-            newLine->setGeometry(QStyle::alignedRect(
-                                     Qt::LeftToRight,
-                                     Qt::AlignCenter,
-                                     QSize(400, child->height()),
-                                     qApp->desktop()->geometry()
-                                 ));
+
+            QPoint pos = child->mapToGlobal(QPoint(0,0));
+            newLine->setGeometry(pos.x(),pos.y()+child->height(),400,child->height());
+            newLine->setReadOnly((child->isReadOnly()));
+            newLine->setWindowFlag(Qt::FramelessWindowHint);
+            newLine->setObjectName("myObject");
+            newLine->setStyleSheet("#myObject { border: 2px solid darkGray; border-radius: 5px; }");
+
             newLine->setText(child->text());
             newLine->setAlignment(Qt::AlignLeft);
             newLine->setWindowModality(Qt::ApplicationModal);
+
             connect(newLine, SIGNAL(textChanged(const QString &)), this, SLOT(customSlot(const QString &)));
             connect(newLine, SIGNAL(editingFinished()), this, SLOT(finishSlot()));
             newLine->show();
@@ -52,7 +56,7 @@ void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
     size->setVerticalPolicy(QSizePolicy::Expanding);
     ple->setSizePolicy(*size);
     ple->setMinimumSize(70, 40);
-
+    ple->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
     // Настраиваем размер текста
     auto font = ple->font();
     font.setPointSizeF(20);
@@ -71,7 +75,7 @@ void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
     ple->setToolTip("Matrix cell");
 
     // Фильтрация ввода
-    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("^(?!0[\\d*])[-]?\\d*"), this); // pos and neg
+    QRegExpValidator* rxv = new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this);
     ple->setValidator(rxv);
 
     // Параметр только для чтения
@@ -140,6 +144,7 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
     QList<QLineEdit*> list1 = ui->m_scrollArea_1->findChildren<QLineEdit*>();
     QList<QLineEdit*> list2 = ui->m_scrollArea_2->findChildren<QLineEdit*>();
 
+
     // Сортировка листов
     for (int squar(2); squar < sqrt(list.size()); ++squar)
         for (int i(squar), j(squar * squar); i < pow(squar + 1, 2) - 1; i += squar + 1, j += 2)
@@ -161,36 +166,9 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
         {
             QString number(list[i * lSize + j]->text()), number1(list1[i * lSize + j]->text());
             // Обработка знаков чисел первой матрицы
-            if (number.isEmpty())
-                mat1[i][j].push_back(0);
 
-            else if (number[0] == '-')
-            {
-                mat1[i][j].push_back(1);
-                number.remove(0, 1);
-            }
-            else
-                mat1[i][j].push_back(0);
-
-            for (int k(0); k < number.size(); ++k)
-                mat1[i][j].push_back(number[k].digitValue());
-
-            // Обработка знаков чисел второй матрицы
-            if (number1.isEmpty())
-            {
-                mat2[i][j].push_back(0);
-                continue;
-            }
-            if (number1[0] == '-')
-            {
-                mat2[i][j].push_back(1);
-                number1.remove(0, 1);
-            }
-            else
-                mat2[i][j].push_back(0);
-
-            for (int k(0); k < number1.size(); ++k)
-                mat2[i][j].push_back(number1[k].digitValue());
+            mat1[i][j] = integ_convert(number);
+            mat2[i][j]= integ_convert(number1);
         }
     }
 
@@ -201,7 +179,6 @@ QList<QLineEdit*> Project_DM_Qt::getData(Matrix &mat1, Matrix &mat2)
 void Project_DM_Qt::on_m_calc_clicked()
 {
     using namespace std;
-
     Matrix mat1, mat2, result;
     QList<QLineEdit*> list = getData(mat1, mat2);
 
@@ -221,7 +198,7 @@ void Project_DM_Qt::on_m_calc_clicked()
                 list[i * counter + j]->setText("-");
 
             for(uint k(1); k < result[i][j].size(); ++k)
-                if (result[i][j][k])
+                if (result[i][j][1])
                     list[i * counter + j]->setText(list[i * counter + j]->text() + QString::number(result[i][j][k]));
         }
 }
