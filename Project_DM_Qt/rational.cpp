@@ -5,9 +5,9 @@
 
 Drob SUB_QQ_Q(Drob f, Drob s)
 {
-    if (POZ_Z_D(s.numerator) == 0) // если s == 0
+	if (POZ_Z_D(s.numerator) == 0) // если s == 0
 		return f;
-    s.numerator = MUL_ZM_Z(s.numerator); // иначе инвертируем знак второго
+	s.numerator = MUL_ZM_Z(s.numerator); // иначе инвертируем знак второго
 	return ADD_QQ_Q(f, s); // вызываем ф-ию сложения целых чисел, но прибавляем мы число с противоположным знаком	
 }
 
@@ -20,50 +20,36 @@ Drob SUB_QQ_Q(Drob f, Drob s)
 int INT_Q_B(Drob a)
 {
 	a = RED_Q_Q(a); //Выполним сокращение дроби
-    if ((a.denominator[0] == 1) && (a.denominator.size() == 1)) // Проверим, является ли его первый элемент единицей в знаменателе
-        return 1; // Если да, то выведем единицу
+	if (a.denominator[0] == 1 && a.denominator.size() == 1)  // Проверим, является ли его первый элемент единицей в знаменателе
+		return 1; // Если да, то выведем единицу
 	else
 		return 0; // Если нет, то ноль
 }
 
 Drob DIV_QQ_Q(Drob a, Drob b)
 {
-    Drob null;
-    null.numerator = { 0, 0 };
-    null.denominator = { 1 };
-    Drob result;
+	Drob null;
+	null.numerator = { 0, 0 };
+	null.denominator = { 1 };
+	Drob result;
+	if (POZ_Z_D(b.numerator) == 0)
+		throw "Zero devider";
+	if (POZ_Z_D(a.numerator) == 0)
+		return null;
+	result.numerator = MUL_ZZ_Z(a.numerator, TRANS_N_Z(b.denominator)); // Умножим числитель дроби a на знаменатель дроби b
+	result.denominator = MUL_NN_N(a.denominator, TRANS_Z_N(b.numerator)); // Аналогично для знаменателя
+	if (POZ_Z_D(result.numerator) == 0)
+	{
+		result = RED_Q_Q(result);
+		return result;
+	}
+	if ((POZ_Z_D(a.numerator) == POZ_Z_D(b.numerator)))
+		result.numerator[0] = 0;
+	else
+		result.numerator[0] = 1;
 
-    if (POZ_Z_D(a.numerator) == 0)
-        return null;
-    result.numerator = MUL_ZZ_Z(a.numerator, TRANS_N_Z(b.denominator)); // Oiii?ei ?eneeoaeu a?iae a ia ciaiaiaoaeu a?iae b
-    result.denominator = MUL_NN_N(a.denominator, TRANS_Z_N(b.numerator)); // Aiaeiae?ii aey ciaiaiaoaey
-    if (POZ_Z_D(result.numerator) == 0)
-    {
-        result = RED_Q_Q(result);
-        return result;
-    }
-    if ((POZ_Z_D(a.numerator) == POZ_Z_D(b.numerator)))
-        result.numerator[0] = 0;
-    else
-        result.numerator[0] = 1;
-
-    result = RED_Q_Q(result); // Выполним сокращение дроби
-    return(result);
-
-//	Drob result;
-//	if ((POZ_Z_D(b.numerator) == 0)|| (POZ_Z_D(b.numerator) == 0))
-//			throw ((string)"Error / zero \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
-
-//	if (POZ_Z_D(b.numerator) == 1)
-//		b.denominator.insert(b.denominator.begin(), 1);
-//	else // if (POZ_Z_D(b.numerator) == 2)
-//		b.denominator.insert(b.denominator.begin(), 0);
-	
-//	b.numerator = ABS_Z_N(b.numerator);
-//    swap(b.numerator, b.denominator);
-		
-//	result = RED_Q_Q(MUL_QQ_Q(a,b)); // Выполним сокращение дроби
-//	return(result);
+	result = RED_Q_Q(result); // Выполним сокращение дроби
+	return(result);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,6 +77,8 @@ Drob MUL_QQ_Q(Drob num1, Drob num2)
 Drob ADD_QQ_Q(Drob a, Drob b) 
 {
 	Drob res;
+	a = RED_Q_Q(a);
+	b = RED_Q_Q(b);
 	if ((a.denominator == b.denominator) && (POZ_Z_D(ADD_ZZ_Z(a.numerator, b.numerator)) == 0))
 	{
 		res.numerator.push_back(0);
@@ -98,24 +86,24 @@ Drob ADD_QQ_Q(Drob a, Drob b)
 		res.denominator.push_back(1);
 		return res;
 	}
-	vector<int> zn1 = a.denominator;
-	vector<int> zn2 = b.denominator;
-	vector <int> zn = LCM_NN_N(a.denominator, b.denominator);	
-	vector <int> mn = DIV_NN_N(zn, a.denominator);
-	mn.insert(mn.begin(), 0);
-	vector <int> chisl1 = MUL_ZZ_Z(a.numerator, mn);
-	vector <int> mn1 = DIV_NN_N(zn, b.denominator);
-	mn1.insert(mn1.begin(), 0);
-	vector <int> chisl2 = MUL_ZZ_Z(b.numerator, mn1);
-	res.numerator = ADD_ZZ_Z(chisl1, chisl2);
-	res.denominator = zn;	
-	return RED_Q_Q(res);
+	vector <int> f = LCM_NN_N(a.denominator, b.denominator);
+
+	a.numerator = MUL_ZZ_Z(a.numerator, TRANS_N_Z(DIV_NN_N(f, a.denominator)));
+	b.numerator = MUL_ZZ_Z(b.numerator, TRANS_N_Z(DIV_NN_N(f, b.denominator)));
+
+	res.numerator = ADD_ZZ_Z(a.numerator, b.numerator);
+	res.denominator = f;
+
+	return res;
 }
 
 vector<int> TRANS_Q_Z(Drob a)
 {
-	vector<int> r = a.numerator;
-	return r;
+	vector <int> one = { 1 };
+	a = RED_Q_Q(a);
+	if (a.denominator != one)
+		throw "Error, impossible to make integer of rational";
+	return a.numerator;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -135,7 +123,10 @@ Drob TRANS_Z_Q(vector <int> a)
 Drob RED_Q_Q(Drob a)
 {
 	if (POZ_Z_D(a.numerator) == 0)
+	{
+		a.denominator = { 1 };
 		return a;
+	}
 	vector<int> Nod = GCF_NN_N(ABS_Z_N(a.numerator), a.denominator);
 	a.denominator = DIV_NN_N(a.denominator, Nod);
 	Nod.insert(Nod.begin(), 0);

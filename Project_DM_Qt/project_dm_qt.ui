@@ -1519,7 +1519,7 @@ color: white;
          </property>
         </widget>
        </widget>
-       <widget class="QPushButton" name="natural_Button_help_1">
+       <widget class="QPushButton" name="natural_Button_help">
         <property name="geometry">
          <rect>
           <x>1050</x>
@@ -1952,7 +1952,7 @@ background:white;
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QComboBox" name="Pol_choose_2">
+           <widget class="QComboBox" name="Pol_choose">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>

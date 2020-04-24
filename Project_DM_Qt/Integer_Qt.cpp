@@ -70,7 +70,7 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
 {
     vector <int> res;
 
-    if (a.isEmpty())
+    if ((a.isEmpty()) || (a[0]== '-' && a.size() == 1))
     {
         res.push_back(0);
         res.push_back(0);

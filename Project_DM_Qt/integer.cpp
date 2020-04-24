@@ -1,6 +1,6 @@
 #include "integer.h"
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Старосельский Александр     //
+///////////////////////////////////////////////////////////////////////////////////////////////     Г‘ГІГ Г°Г®Г±ГҐГ«ГјГ±ГЄГЁГ© ГЂГ«ГҐГЄГ±Г Г­Г¤Г°     //
 
 vector<int> ABS_Z_N(vector<int> a)
 {
@@ -10,43 +10,40 @@ vector<int> ABS_Z_N(vector<int> a)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Ермольев Максим     //
+///////////////////////////////////////////////////////////////////////////////////////////////     Г…Г°Г¬Г®Г«ГјГҐГў ГЊГ ГЄГ±ГЁГ¬     //
 
-vector<int> MUL_ZZ_Z(vector<int> a, vector<int> b) // Ермольев Максим Викторович
+vector<int> MUL_ZZ_Z(vector<int> a, vector<int> b) // Г…Г°Г¬Г®Г«ГјГҐГў ГЊГ ГЄГ±ГЁГ¬ Г‚ГЁГЄГІГ®Г°Г®ГўГЁГ·
 {
-	vector<int> result; // Перменнная, которая хранит результат умножения
-	if (POZ_Z_D(a) == 0 || POZ_Z_D(b) == 0) //  Если одно из чисел равно 0, то их произведение тоже равно 0
+	vector<int> result; // ГЏГҐГ°Г¬ГҐГ­Г­Г­Г Гї, ГЄГ®ГІГ®Г°Г Гї ГµГ°Г Г­ГЁГІ Г°ГҐГ§ГіГ«ГјГІГ ГІ ГіГ¬Г­Г®Г¦ГҐГ­ГЁГї
+	if (POZ_Z_D(a) == 0 || POZ_Z_D(b) == 0) //  Г…Г±Г«ГЁ Г®Г¤Г­Г® ГЁГ§ Г·ГЁГ±ГҐГ« Г°Г ГўГ­Г® 0, ГІГ® ГЁГµ ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ ГІГ®Г¦ГҐ Г°Г ГўГ­Г® 0
 	{
 		result.push_back(0);
 		result.push_back(0);
-	}		
+	}
+		
 	else
 	{
-		result = MUL_NN_N(ABS_Z_N(a), ABS_Z_N(b)); // Переведем целые в натуральные и выполним умножение
-		result = TRANS_N_Z(result); // Переведем натуральные в целые
-		if (POZ_Z_D(a) != POZ_Z_D(b)) //Проверим равны ли знаки чисел, если нет, то поменяем знак
-			result = MUL_ZM_Z(result); // Умножим число на -1
+		result = MUL_NN_N(ABS_Z_N(a), ABS_Z_N(b)); // ГЏГҐГ°ГҐГўГҐГ¤ГҐГ¬ Г¶ГҐГ«Г»ГҐ Гў Г­Г ГІГіГ°Г Г«ГјГ­Г»ГҐ ГЁ ГўГ»ГЇГ®Г«Г­ГЁГ¬ ГіГ¬Г­Г®Г¦ГҐГ­ГЁГҐ
+		result = TRANS_N_Z(result); // ГЏГҐГ°ГҐГўГҐГ¤ГҐГ¬ Г­Г ГІГіГ°Г Г«ГјГ­Г»ГҐ Гў Г¶ГҐГ«Г»ГҐ
+		if (POZ_Z_D(a) != POZ_Z_D(b)) //ГЏГ°Г®ГўГҐГ°ГЁГ¬ Г°Г ГўГ­Г» Г«ГЁ Г§Г­Г ГЄГЁ Г·ГЁГ±ГҐГ«, ГҐГ±Г«ГЁ Г­ГҐГІ, ГІГ® ГЇГ®Г¬ГҐГ­ГїГҐГ¬ Г§Г­Г ГЄ
+			result = MUL_ZM_Z(result); // Г“Г¬Г­Г®Г¦ГЁГ¬ Г·ГЁГ±Г«Г® Г­Г  -1
 	}
-	return(result);   // Возвращаемое значение
+	return(result);   // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ
 }
 
 vector<int>  MOD_ZZ_Z(vector<int> a, vector<int> b)
 {
-
-//    if (COM_NN_D(a, b) == 1)
-//        swap(a, b);
-    vector<int> res;
-    res = SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));
-    return res;
+	return SUB_ZZ_Z(a, MUL_ZZ_Z(b, DIV_ZZ_Z(a, b)));   // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Астахов Михаил      //
+///////////////////////////////////////////////////////////////////////////////////////////////     ГЂГ±ГІГ ГµГ®Гў ГЊГЁГµГ ГЁГ«      //
 
 int POZ_Z_D(vector<int> num)
 {
-    if ((num.size() == 2) && (num[0] == 0) && (num[1] == 0))
+
+	if ((num.size() == 2) && (num[0] == 0) && (num[1] == 0))
 		return 0;
 	else if (num[0] == 1)
 		return 1;
@@ -55,48 +52,46 @@ int POZ_Z_D(vector<int> num)
 }
 vector<int> ADD_ZZ_Z(vector<int> num1, vector<int> num2)
 {
-	vector<int> result; // Перменнная, которая хранит результат сложения
+	vector<int> result; // ГЏГҐГ°Г¬ГҐГ­Г­Г­Г Гї, ГЄГ®ГІГ®Г°Г Гї ГµГ°Г Г­ГЁГІ Г°ГҐГ§ГіГ«ГјГІГ ГІ Г±Г«Г®Г¦ГҐГ­ГЁГї
 		 
 	if (POZ_Z_D(num1) == 0)	return num2;
 	if (POZ_Z_D(num2) == 0) return num1;
-    if ((POZ_Z_D(num1) == POZ_Z_D(num2)))
-    {
-        result = ADD_NN_N(ABS_Z_N(num1), ABS_Z_N(num2));
-        result.insert(result.begin(), num1[0]);
-    }
-    else if (POZ_Z_D(num1) == 2 && POZ_Z_D(num2) == 1) // num1 - полож, num2 - отриц
-    {
-        result = TRANS_N_Z(SUB_NN_N(ABS_Z_N(num1), ABS_Z_N(num2)));
-        if (COM_NN_D(ABS_Z_N(num1), ABS_Z_N(num2)) == 1) // COM_NN_D 2 - num1 > num2; 1 - num2 > num1
-            result = MUL_ZM_Z(result);
-    }
-    else if (POZ_Z_D(num1) == 1 && POZ_Z_D(num2) == 2) //POZ_Z_D 1 - отриц, 2 - полож
-    {
-        result = TRANS_N_Z(SUB_NN_N(ABS_Z_N(num1), ABS_Z_N(num2)));
-        if (COM_NN_D(ABS_Z_N(num1), ABS_Z_N(num2)) == 2)
-            result = MUL_ZM_Z(result);
-    }
-    return(result);// Возвращаемое значение
+	if ((POZ_Z_D(num1) == POZ_Z_D(num2)))
+	{
+		result = ADD_NN_N(ABS_Z_N(num1), ABS_Z_N(num2));
+		result.insert(result.begin(), num1[0]);
+	}		
+	else if (POZ_Z_D(num1) == 2 && POZ_Z_D(num2) == 1)
+	{
+		result = TRANS_N_Z(SUB_NN_N(ABS_Z_N(num1), ABS_Z_N(num2)));
+		if (COM_NN_D(ABS_Z_N(num1), ABS_Z_N(num2)) == 1)
+			result = MUL_ZM_Z(result);
+	}
+	else if (POZ_Z_D(num1) == 1 && POZ_Z_D(num2) == 2)
+	{
+		result = TRANS_N_Z(SUB_NN_N(ABS_Z_N(num1), ABS_Z_N(num2)));
+		if (COM_NN_D(ABS_Z_N(num1), ABS_Z_N(num2)) == 2)
+			result = MUL_ZM_Z(result);
+	}
+	return(result);   // Г‚Г®Г§ГўГ°Г Г№Г ГҐГ¬Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Игорь Темников      //
+///////////////////////////////////////////////////////////////////////////////////////////////     Г€ГЈГ®Г°Гј Г’ГҐГ¬Г­ГЁГЄГ®Гў      //
 
 vector<int> MUL_ND_N(vector<int> entry, int number) 
 {
 	if (entry.empty())
 		throw "Error:Empty entry";
-
-    if (number == 0)
-            return { 0 };
-
-	short digit = 0;// переменная отвечающая за увеличение следующего разряда
+	if (number == 0)
+		return { 0 };
+	short digit = 0;// ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г Гї Г®ГІГўГҐГ·Г ГѕГ№Г Гї Г§Г  ГіГўГҐГ«ГЁГ·ГҐГ­ГЁГҐ Г±Г«ГҐГ¤ГіГѕГ№ГҐГЈГ® Г°Г Г§Г°ГїГ¤Г 
 
 	for (int i = entry.size() - 1; i >= 0; i--)
 	{
 		short multiplication;
-		multiplication = number * entry[i];   // произведение цифры и разряда
+		multiplication = number * entry[i];   // ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ Г¶ГЁГґГ°Г» ГЁ Г°Г Г§Г°ГїГ¤Г 
 
 		if (multiplication + digit >= 10) 
 		{
@@ -110,56 +105,55 @@ vector<int> MUL_ND_N(vector<int> entry, int number)
 		}
 	}
 
-	if (digit != 0) //если последний разряд >= 10 то дописываем новый элемент в начало вектора
+	if (digit != 0) //ГҐГ±Г«ГЁ ГЇГ®Г±Г«ГҐГ¤Г­ГЁГ© Г°Г Г§Г°ГїГ¤ >= 10 ГІГ® Г¤Г®ГЇГЁГ±Г»ГўГ ГҐГ¬ Г­Г®ГўГ»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ Гў Г­Г Г·Г Г«Г® ГўГҐГЄГІГ®Г°Г 
 		entry.insert(entry.begin(), digit);
 
 	return entry;
 }
 
-vector<int> SUB_ZZ_Z(vector<int> vector_1, vector<int> vector_2) //Вычитание целых чисел
+vector<int> SUB_ZZ_Z(vector<int> vector_1, vector<int> vector_2) //Г‚Г»Г·ГЁГІГ Г­ГЁГҐ Г¶ГҐГ«Г»Гµ Г·ГЁГ±ГҐГ«
 {
-    if (POZ_Z_D(vector_2) == 0 && POZ_Z_D(vector_1) == 0)
-        return { 0, 0 };
-    else if (POZ_Z_D(vector_2) == 0)
-        return vector_1;
-    else if (POZ_Z_D(vector_1) == 0)
-        return MUL_ZM_Z(vector_2);
-    else
-        return ADD_ZZ_Z(vector_1, MUL_ZM_Z(vector_2));
+	if (POZ_Z_D(vector_2) == 0 && POZ_Z_D(vector_1) == 0)
+	return { 0, 0 };
+	else if (POZ_Z_D(vector_2) == 0)
+		return vector_1;
+	else if (POZ_Z_D(vector_1) == 0)
+		return MUL_ZM_Z(vector_2);
+	else
+		return ADD_ZZ_Z(vector_1, MUL_ZM_Z(vector_2));
 }
 
 vector<int> DIV_ZZ_Z(vector<int> vector_1_N, vector<int> vector_2_N)
 {
-    vector<int> result;
-    if ((POZ_Z_D(vector_2_N) == 0))// anee Aaeeoaeu = 0 ioeaea
-        throw ("Divider 0!");
-
-        if ((POZ_Z_D(vector_1_N) == 0))// anee Aaeeiia = 0 aica?auaai 0
-            return { 0,0 };
-
-        bool first = POZ_Z_D(vector_1_N) == 1;
-        bool second = POZ_Z_D(vector_2_N) == 1;
-
-        if (!NZER_N_B(MOD_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))) || (!first && !second))
-        {
-            if((first && !second) || (second && !first))
-                result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
-            else
-                result = TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)));
-        }
-        else if (first && !second)
-            result = MUL_ZM_Z(TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)))));
-        else if (!first && second)
-            result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
-        else
-            result = TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
-        return result;
+	vector<int> result;
+	if ((POZ_Z_D(vector_2_N) == 0))// ГҐГ±Г«ГЁ Г„ГҐГ«ГЁГІГҐГ«Гј = 0 Г®ГёГЁГЎГЄГ 
+		throw ("Divider 0!");
 	
+		if ((POZ_Z_D(vector_1_N) == 0))// ГҐГ±Г«ГЁ Г„ГҐГ«ГЁГ¬Г®ГҐ = 0 ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ 0 
+			return { 0 };
+
+		bool first = POZ_Z_D(vector_1_N) == 1;
+		bool second = POZ_Z_D(vector_2_N) == 1;
+
+		if (!NZER_N_B(MOD_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))) || (!first && !second))
+		{
+			if((first && !second) || (second && !first))
+				result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+			else
+				result = TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)));	
+		}
+		else if (first && !second)
+			result = MUL_ZM_Z(TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N)))));
+		else if (!first && second)
+			result = MUL_ZM_Z(TRANS_N_Z(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+		else
+			result = TRANS_N_Z(ADD_1N_N(DIV_NN_N(ABS_Z_N(vector_1_N), ABS_Z_N(vector_2_N))));
+		return result;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Табояков Иван      //
+///////////////////////////////////////////////////////////////////////////////////////////////     Г’Г ГЎГ®ГїГЄГ®Гў Г€ГўГ Г­      //
 
 vector<int> MUL_ZM_Z(vector<int> input)
 {
@@ -169,7 +163,7 @@ vector<int> MUL_ZM_Z(vector<int> input)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////     Жиренкин Артем      //
+///////////////////////////////////////////////////////////////////////////////////////////////     Г†ГЁГ°ГҐГ­ГЄГЁГ­ ГЂГ°ГІГҐГ¬      //
 
 vector<int> TRANS_Z_N(vector<int> a)
 {
