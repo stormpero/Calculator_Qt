@@ -4,9 +4,9 @@
 
 ////////////////////////// Старосельский Александр  ///////////////////////////////////
 
-//vector<int> MAT_Z_DET(vector<vector<vector<int>>> a); // Определитель матрицы
+vector<int> MAT_Z_DET(vector<vector<vector<int>>> a); // Определитель матрицы
 
-//int MAT_Z_RANK(vector<vector<vector<int>>> a); // Ранг матрицы
+int MAT_Z_RANK(vector<vector<vector<int>>> a); // Ранг матрицы
 
 //////////////////////////////////////////////////////////////////////////////
 

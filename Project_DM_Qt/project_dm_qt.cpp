@@ -12,6 +12,7 @@
  */
 
 
+
 // Animation object
 QPropertyAnimation *animation = new QPropertyAnimation();
 
@@ -37,46 +38,36 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     animation->setDuration(500);
     animation->setPropertyName("geometry");
 
-
-    //const QPalette palet3(qRgb(152, 251, 152)); //(212, 102, 102)
-    //ui->natural->setPalette(palet3);
-     //ui->natural->setTextureImage(QPixmap(":/buttons/img/fon_nat.jpg"));
-
-     // Background color for Natural
-     QBrush fon_nat(Qt::TexturePattern);
-     fon_nat.setTextureImage(QImage(":/buttons/img/fon_nat.jpg"));
-     QPalette fon_nat_pal =ui->natural->palette();
-     fon_nat_pal.setBrush(QPalette::Background, fon_nat);
-     ui->natural->setPalette(fon_nat_pal);
-     ui->natural->setAutoFillBackground(true);
+    // Background color for Natural
+    QBrush fon_nat(QImage(":/buttons/img/fon_nat.jpg"));
+    QPalette fon_nat_pal =ui->natural->palette();
+    fon_nat_pal.setBrush(QPalette::Background, fon_nat);
+    ui->natural->setPalette(fon_nat_pal);
+    ui->natural->setAutoFillBackground(true);
 
     // Background color for Integer
-     QBrush fon_int(Qt::TexturePattern);
-     fon_int.setTextureImage(QImage(":/buttons/img/fon_int.jpg"));
-     QPalette fon_int_pal =ui->integer->palette();
-     fon_int_pal.setBrush(QPalette::Background, fon_int);
-     ui->integer->setPalette(fon_int_pal);
-     ui->integer->setAutoFillBackground(true);
+    QBrush fon_int(QImage(":/buttons/img/fon_int.jpg"));
+    QPalette fon_int_pal =ui->integer->palette();
+    fon_int_pal.setBrush(QPalette::Background, fon_int);
+    ui->integer->setPalette(fon_int_pal);
+    ui->integer->setAutoFillBackground(true);
 
     // Background color for Rational
-     QBrush fon_rat(Qt::TexturePattern);
-     fon_rat.setTextureImage(QImage(":/buttons/img/fon_rat.jpg"));
-     QPalette fon_rat_pal =ui->rational->palette();
-     fon_rat_pal.setBrush(QPalette::Background, fon_rat);
-     ui->rational->setPalette(fon_rat_pal);
-     ui->rational->setAutoFillBackground(true);
+    QBrush fon_rat(QImage(":/buttons/img/fon_rat.jpg"));
+    QPalette fon_rat_pal =ui->rational->palette();
+    fon_rat_pal.setBrush(QPalette::Background, fon_rat);
+    ui->rational->setPalette(fon_rat_pal);
+    ui->rational->setAutoFillBackground(true);
 
     // Background color for Polynomials
-     QBrush fon_pol(Qt::TexturePattern);
-     fon_pol.setTextureImage(QImage(":/buttons/img/fon_pol.jpg"));
-     QPalette fon_pol_pal =ui->polynomials->palette();
-     fon_pol_pal.setBrush(QPalette::Background, fon_pol);
-     ui->polynomials->setPalette(fon_pol_pal);
-     ui->polynomials->setAutoFillBackground(true);
+    QBrush fon_pol(QImage(":/buttons/img/fon_pol.jpg"));
+    QPalette fon_pol_pal =ui->polynomials->palette();
+    fon_pol_pal.setBrush(QPalette::Background, fon_pol);
+    ui->polynomials->setPalette(fon_pol_pal);
+    ui->polynomials->setAutoFillBackground(true);
 
     // Background color for Matrices
-    QBrush fon_mat(Qt::TexturePattern);
-    fon_mat.setTextureImage(QImage(":/buttons/img/fon_mat.jpg"));
+    QBrush fon_mat(QImage(":/buttons/img/fon_mat.jpg"));
     QPalette fon_mat_pal =ui->matrix->palette();
     fon_mat_pal.setBrush(QPalette::Background, fon_mat);
     ui->matrix->setPalette(fon_mat_pal);
@@ -131,7 +122,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     //\////////////////////////
 
     //info_buttons
-    connect(ui->natural_Button_help_1,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
+    //connect(ui->natural_Button_help_1,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_2,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_3,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_4,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
@@ -143,6 +134,59 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
 Project_DM_Qt::~Project_DM_Qt()
 {
     delete ui;
+}
+QLineEdit *child, *newLine;
+
+void Project_DM_Qt::customSlot(const QString &str)
+{
+    child->setText(str);
+}
+void Project_DM_Qt::finishSlot()
+{
+    child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
+    newLine->close();
+}
+
+void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
+{
+   if (event->key() == Qt::Key_Alt)
+   {
+       QPoint pt = mapFromGlobal(QCursor::pos());
+       child = qobject_cast<QLineEdit*>(childAt(pt));
+
+       if (child)
+       {
+           child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(178, 34, 34);}");
+
+            newLine = new QLineEdit();
+            createCell(newLine, false);
+
+            QPoint pos = child->mapToGlobal(QPoint(0,0));
+            newLine->setGeometry(pos.x(),pos.y()+child->height(),400,child->height());
+            newLine->setReadOnly((child->isReadOnly()));
+            newLine->setWindowFlag(Qt::FramelessWindowHint);
+            newLine->setObjectName("myObject");
+            newLine->setStyleSheet("#myObject { border: 2px solid darkGray; border-radius: 5px; }");
+            newLine->setAlignment(Qt::AlignLeft);
+            newLine->setText(child->text());
+            newLine->setTextMargins(3,0,43,0);
+            newLine->setWindowModality(Qt::ApplicationModal);
+
+            QPushButton *butt = new QPushButton(newLine);
+            butt->setGeometry(newLine->width()-40,newLine->height() / 2 - 15, 30, 30);
+            butt->setText("X");
+            butt->setStyleSheet("QPushButton { border: 1px solid darkGray; border-radius: 3px; }");
+            butt->setCursor(Qt::PointingHandCursor);
+            butt->show();
+
+
+            connect(butt, SIGNAL(pressed()), this, SLOT(finishSlot()));
+            connect(newLine, SIGNAL(textChanged(const QString &)), this, SLOT(customSlot(const QString &)));
+            connect(newLine, SIGNAL(editingFinished()), this, SLOT(finishSlot()));
+            newLine->show();
+            newLine->setFocus();
+       }
+   }
 }
 
 

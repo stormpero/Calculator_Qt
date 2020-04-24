@@ -4,7 +4,7 @@
 
 bool NZER_N_B(vector<int> a_Z) // Проверка на ноль: если число не равно нулю, то «да» иначе «нет» 
 {
-    if ((a_Z[0] == 0) && (a_Z.size() == 1))
+	if ((a_Z[0] == 0) && (a_Z.size() == 1))
 		return false;
 	else
 		return true;
@@ -305,7 +305,6 @@ vector<int> DIV_NN_Dk(vector<int> vector_1, vector<int> vector_2) // Вычис�
 	result[0] = k;
 	return result;
 }
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -319,7 +318,7 @@ vector<int> TRANS_N_Z(vector<int> input) // Преобразование нат�
 
 vector<int> LCM_NN_N(vector<int> vector_1, vector<int> vector_2)
 {
-    return DIV_NN_N(MUL_NN_N(vector_1, vector_2), GCF_NN_N(vector_1, vector_2));
+	return DIV_NN_N(MUL_NN_N(vector_1, vector_2), GCF_NN_N(vector_1, vector_2));
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
