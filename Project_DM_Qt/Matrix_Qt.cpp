@@ -1,53 +1,5 @@
 #include "project_dm_qt.h"
 #include "ui_project_dm_qt.h"
-#include <QRegExpValidator>
-#include <QMouseEvent>
-#include <QtWidgets>
-
-QLineEdit *child, *newLine;
-void Project_DM_Qt::customSlot(const QString &str)
-{
-    child->setText(str);
-}
-void Project_DM_Qt::finishSlot()
-{
-    child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(255, 255, 255);}");
-    newLine->close();
-}
-
-void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
-{
-   if (event->key() == Qt::Key_Alt)
-   {
-       QPoint pt = mapFromGlobal(QCursor::pos());
-       child = qobject_cast<QLineEdit*>(childAt(pt));
-
-       if (child)
-       {
-           child->setStyleSheet("QLineEdit {border: 2px solid gray; border-radius: 5px; padding: 0 8px; selection-background-color: #1E90FF; background: rgb(178, 34, 34);}");
-
-            newLine = new QLineEdit();
-            createCell(newLine, false);
-
-            QPoint pos = child->mapToGlobal(QPoint(0,0));
-            newLine->setGeometry(pos.x(),pos.y()+child->height(),400,child->height());
-            newLine->setReadOnly((child->isReadOnly()));
-            newLine->setWindowFlag(Qt::FramelessWindowHint);
-            newLine->setObjectName("myObject");
-            newLine->setStyleSheet("#myObject { border: 2px solid darkGray; border-radius: 5px; }");
-
-            newLine->setText(child->text());
-            newLine->setAlignment(Qt::AlignLeft);
-            newLine->setWindowModality(Qt::ApplicationModal);
-
-            connect(newLine, SIGNAL(textChanged(const QString &)), this, SLOT(customSlot(const QString &)));
-            connect(newLine, SIGNAL(editingFinished()), this, SLOT(finishSlot()));
-            newLine->show();
-            newLine->setFocus();
-       }
-   }
-}
-
 
 void Project_DM_Qt::createCell(QLineEdit* ple, bool readonly = false)
 {

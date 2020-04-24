@@ -8,7 +8,15 @@
 #include "natural.h"
 #include "integer.h"
 #include "rational.h"
+#include "polynomial.h"
 #include "matrix.h"
+#include <QMessageBox>
+#include <QPixmap>
+#include <QMouseEvent>
+#include <QDebug>
+#include <QRegExpValidator>
+#include <QtWidgets>
+#include <QPropertyAnimation>
 
 typedef vector<vector<vector<int>>> Matrix;
 
@@ -35,6 +43,7 @@ private slots:
     //\////////////////////////////////
     bool check_zero(vector <int> zero);
     //\////////////////////////////////
+
     // Disablebuttons /////
     void disablebuttons();
 
@@ -66,7 +75,6 @@ private slots:
     void on_m_calc_clicked();    
     void on_spinBox_valueChanged(int arg1);
     //\/////////////////////////////////////
-
 
     //Help_info/////////////////////////////
     void on_natural_Button_help_clicked();

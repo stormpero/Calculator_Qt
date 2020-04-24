@@ -25,6 +25,7 @@ SOURCES += \
     main.cpp \
     matrix.cpp \
     natural.cpp \
+    polynomial.cpp \
     project_dm_qt.cpp \
     rational.cpp
 
@@ -33,6 +34,7 @@ HEADERS += \
     integer.h \
     matrix.h \
     natural.h \
+    polynomial.h \
     project_dm_qt.h \
     rational.h
 
