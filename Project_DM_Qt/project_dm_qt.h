@@ -64,7 +64,7 @@ private slots:
 
     //Polynoms//////////////////////////////
     void poly_add();
-    vector<Drob> poly_out();
+    void poly_out();
     void Create_poly();
     //\/////////////////////////////////////
 

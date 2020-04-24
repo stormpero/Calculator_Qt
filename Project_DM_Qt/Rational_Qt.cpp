@@ -39,8 +39,9 @@ void Project_DM_Qt::ration()
         // Проверка на ноль
         if (POZ_Z_D(b.numerator)==0)
         {
-            ui->Rational_res_num->setText("Error");
+            ui->Rational_res_num->setText(" =) ");
             ui->Rational_res_det->setText(" =) ");
+            QMessageBox::critical(this, "Almighty calculator", "Error, wrong input =) ");
             return;
         }
         res = DIV_QQ_Q(a,b);
