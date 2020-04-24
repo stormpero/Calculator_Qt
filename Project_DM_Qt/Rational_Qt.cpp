@@ -14,7 +14,9 @@ void Project_DM_Qt::ration()
     //Ошибка, если введён только минус
     if (a.numerator.size()==1 && a.numerator[0]==1)
     {
-        QMessageBox::critical(this, "Almighty calculator", "Error, wrong input");
+        ui->Rational_res_num->setText("Error");
+        ui->Rational_res_det->setText(" =) ");
+        QMessageBox::critical(this, "Almighty calculator", "Error, wrong input =) ");
         return;
     }
     if (ui->Rational_choose->currentText() == "+")
@@ -62,8 +64,7 @@ void Project_DM_Qt::ration()
 Drob Project_DM_Qt::ration_convert(QString a, QString b)
 {
     Drob number;
-
-    number.numerator = integ_convert(a);
+    number.numerator = integ_convert_int(a);
     number.denominator = natural_convert(b);
     if (number.denominator.size()==1 && number.denominator[0]==0)
         number.denominator[0] = 1;

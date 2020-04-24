@@ -94,7 +94,7 @@ Drob ADD_QQ_Q(Drob a, Drob b)
 	res.numerator = ADD_ZZ_Z(a.numerator, b.numerator);
 	res.denominator = f;
 
-	return res;
+    return RED_Q_Q(res);
 }
 
 vector<int> TRANS_Q_Z(Drob a)
