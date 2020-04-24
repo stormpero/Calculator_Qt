@@ -4,14 +4,15 @@
 void Project_DM_Qt::integ()
 {
     ui->Integer_res->setText("");
-    vector <int> a = integ_convert(ui->Integer_num1->text());
-    vector <int> b = integ_convert(ui->Integer_num2->text());
+    vector <int> a = integ_convert_int(ui->Integer_num1->text());
+    vector <int> b = integ_convert_int(ui->Integer_num2->text());
     vector <int> res;
 
     //Ошибка, если введён только минус
     if ((a.size()==1 && a[0]==1)||(b.size()==1 && b[0]==1))
     {
         ui->Integer_res->setText("Error");
+        QMessageBox::critical(this, "Almighty calculator", "Error, wrong input =) ");
         return;
     }
 
@@ -92,7 +93,31 @@ vector <int> Project_DM_Qt::integ_convert(QString a)
 
     return res;
 }
+vector <int> Project_DM_Qt::integ_convert_int(QString a)
+{
+    vector <int> res;
 
+    if (a.isEmpty())
+    {
+        res.push_back(0);
+        res.push_back(0);
+        return res;
+    }
+
+    // Проверка знака
+    if (a[0] == '-')
+    {
+        res.push_back(1);
+        a.remove(0, 1);
+    }
+    else
+        res.push_back(0);
+    // Преобразование в строки в вектор
+    for (int k(0); k < a.size(); ++k)
+        res.push_back(a[k].digitValue());
+
+    return res;
+}
 
 
 

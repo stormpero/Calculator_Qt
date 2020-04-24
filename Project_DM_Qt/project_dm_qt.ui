@@ -2031,12 +2031,12 @@ color: white;
          </item>
         </layout>
        </widget>
-       <widget class="QScrollArea" name="scrollArea">
+       <widget class="QScrollArea" name="Poly_scrollArea">
         <property name="geometry">
          <rect>
           <x>120</x>
           <y>370</y>
-          <width>861</width>
+          <width>831</width>
           <height>161</height>
          </rect>
         </property>
@@ -2048,56 +2048,63 @@ color: white;
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>859</width>
+           <width>829</width>
            <height>159</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item>
-             <widget class="QLabel" name="Poly_res1">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>500</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 2px solid gray;
+         <widget class="QWidget" name="gridLayoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>9</x>
+            <y>9</y>
+            <width>821</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QLabel" name="Poly_res1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid gray;
 border-radius: 5px;
 padding: 0 8px;
 selection-background-color: #1E90FF;
 font-size: 20px;
 background:white;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="Poly_res2">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>500</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border: 2px solid gray;
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="Poly_res2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>500</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">border: 2px solid gray;
 border-radius: 5px;
 padding: 0 8px;
 selection-background-color: #1E90FF;
@@ -2105,23 +2112,22 @@ font-size: 20px;
 background:white;
 
 </string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </widget>
        <widget class="QWidget" name="verticalLayoutWidget">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>170</x>
           <y>410</y>
-          <width>441</width>
+          <width>71</width>
           <height>81</height>
          </rect>
         </property>
@@ -2234,6 +2240,76 @@ selection-background-color: #c397e1;
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="Poly_clear_res1">
+        <property name="geometry">
+         <rect>
+          <x>971</x>
+          <y>404</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Poly_clear_res1_2">
+        <property name="geometry">
+         <rect>
+          <x>971</x>
+          <y>464</y>
+          <width>31</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+color: #31213c;
+background-color: #cfbfda;
+border: 2px solid white;
+border-radius: 3px;
+font-size: 23px;
+font-weight: 900;
+}
+QPushButton:hover {
+border: 2px solid white;
+background-color: #c397e1;
+}
+QPushButton:hover:pressed {
+background-color: #c397e1;
+color: white;
+}
+QPushButton:disabled {
+background-color: #c397e1;
+color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
        </widget>
       </widget>
      </item>
