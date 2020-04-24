@@ -7,7 +7,7 @@ int DEG_P_N(vector <Drob> a)
 	return a.size() - 1;
 }
 
-vector<Drob> GCF_PP_P(vector<Drob> fir, vector<Drob> sec)
+vector<Drob> GCF_PP_P(vector<Drob> fir, vector<Drob> sec) // ОШИБКА
 {	
 	if(fir.empty() || sec.empty())
 		throw ((string)" Empty polynomial \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
