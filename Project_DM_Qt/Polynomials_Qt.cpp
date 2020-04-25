@@ -52,7 +52,11 @@ void Project_DM_Qt::poly_add()
     int degree = 0; //Степень
 
     Drob a = ration_convert(ui->Poly_num->text(), ui->Poly_det->text()); // Обработка дроби
-
+    if (a.numerator.size()==1)
+    {
+        ui->Poly_res1->setText("Error");
+        return;
+    }
     degree = ui->Poly_deg->text().toInt(); // Читает степень и переводит в Int
 
     if (ui->Poly_rad1->isChecked()) // Смотрим, что выбран первый многочлен
@@ -195,11 +199,14 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
     vector<int>check_num_min = {1,1};
     vector<int>nul2 = {1}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
     Drob null{ vector<int> {0, 0}, vector<int> {1} };
+
     if (pl1.empty())
         pl1.push_back(null);
 
     if (pl2.empty())
         pl2.push_back(null);
+    try {
+
 
     vector <Drob> pl_res;
 
@@ -218,6 +225,11 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
 
     ui->Poly_res3->setText("");
     poly_out_res3(pl_res);
+
+    } catch (string s)
+    {
+       qDebug()<<QString::fromStdString(s);
+    }
 }
 
 void Project_DM_Qt::poly_three_res()
@@ -234,6 +246,8 @@ void Project_DM_Qt::poly_three_res()
     if (pl2.empty())
         pl2.push_back(null);
 
+    ui->Poly_res3->setText("");
+
     if (ui->Poly_rad1->isChecked())
     {
         if (button == ui->Poly_der_button)
@@ -241,9 +255,9 @@ void Project_DM_Qt::poly_three_res()
         else if (button == ui->Poly_nod_button)
         {
             pl_res = FAC_P_Q(pl1,Nok,Nod);
-             qDebug()<< Nod;
-             qDebug()<< Nok;
+
             ui->Poly_res3->setText("Нод: ");
+
             for (int i = 0; i < Nod.size(); i++)
                 ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nod[i]));
 
@@ -251,10 +265,13 @@ void Project_DM_Qt::poly_three_res()
 
             for (int i = 0; i < Nok.size(); i++)
                 ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nok[i]));
+            ui->Poly_res3->setText(ui->Poly_res3->text() + " | ");
         }
         else if (button == ui->Poly_sqrt_button)
         {
-            pl_res = NMR_P_P(pl1);
+            ui->Poly_res3->setText("=)");
+            return;
+            //pl_res = NMR_P_P(pl1);
         }
     }
     else if (ui->Poly_rad2->isChecked())
@@ -277,7 +294,9 @@ void Project_DM_Qt::poly_three_res()
         }
         else if (button == ui->Poly_sqrt_button)
         {
-            pl_res = NMR_P_P(pl2);
+            ui->Poly_res3->setText("=)");
+            return;
+            //pl_res = NMR_P_P(pl2);
         }
     }
     poly_out_res3(pl_res);
@@ -296,7 +315,6 @@ void Project_DM_Qt::poly_out_res3(vector <Drob> pl_res)
    {
        if(pl_res[i].numerator == nul)// Если Числитель равен нулевому вектору, то пропускаем число
            continue;
-        qDebug()<< (i !=  pl_res.size() - 1);
        if (pl_res[i].numerator[0] == 1)
             ui->Poly_res3->setText(ui->Poly_res3->text() + " - "); // Если числитель отрицательный выводим -
         else

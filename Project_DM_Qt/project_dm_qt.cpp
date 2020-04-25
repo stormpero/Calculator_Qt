@@ -128,6 +128,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     connect(ui->natural_Button_help_4,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_5,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     //\////////////////////////
+    ui->Poly_sqrt_button->hide();
 }
 
 // Destructor
@@ -288,7 +289,7 @@ void Project_DM_Qt::on_natural_Button_help_clicked()
     QPixmap p;
     p.load(":/buttons/img/info.png");
     msgBox.setIconPixmap(p);// no sound, but with icon
-
+    msgBox.setWindowIcon(QIcon(":/buttons/img/1200x630bb.png"));
     msgBox.exec();
 }
 
