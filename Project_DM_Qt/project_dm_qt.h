@@ -66,7 +66,11 @@ private slots:
     //Polynoms//////////////////////////////
     void poly_add();
     void poly_out();
+    void poly_out_res3(vector <Drob> pl_res);
+    void poly_three_res();
     void Create_poly();
+    void poly_clear1();
+    void poly_clear2();
     //\/////////////////////////////////////
 
     // Matrices ////////////////////////////
@@ -80,6 +84,8 @@ private slots:
     //Help_info/////////////////////////////
     void on_natural_Button_help_clicked();
     //\////////////////////////////////
+
+
 
 private:
     Ui::Project_DM_Qt *ui;

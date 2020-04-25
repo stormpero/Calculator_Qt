@@ -10,6 +10,13 @@ void Project_DM_Qt::Create_poly()
 {
     connect(ui->Poly_button_res,SIGNAL(clicked()),this,SLOT(poly_out()));
     connect(ui->Poly_addButton,SIGNAL(clicked()),this,SLOT(poly_add()));
+    connect(ui->Poly_clear_res1,SIGNAL(clicked()),this,SLOT(poly_clear1()));
+    connect(ui->Poly_clear_res2,SIGNAL(clicked()),this,SLOT(poly_clear2()));
+
+    connect(ui->Poly_der_button,SIGNAL(clicked()),this,SLOT(poly_three_res()));
+    connect(ui->Poly_nod_button,SIGNAL(clicked()),this,SLOT(poly_three_res()));
+    connect(ui->Poly_sqrt_button,SIGNAL(clicked()),this,SLOT(poly_three_res()));
+
     ui->Poly_num->setValidator(new QRegExpValidator(QRegExp("^([1-9]|-[1-9]|0$)\\d*"), this));
     ui->Poly_det->setValidator(new QRegExpValidator(QRegExp("^[1-9]\\d*"), this));
     ui->Poly_deg->setValidator(new QRegExpValidator(QRegExp("^([1-9]|0$)\\d{1,6}"), this));
@@ -22,13 +29,25 @@ void Project_DM_Qt::Create_poly()
     ui->Poly_deg->setPlaceholderText("0");    
 
 }
+void Project_DM_Qt::poly_clear1()
+{
+    ui->Poly_res1->setText("");
+    pl1.clear();
+    degreeold1 = -1;
+}
+void Project_DM_Qt::poly_clear2()
+{
+    ui->Poly_res2->setText("");
+    pl2.clear();
+    degreeold2 = -1;
+}
 
 void Project_DM_Qt::poly_add()
 {
-    vector<int>nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
-    vector<int>check_num = {0,1};
-    vector<int>check_num_min = {1,1};
-    vector<int>nul2 = {1}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
+    vector<int> nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
+    vector<int> check_num = {0,1};
+    vector<int> check_num_min = {1,1};
+    vector<int> nul2 = {1}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
     Drob null{ vector<int> {0, 0}, vector<int> {1} };
     int degree = 0; //Степень
 
@@ -84,19 +103,20 @@ void Project_DM_Qt::poly_add()
            {
                if (degreeold1 != 0)
                ui->Poly_res1->setText(ui->Poly_res1->text() + " + "); // Если числитель положительный выводим +
+           }            
+           if (pl1[0].numerator != nul)
+           {
+           for (int i = 1; i < pl1[0].numerator.size(); i++) // Вывод числителя дроби
+               ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].numerator[i]));
            }
-            if (((pl1[0].numerator != check_num) && (pl1[0].numerator != check_num_min )) || (pl1[0].denominator != nul2))
-            {
-                for (int i = 1; i < pl1[0].numerator.size(); i++) // Вывод числителя дроби
-                    ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].numerator[i]));
-                if (pl1[0].denominator != nul2)
-                {
-                    ui->Poly_res1->setText(ui->Poly_res1->text() + "/"); // Вывод слеша
+           if (pl1[0].denominator != nul2)
+           {
+               ui->Poly_res1->setText(ui->Poly_res1->text() + "/"); // Вывод слеша
 
-                    for (int i = 0; i < pl1[0].denominator.size(); i++) // Вывод знаменателя дроби
-                        ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].denominator[i]));
-                }
-            }
+               for (int i = 0; i < pl1[0].denominator.size(); i++) // Вывод знаменателя дроби
+                   ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].denominator[i]));
+           }
+
        }
 
     }
@@ -147,21 +167,22 @@ void Project_DM_Qt::poly_add()
                ui->Poly_res2->setText(ui->Poly_res2->text() + " - "); // Если числитель отрицательный выводим -
            else
            {
-               if (degreeold1 != 0)
-               ui->Poly_res2->setText(ui->Poly_res2->text() + " + "); // Если числитель положительный выводим +
+               if (degreeold2 != 0)
+                    ui->Poly_res2->setText(ui->Poly_res2->text() + " + "); // Если числитель положительный выводим +
            }
-            if (((pl2[0].numerator != check_num) && (pl2[0].numerator != check_num_min )) || (pl2[0].denominator != nul2))
+            if (pl2[0].numerator != nul)
             {
                 for (int i = 1; i < pl2[0].numerator.size(); i++) // Вывод числителя дроби
                     ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl2[0].numerator[i]));
-                if (pl2[0].denominator != nul2)
-                {
-                    ui->Poly_res2->setText(ui->Poly_res2->text() + "/"); // Вывод слеша
-
-                    for (int i = 0; i < pl2[0].denominator.size(); i++) // Вывод знаменателя дроби
-                        ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl2[0].denominator[i]));
-                }
             }
+            if (pl2[0].denominator != nul2)
+            {
+                ui->Poly_res2->setText(ui->Poly_res2->text() + "/"); // Вывод слеша
+
+                for (int i = 0; i < pl2[0].denominator.size(); i++) // Вывод знаменателя дроби
+                    ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl2[0].denominator[i]));
+            }
+
        }
 
     }
@@ -195,19 +216,91 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
     else if (ui->Pol_choose->currentText() == "НОД")
         pl_res = GCF_PP_P(pl1,pl2);
 
-
-
     ui->Poly_res3->setText("");
+    poly_out_res3(pl_res);
+}
+
+void Project_DM_Qt::poly_three_res()
+{
+   vector <Drob> pl_res;
+   vector <int> Nod;
+   vector <int> Nok;
+   Drob null{ vector<int> {0, 0}, vector<int> {1} };
+   QPushButton * button = (QPushButton *)sender();
+
+
+    if (pl1.empty())
+        pl1.push_back(null);
+    if (pl2.empty())
+        pl2.push_back(null);
+
+    if (ui->Poly_rad1->isChecked())
+    {
+        if (button == ui->Poly_der_button)
+         pl_res = DER_P_P(pl1);
+        else if (button == ui->Poly_nod_button)
+        {
+            pl_res = FAC_P_Q(pl1,Nok,Nod);
+             qDebug()<< Nod;
+             qDebug()<< Nok;
+            ui->Poly_res3->setText("Нод: ");
+            for (int i = 0; i < Nod.size(); i++)
+                ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nod[i]));
+
+            ui->Poly_res3->setText(ui->Poly_res3->text() + " Нок: ");
+
+            for (int i = 0; i < Nok.size(); i++)
+                ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nok[i]));
+        }
+        else if (button == ui->Poly_sqrt_button)
+        {
+            pl_res = NMR_P_P(pl1);
+        }
+    }
+    else if (ui->Poly_rad2->isChecked())
+    {
+        if (button == ui->Poly_der_button)
+         pl_res = DER_P_P(pl2);
+        else if (button == ui->Poly_nod_button)
+        {
+            FAC_P_Q(pl2,Nok,Nod);
+
+            ui->Poly_res3->setText("Нод: ");
+            for (int i = 0; i < Nod.size(); i++)
+                ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nod[i]));
+
+            ui->Poly_res3->setText(ui->Poly_res3->text() + " Нок: ");
+
+            for (int i = 0; i < Nok.size(); i++)
+                ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nok[i]));
+            return;
+        }
+        else if (button == ui->Poly_sqrt_button)
+        {
+            pl_res = NMR_P_P(pl2);
+        }
+    }
+    poly_out_res3(pl_res);
+}
+
+void Project_DM_Qt::poly_out_res3(vector <Drob> pl_res)
+{
+    vector<int>nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
+    vector<int>check_num = {0,1};
+    vector<int>check_num_min = {1,1};
+    vector<int>nul2 = {1}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
+    Drob null{ vector<int> {0, 0}, vector<int> {1} };
+
 
     for (int i = pl_res.size() - 1; i >= 1; i--)
    {
        if(pl_res[i].numerator == nul)// Если Числитель равен нулевому вектору, то пропускаем число
            continue;
-
+        qDebug()<< (i !=  pl_res.size() - 1);
        if (pl_res[i].numerator[0] == 1)
             ui->Poly_res3->setText(ui->Poly_res3->text() + " - "); // Если числитель отрицательный выводим -
         else
-           if (i !=  pl_res.size() - 1)
+           if ((i !=  pl_res.size() - 1) || (!ui->Poly_res3->text().isEmpty()))
             ui->Poly_res3->setText(ui->Poly_res3->text() + " + "); // Если числитель положительный выводим +
 
         if (((pl_res[i].numerator != check_num) && (pl_res[i].numerator != check_num_min )) || (pl_res[i].denominator != nul2))
@@ -233,35 +326,25 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
            ui->Poly_res3->setText(ui->Poly_res3->text() + " - "); // Если числитель отрицательный выводим -
        else
        {
-           if (degreeold1 != 0)
+           if (!ui->Poly_res3->text().isEmpty())
            ui->Poly_res3->setText(ui->Poly_res3->text() + " + "); // Если числитель положительный выводим +
        }
-        if (((pl_res[0].numerator != check_num) && (pl_res[0].numerator != check_num_min )) || (pl_res[0].denominator != nul2))
-        {
-            for (int i = 1; i < pl_res[0].numerator.size(); i++) // Вывод числителя дроби
-                ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(pl_res[0].numerator[i]));
-            if (pl_res[0].denominator != nul2)
-            {
-                ui->Poly_res3->setText(ui->Poly_res3->text() + "/"); // Вывод слеша
+       if (pl_res[0].numerator != nul)
+       {
+           for (int i = 1; i < pl_res[0].numerator.size(); i++) // Вывод числителя дроби
+               ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(pl_res[0].numerator[i]));
+       }
+       if (pl_res[0].denominator != nul2)
+       {
+           ui->Poly_res3->setText(ui->Poly_res3->text() + "/"); // Вывод слеша
 
-                for (int i = 0; i < pl_res[0].denominator.size(); i++) // Вывод знаменателя дроби
-                    ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(pl_res[0].denominator[i]));
-            }
-        }
+           for (int i = 0; i < pl_res[0].denominator.size(); i++) // Вывод знаменателя дроби
+               ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(pl_res[0].denominator[i]));
+       }
+
    }
    if (ui->Poly_res3->text().isEmpty())
        ui->Poly_res3->setText(" 0 ");
 
 }
-//if (degree > degreeold1) // Если новая степень больше превыд. то добавляем в массив эл-ты
-//{
-//    pl1.resize(degree + 1);
-//    for (int i(0); i < pl1.size(); i++)
-//    {
-//        pl1[i].numerator.resize(2); // В числитель два нуля
-//        pl1[i].denominator.resize(1,1);// В знаменатель единица
-//    }
-//    degreeold1 = degree; // Сохраняем степень
-//}
-
 
