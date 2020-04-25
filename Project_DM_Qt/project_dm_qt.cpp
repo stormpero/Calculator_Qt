@@ -128,7 +128,7 @@ Project_DM_Qt::Project_DM_Qt(QWidget *parent)
     connect(ui->natural_Button_help_4,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     connect(ui->natural_Button_help_5,SIGNAL(clicked()),this,SLOT(on_natural_Button_help_clicked()));
     //\////////////////////////
-    ui->Poly_sqrt_button->hide();
+
 }
 
 // Destructor
@@ -188,6 +188,19 @@ void Project_DM_Qt::keyPressEvent ( QKeyEvent * event )
             newLine->setFocus();
        }
    }
+   else if (event->key() == Qt::Key_D && ui->Poly_res1->x() + ui->Poly_res1->width() > 810)
+      {
+          ui->Poly_res1->setGeometry(ui->Poly_res1->x() - 20, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+          ui->Poly_res2->setGeometry(ui->Poly_res2->x() - 20, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+          ui->Poly_res3->setGeometry(ui->Poly_res3->x() - 20, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+      }
+
+      else if (event->key() == Qt::Key_A && ui->Poly_res1->x() < 1)
+      {
+          ui->Poly_res1->setGeometry(ui->Poly_res1->x() + 20, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+          ui->Poly_res2->setGeometry(ui->Poly_res2->x() + 20, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+          ui->Poly_res3->setGeometry(ui->Poly_res3->x() + 20, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+      }
 }
 
 
@@ -292,4 +305,39 @@ void Project_DM_Qt::on_natural_Button_help_clicked()
     msgBox.setWindowIcon(QIcon(":/buttons/img/1200x630bb.png"));
     msgBox.exec();
 }
+void Project_DM_Qt::on_Poly_res1_objectNameChanged(const QString &objectName)
+{
+    QFontMetrics metr(objectName);
 
+    if (metr.horizontalAdvance(objectName) > 809)
+    {
+        ui->Poly_res1->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res2->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res3->setMinimumWidth(metr.horizontalAdvance(objectName));
+    }
+    else
+    {
+        ui->Poly_res1->setMinimumWidth(809);
+        ui->Poly_res2->setMinimumWidth(809);
+        ui->Poly_res3->setMinimumWidth(809);
+    }
+}
+
+
+void Project_DM_Qt::on_Poly_res2_objectNameChanged(const QString &objectName)
+{
+    QFontMetrics metr(objectName);
+
+    if (metr.horizontalAdvance(objectName) > 809)
+    {
+        ui->Poly_res1->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res2->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res3->setMinimumWidth(metr.horizontalAdvance(objectName));
+    }
+    else
+    {
+        ui->Poly_res1->setMinimumWidth(809);
+        ui->Poly_res2->setMinimumWidth(809);
+        ui->Poly_res3->setMinimumWidth(809);
+    }
+}

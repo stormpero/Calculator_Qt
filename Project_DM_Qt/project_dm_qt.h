@@ -71,6 +71,8 @@ private slots:
     void Create_poly();
     void poly_clear1();
     void poly_clear2();
+    void on_Poly_res1_objectNameChanged(const QString &objectName);
+    void on_Poly_res2_objectNameChanged(const QString &objectName);
     //\/////////////////////////////////////
 
     // Matrices ////////////////////////////

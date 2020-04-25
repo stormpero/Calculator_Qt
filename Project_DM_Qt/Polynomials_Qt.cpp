@@ -32,18 +32,24 @@ void Project_DM_Qt::Create_poly()
 void Project_DM_Qt::poly_clear1()
 {
     ui->Poly_res1->setText("");
+    ui->Poly_res1->setObjectName(ui->Poly_res1->text());
     pl1.clear();
     degreeold1 = -1;
 }
 void Project_DM_Qt::poly_clear2()
 {
     ui->Poly_res2->setText("");
+    ui->Poly_res2->setObjectName(ui->Poly_res2->text());
     pl2.clear();
     degreeold2 = -1;
 }
 
 void Project_DM_Qt::poly_add()
 {
+    ui->Poly_res1->setGeometry(0, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+    ui->Poly_res2->setGeometry(0, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+    ui->Poly_res3->setGeometry(0, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+
     vector<int> nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
     vector<int> check_num = {0,1};
     vector<int> check_num_min = {1,1};
@@ -55,6 +61,7 @@ void Project_DM_Qt::poly_add()
     if (a.numerator.size()==1)
     {
         ui->Poly_res1->setText("Error");
+        ui->Poly_res1->setObjectName(ui->Poly_res1->text());
         return;
     }
     degree = ui->Poly_deg->text().toInt(); // Читает степень и переводит в Int
@@ -62,6 +69,7 @@ void Project_DM_Qt::poly_add()
     if (ui->Poly_rad1->isChecked()) // Смотрим, что выбран первый многочлен
     {
         ui->Poly_res1->setText("");
+        ui->Poly_res1->setObjectName(ui->Poly_res1->text());
         if(degreeold1 == -1)
         {
             for(int i(0);i < degree+1; i++)
@@ -106,6 +114,7 @@ void Project_DM_Qt::poly_add()
              }
 
             ui->Poly_res1->setText(ui->Poly_res1->text() + "x<sup>" + QString::number(i) + "</sup>"); // Вывод x и степени, степень - i
+            ui->Poly_res1->setObjectName(ui->Poly_res1->text());
        }
        //Свободный член в самом конце выводим, уже вне цикла
        if(pl1[0].numerator != nul) // Выводим, если он не равен нулю
@@ -129,6 +138,7 @@ void Project_DM_Qt::poly_add()
                for (int i = 0; i < pl1[0].denominator.size(); i++) // Вывод знаменателя дроби
                    ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].denominator[i]));
            }
+           ui->Poly_res1->setObjectName(ui->Poly_res1->text());
 
        }
 
@@ -181,6 +191,7 @@ void Project_DM_Qt::poly_add()
              }
 
             ui->Poly_res2->setText(ui->Poly_res2->text() + "x<sup>" + QString::number(i) + "</sup>"); // Вывод x и степени, степень - i
+            ui->Poly_res2->setObjectName(ui->Poly_res2->text());
        }
        //Свободный член в самом конце выводим, уже вне цикла
        if(pl2[0].numerator != nul) // Выводим, если он не равен нулю
@@ -206,12 +217,17 @@ void Project_DM_Qt::poly_add()
             }
 
        }
+       ui->Poly_res2->setObjectName(ui->Poly_res2->text());
 
     }
 }
 
 void Project_DM_Qt::poly_out() // Функция обработки и операции с многочленами
 { 
+    ui->Poly_res1->setGeometry(0, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+    ui->Poly_res2->setGeometry(0, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+    ui->Poly_res3->setGeometry(0, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+
     vector<int>nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
     vector<int>check_num = {0,1};
     vector<int>check_num_min = {1,1};
@@ -235,7 +251,15 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
     else if (ui->Pol_choose->currentText() == "*")
         pl_res = MUL_PP_P(pl1,pl2);
     else if (ui->Pol_choose->currentText() == "div")
+    {
+        if (DEG_P_N(pl1) < DEG_P_N(pl2))
+        {
+            ui->Poly_res3->setText("0");
+            return;
+        }
+
         pl_res = DIV_PP_P(pl1,pl2);
+    }
     else if (ui->Pol_choose->currentText() == "mod")
         pl_res = MOD_PP_P(pl1,pl2);
     else if (ui->Pol_choose->currentText() == "НОД")
@@ -252,6 +276,10 @@ void Project_DM_Qt::poly_out() // Функция обработки и опер�
 
 void Project_DM_Qt::poly_three_res()
 {
+    ui->Poly_res1->setGeometry(0, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+    ui->Poly_res2->setGeometry(0, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+    ui->Poly_res3->setGeometry(0, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+
    vector <Drob> pl_res;
    vector <int> Nod;
    vector <int> Nok;
@@ -286,10 +314,8 @@ void Project_DM_Qt::poly_three_res()
             ui->Poly_res3->setText(ui->Poly_res3->text() + " | ");
         }
         else if (button == ui->Poly_sqrt_button)
-        {
-            ui->Poly_res3->setText("=)");
-            return;
-            //pl_res = NMR_P_P(pl1);
+        {                     
+           pl_res = NMR_P_P(pl1);
         }
     }
     else if (ui->Poly_rad2->isChecked())
@@ -313,9 +339,7 @@ void Project_DM_Qt::poly_three_res()
         }
         else if (button == ui->Poly_sqrt_button)
         {
-            ui->Poly_res3->setText("=)");
-            return;
-            //pl_res = NMR_P_P(pl2);
+           pl_res = NMR_P_P(pl2);
         }
     }
     poly_out_res3(pl_res);
