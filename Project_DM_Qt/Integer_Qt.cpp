@@ -54,7 +54,10 @@ void Project_DM_Qt::integ()
         }
         // Если второе число больше первого, то первое число это остаток
         if ((COM_NN_D(ABS_Z_N(a),ABS_Z_N(b))==1 && POZ_Z_D(a)==1 && POZ_Z_D(b)==1)||(check_zero(a)))
+        {
             res = a;
+            res[0] = 0;
+        }
         else
             res = MOD_ZZ_Z(a,b);
     }

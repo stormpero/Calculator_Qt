@@ -62,11 +62,20 @@ void Project_DM_Qt::poly_add()
     if (ui->Poly_rad1->isChecked()) // Смотрим, что выбран первый многочлен
     {
         ui->Poly_res1->setText("");
-        if (degree > degreeold1) // Если новая степень больше превыд. то добавляем в массив эл-ты
+        if(degreeold1 == -1)
         {
             for(int i(0);i < degree+1; i++)
-                pl1.push_back(null);
-             degreeold1 = degree; // Сохраняем степень
+                 pl1.push_back(null);
+            degreeold1 = degree;
+        }
+        else
+        {
+            if (degree > degreeold1) // Если новая степень больше превыд. то добавляем в массив эл-ты
+            {
+                for(int i(0);i < degree-degreeold1; i++)
+                    pl1.push_back(null);
+                degreeold1 = degree; // Сохраняем степень
+            }
         }
 
         pl1[degree] = RED_Q_Q(a); // Присваем дробь к многочлены на позицию степени(Степень - индекс)
@@ -128,11 +137,20 @@ void Project_DM_Qt::poly_add()
     else if (ui->Poly_rad2->isChecked())// Смотрим, что выбран второй многочлен
     {
         ui->Poly_res2->setText("");
-        if (degree > degreeold2) // Если новая степень больше превыд. то добавляем в массив эл-ты
+        if(degreeold2 == -1)
         {
             for(int i(0);i < degree+1; i++)
-                pl2.push_back(null);
-             degreeold2 = degree; // Сохраняем степень
+                 pl2.push_back(null);
+            degreeold2 = degree;
+        }
+        else
+        {
+            if (degree > degreeold2) // Если новая степень больше превыд. то добавляем в массив эл-ты
+            {
+                for(int i(0);i < degree-degreeold2; i++)
+                    pl2.push_back(null);
+                degreeold2 = degree; // Сохраняем степень
+            }
         }
 
         pl2[degree] = RED_Q_Q(a); // Присваем дробь к многочлены на позицию степени(Степень - индекс)
@@ -280,7 +298,7 @@ void Project_DM_Qt::poly_three_res()
          pl_res = DER_P_P(pl2);
         else if (button == ui->Poly_nod_button)
         {
-            FAC_P_Q(pl2,Nok,Nod);
+           pl_res = FAC_P_Q(pl2,Nok,Nod);
 
             ui->Poly_res3->setText("Нод: ");
             for (int i = 0; i < Nod.size(); i++)
@@ -290,7 +308,8 @@ void Project_DM_Qt::poly_three_res()
 
             for (int i = 0; i < Nok.size(); i++)
                 ui->Poly_res3->setText(ui->Poly_res3->text() + QString::number(Nok[i]));
-            return;
+            ui->Poly_res3->setText(ui->Poly_res3->text() + " | ");
+
         }
         else if (button == ui->Poly_sqrt_button)
         {
