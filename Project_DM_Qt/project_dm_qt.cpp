@@ -293,3 +293,40 @@ void Project_DM_Qt::on_natural_Button_help_clicked()
     msgBox.exec();
 }
 
+
+void Project_DM_Qt::on_Poly_res1_objectNameChanged(const QString &objectName)
+{
+    QFontMetrics metr(objectName);
+
+    if (metr.horizontalAdvance(objectName) > 819)
+    {
+        ui->Poly_res1->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res2->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res3->setMinimumWidth(metr.horizontalAdvance(objectName));
+    }
+    else
+    {
+        ui->Poly_res1->setMinimumWidth(819);
+        ui->Poly_res2->setMinimumWidth(819);
+        ui->Poly_res3->setMinimumWidth(819);
+    }
+}
+
+
+void Project_DM_Qt::on_Poly_res2_objectNameChanged(const QString &objectName)
+{
+    QFontMetrics metr(objectName);
+
+    if (metr.horizontalAdvance(objectName) > 819)
+    {
+        ui->Poly_res1->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res2->setMinimumWidth(metr.horizontalAdvance(objectName));
+        ui->Poly_res3->setMinimumWidth(metr.horizontalAdvance(objectName));
+    }
+    else
+    {
+        ui->Poly_res1->setMinimumWidth(819);
+        ui->Poly_res2->setMinimumWidth(819);
+        ui->Poly_res3->setMinimumWidth(819);
+    }
+}
