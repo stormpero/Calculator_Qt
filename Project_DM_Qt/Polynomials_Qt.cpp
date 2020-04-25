@@ -44,6 +44,10 @@ void Project_DM_Qt::poly_clear2()
 
 void Project_DM_Qt::poly_add()
 {
+    ui->Poly_res1->setGeometry(0, ui->Poly_res1->y(), ui->Poly_res1->width(), ui->Poly_res1->height());
+    ui->Poly_res2->setGeometry(0, ui->Poly_res2->y(), ui->Poly_res2->width(), ui->Poly_res2->height());
+    ui->Poly_res3->setGeometry(0, ui->Poly_res3->y(), ui->Poly_res3->width(), ui->Poly_res3->height());
+    
     vector<int> nul = {0,0}; //Нулевой вектор, для проверки числителя на пустоту, чтобы не выводить пустые степени
     vector<int> check_num = {0,1};
     vector<int> check_num_min = {1,1};
