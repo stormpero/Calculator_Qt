@@ -21,7 +21,7 @@ vector<Drob> MUL_Pxk_P(vector<Drob> poly, vector<int> k);  // Домножение многочл
 
 vector<Drob> SUB_PP_P(vector<Drob> first, vector<Drob> second); // Вычитание многчленов
 
-void FAC_P_Q(vector<Drob> poly, vector<int>& LCM_de, vector<int>& GCD_num); // Вынесение из многочлена НОК знаменателей коэффициентов и НОД числителей
+vector<Drob> FAC_P_Q(vector<Drob> poly, vector<int>& LCM_de, vector<int>& GCD_num); // Вынесение из многочлена НОК знаменателей коэффициентов и НОД числителей
 
 //////////////////////////////////////////////////////////////////////////////
 

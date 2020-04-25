@@ -52,25 +52,34 @@ vector <Drob> MUL_Pxk_P(vector<Drob> poly, vector<int> k)
 	return result;
 }
 
-void FAC_P_Q(vector<Drob> poly, vector<int>& LCM_de, vector<int>& GCD_num)
+vector<Drob> FAC_P_Q(vector<Drob> poly, vector<int>& LCM_de, vector<int>& GCD_num)
 {
-	if (poly.empty())
-		throw ((string)" Empty polynomial \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
+    if (poly.empty())
+        throw ((string)" Empty polynomial \nIn File: " + __FILE__ + "\nIn line: " + to_string(__LINE__));
 
-	// и НОДу числитель первого коэффициента (в виде натурального числа)
-	// Приравниваем НОКу знаменатель первого коэффициента многочлена
-	GCD_num = ABS_Z_N(poly[0].numerator);
-	LCM_de = poly[0].denominator;
+    // и НОДу числитель первого коэффициента (в виде натурального числа)
+    // Приравниваем НОКу знаменатель первого коэффициента многочлена
+    int i = 0;
+    while (POZ_Z_D(poly[i].numerator) == 0)
+        i++;
+    GCD_num = ABS_Z_N(poly[i].numerator);
+    LCM_de = poly[i].denominator;
 
-	// И последовательно вычисляем его НОД и НОК с каждым следующим коэфициентом
-	for (int i(1); i < poly.size(); ++i)
-	{
-		GCD_num = GCF_NN_N(GCD_num, ABS_Z_N(poly[i].numerator));
-		LCM_de = LCM_NN_N(LCM_de, poly[i].denominator);
-	}
+    // И последовательно вычисляем его НОД и НОК с каждым следующим коэфициентом
+    for (int i(1); i < poly.size(); ++i)
+    {
+        if ((POZ_Z_D(poly[i].numerator) == 0))
+            continue;
+        GCD_num = GCF_NN_N(GCD_num, ABS_Z_N(poly[i].numerator));
+        LCM_de = LCM_NN_N(LCM_de, poly[i].denominator);
+    }
 
-	// Переводим НОД обратно в целое число
-	GCD_num = TRANS_N_Z(GCD_num);
+    for (int i = 0; i < poly.size(); i++)
+    {
+        poly[i].numerator = MUL_ZZ_Z(DIV_ZZ_Z(poly[i].numerator, TRANS_N_Z(GCD_num)), TRANS_N_Z(DIV_NN_N(LCM_de, poly[i].denominator)));
+        poly[i].denominator = { 1 };
+    }
+    return poly;
 }
 
 vector<Drob> SUB_PP_P(vector<Drob> first, vector<Drob> second)
@@ -200,7 +209,6 @@ vector <Drob> MUL_PP_P(vector <Drob> f, vector <Drob> s)
 	vector <Drob> result;
 	result = MUL_PQ_P(f, s[0]); // Умножаем первый многочлен на свободный член второго
 
-
 	vector <int> ssize = { 0 };
 	              // Здесь костыль. Так как MUL_Pxk_P на вход принимает многочлен и вектор, а s.size() это просто число типа int. Поэтому пришлось преобразовывать int к vector <int>
 	for (int i = 0; i < s.size(); i++)
@@ -300,29 +308,27 @@ vector<Drob> DIV_PP_P(vector<Drob> a, vector<Drob> b)
 	if (DEG_P_N(b) > DEG_P_N(a))
 		swap(a, b);
 
-	Drob number;
-	vector <Drob> div_a_b;
-	div_a_b.resize(a.size() - b.size() + 1);
-	for (int i = 0; i < div_a_b.size(); i++)
-	{
-		div_a_b[i].numerator.push_back(0);
-		div_a_b[i].numerator.push_back(0);
-		div_a_b[i].denominator.push_back(1);
-	}
+    Drob number;
+    vector <Drob> div_a_b;
+    div_a_b.resize(a.size() - b.size() + 1);
+    for (int i = 0; i < div_a_b.size(); i++)
+    {
+        div_a_b[i].numerator.push_back(0);
+        div_a_b[i].numerator.push_back(0);
+        div_a_b[i].denominator.push_back(1);
+    }
 
-	int i = 0;
-	while (DEG_P_N(a) >= DEG_P_N(b) && !(a.size() == 1 && POZ_Z_D(a[0].numerator) == 0))
-	{
-		number = DIV_QQ_Q(a[a.size() - 1], b[b.size() - 1]);
-		div_a_b[div_a_b.size() - 1 - i] = number;
-		vector <int> vect = { 0 };
+    while (DEG_P_N(a) >= DEG_P_N(b) && !(a.size() == 1 && POZ_Z_D(a[0].numerator) == 0))
+    {
+        number = DIV_QQ_Q(a[a.size() - 1], b[b.size() - 1]);
+        div_a_b[(a.size() - 1) - (b.size() - 1)] = number;
+        vector <int> vect = { 0 };
 
-		for (int j = 0; j < div_a_b.size() - 1 - i; j++)
-			vect = ADD_1N_N(vect);
+        for (int j = 0; j < (a.size() - 1) - (b.size() - 1); j++)
+            vect = ADD_1N_N(vect);
 
-		a = SUB_PP_P(a, MUL_PQ_P(MUL_Pxk_P(b, vect), number));
-		i++;
-	}
+        a = SUB_PP_P(a, MUL_PQ_P(MUL_Pxk_P(b, vect), number));
+    }
 	return div_a_b;
 };
 
