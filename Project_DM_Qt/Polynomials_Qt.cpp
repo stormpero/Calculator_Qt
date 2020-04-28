@@ -39,7 +39,9 @@ void Project_DM_Qt::poly_clear1()
 void Project_DM_Qt::poly_clear2()
 {
     ui->Poly_res2->setText("");
+
     ui->Poly_res2->setObjectName(ui->Poly_res2->text());
+
     pl2.clear();
     degreeold2 = -1;
 }
@@ -137,7 +139,8 @@ void Project_DM_Qt::poly_add()
 
                for (int i = 0; i < pl1[0].denominator.size(); i++) // Вывод знаменателя дроби
                    ui->Poly_res1->setText(ui->Poly_res1->text() + QString::number(pl1[0].denominator[i]));
-           }
+           }           
+
            ui->Poly_res1->setObjectName(ui->Poly_res1->text());
 
        }
@@ -215,6 +218,8 @@ void Project_DM_Qt::poly_add()
                 for (int i = 0; i < pl2[0].denominator.size(); i++) // Вывод знаменателя дроби
                     ui->Poly_res2->setText(ui->Poly_res2->text() + QString::number(pl2[0].denominator[i]));
             }
+           
+           ui->Poly_res2->setObjectName(ui->Poly_res2->text());
 
        }
        ui->Poly_res2->setObjectName(ui->Poly_res2->text());
